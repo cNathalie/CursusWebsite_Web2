@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="../../styles/style.css" type="text/css" />
+    <title>Request Methods</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="content">
+        <div class="header">
+          <h1 class="title">HTTP Request Methods</h1>
+          <img class="label-img" src="../../imgs/need-to-know.png" alt="Need to know" />
+        </div>
+
+        <div class="link-bar">
+          <a href="/pages/lessons/https.html" target="_blank">Introductie</a>
+          <a href="#">Request Methods</a>
+          <a href="/pages/lessons/status-codes.html" target="_blank"
+            >Status Codes</a
+          >
+        </div>
+        <p class="paragraph">
+          HTTP-requestmethodes zijn de verschillende manieren waarop een client
+          (zoals een webbrowser) met een server kan communiceren om gegevens op
+          te vragen, toe te voegen, bij te werken of te verwijderen. Deze
+          methodes vormen de basis van de interactie tussen webapplicaties en
+          servers, en maken het mogelijk om dynamische en interactieve websites
+          te bouwen. De vier belangrijkste HTTP-methodes zijn GET, POST, PUT en
+          DELETE, die elk een specifieke rol spelen in het beheren van gegevens
+          op de server.
+        </p>
+
+        <div class="paragraph card">
+            <h2 class="subtitle">GET</h2>
+            <p><strong>Doel:</strong> Ophalen van gegevens van de server. </p>    
+            <p><strong>Gebruik:</strong> Wordt gebruikt om gegevens op te vragen zonder de server te wijzigen.</p>
+            <p><strong>Voorbeeld:</strong> Een webpagina laden of een lijst met productenopvragen.</p> 
+            <p><strong>Kenmerken:</strong>
+                <ul>
+                    <li>Verzoeken bevatten geen body.</li>
+                    <li>Gegevens worden meestal via de URL verzonden.</li>
+                </ul>
+            </p>         
+        </div>
+
+        <div class="paragraph card">
+            <h2 class="subtitle">PUT</h2>
+            <p><strong>Doel:</strong> Bijwerken of vervangen van bestaande gegevens op de server. </p>    
+            <p><strong>Gebruik:</strong> Wordt gebruikt om een specifieke resource volledig te vervangen.</p>
+            <p><strong>Voorbeeld:</strong> Bestaande productinformatie bijwerken.</p> 
+            <p><strong>Kenmerken:</strong>
+                <ul>
+                    <li>Verzoeken bevatten een body met de gegevens die moeten worden bijgewerkt</li>
+                </ul>
+            </p>         
+        </div>
+
+        <div class="paragraph card">
+            <h2 class="subtitle">POST</h2>
+            <p><strong>Doel:</strong> Verzenden van gegevens naar de server om een nieuwe resource te creëren. </p>    
+            <p><strong>Gebruik:</strong> Wordt gebruikt om nieuwe gegevens toe te voegen.</p>
+            <p><strong>Voorbeeld:</strong> Een nieuw product toevoegen aan de database.</p> 
+            <p><strong>Kenmerken:</strong>
+                <ul>
+                    <li>Verzoeken bevatten een body met de gegevens die moeten worden toegevoegd.</li>
+                </ul>
+            </p>         
+        </div>
+        
+        <div class="paragraph card">
+            <h2 class="subtitle">DELETE</h2>
+            <p><strong>Doel:</strong> Verwijderen van bestaande gegevens van de server. </p>    
+            <p><strong>Gebruik:</strong> Wordt gebruikt om een specifieke resource te verwijderen.</p>
+            <p><strong>Voorbeeld:</strong> Een product verwijderen uit de database.</p> 
+            <p><strong>Kenmerken:</strong>
+                <ul>
+                    <li>Verzoeken bevatten meestal geen body, maar de id van de resource in de URL.</li>
+                </ul>
+            </p>         
+        </div>
+
+        <div class="paragraph">
+            <h2 class="subtitle">Er zijn nog meer HTTP Request Methods:</h2>
+            <ul>
+                <li>HEAD</li>
+                <li>OPTIONS</li>
+                <li>TRACE</li>
+                <li>CONNECT</li>
+                <li>PATCH</li>
+            </ul>            
+            <img class="responsive-image" src="/imgs/request-methods.png" alt="HTTP Resquest Methods">
+            <p>Tijdens deze opleiding én in het werkveld zijn GET, PUT, POST, DELETE de meest gebruikte.</p>
+        </div>
+
+        <div class="paragraph flex-row aha-card">
+            <img class="label-img" src="/imgs/idea.png" alt="Aha moment" />
+            <p>Deze vier methodes zouden een belletje moeten doen rinkelen.
+                Ze zijn namelijk gelinkt aan de CRUD-operaties die je hebt geleerd in de lessen Database.
+                <br>GET = Read
+                <br> PUT = Update
+                <br>POST = Create
+                <br> DELETE = Delete                
+            </p>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

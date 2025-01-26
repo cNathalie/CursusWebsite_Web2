@@ -1,0 +1,130 @@
+body {
+  margin: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.owner {
+  /* door margin-left en margin-right op 'auto' in te stellen, 
+    wordt de div automatisch horizontaal gecentreerd */
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  padding: 4px;
+  border: 2px solid #000;
+  background-color: lightgray;
+}
+
+.owner span {
+  font-weight: bold;
+}
+
+.welcome {
+  font-size: 20px;
+  color: #000;
+  font-weight: light;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.lessons {
+  font-size: 20px;
+  color: #000;
+  font-weight: light;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lessons a {
+  padding: 5px;
+  color: #000;
+  text-decoration: none;
+}
+.lessons a:hover {
+  background-color: lightgray;
+}
+
+.info-page-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.label-img {
+  width: 80px;
+  height: 80px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.link-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  border: 2px solid lightskyblue;
+  padding: 10px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
+  text-decoration: underline;
+}
+
+.paragraph {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 2px solid lightseagreen;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.card .subtitle {
+  text-align: center;
+}
+
+.aha-card {
+  border: 2px solid orange;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.aha-card p {
+  margin-left: 30px;
+}
+
+/* een afbeelding die responsief groeit of krimp relatief aan de parent */
+.responsive-image {
+  max-width: 100%;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}

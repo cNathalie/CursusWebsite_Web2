@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="../../styles/style.css" type="text/css" />
+    <title>HTTP(S)</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="content">
+        <div class="header">
+          <h1 class="title">
+            HTTP (HyperText Transfer Protocol) <br /> HTTPS (HyperText Transfer
+            Protocol Secure)
+          </h1>
+          <img class="label-img" src="../../imgs/good-to-know.png" alt="" />
+        </div>
+
+        <div class="link-bar">
+            <a href="#">Introductie</a>
+            <a href="/pages/lessons/request-methods.html" target="_blank">Request Methods</a>
+            <a href="/pages/lessons/status-codes.html" target="_blank">Status Codes</a>
+        </div>
+
+        <p class="paragraph">Protocollen die worden gebruikt voor het verzenden
+          van gegevens over het internet.
+        </p>
+
+        <h2 class="subtitle">HTTP</h2>
+        <p class="paragraph">
+          HTTP is het basisprotocol dat wordt gebruikt voor het laden van
+          webpagina's. Het werkt volgens een client-server model, waarbij de
+          client (bijvoorbeeld een webbrowser) verzoeken stuurt naar een server,
+          en de server antwoorden terugstuurt. Hier zijn enkele kernpunten:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>Verzoeken en Antwoorden</strong>: Een HTTP-verzoek bestaat
+            uit een methode (zoals GET of POST), een URL, en optioneel headers
+            en een body. De server antwoordt met een statuscode (zoals 200 voor
+            succes of 404 voor niet gevonden), headers, en een body met de
+            gevraagde gegevens.
+          </li>
+          <li>
+            <strong>Stateless</strong>: HTTP is stateless, wat betekent dat elke
+            verzoek onafhankelijk is en de server geen informatie bewaart over
+            eerdere verzoeken.
+          </li>
+          <li>
+            <strong>Poort 80</strong>: HTTP-verkeer wordt meestal verzonden via
+            poort 80.
+          </li>
+        </ul>
+
+        <h2 class="subtitle">HTTPS</h2>
+        <p class="paragraph">
+          HTTPS is de beveiligde versie van HTTP. Het voegt een laag encryptie
+          toe om de gegevens die tussen de client en de server worden verzonden
+          te beschermen. Hier zijn enkele kernpunten:
+        </p>
+        <ul class="paragraph">
+          <li>
+            <strong>Encryptie</strong>: HTTPS gebruikt SSL (Secure Sockets
+            Layer) of TLS (Transport Layer Security) om de gegevens te
+            versleutelen. Dit voorkomt dat derden de gegevens kunnen
+            onderscheppen of manipuleren.
+          </li>
+          <li>
+            <strong>Certificaten</strong>: HTTPS vereist een SSL/TLS-certificaat
+            dat door een vertrouwde certificaatautoriteit (CA) is uitgegeven.
+            Dit certificaat bevestigt de identiteit van de server.
+          </li>
+          <li>
+            <strong>Poort 443</strong>: HTTPS-verkeer wordt meestal verzonden
+            via poort 443.
+          </li>
+        </ul>
+
+        <img src="/imgs/https.png" alt="Http vs Https" class="responsive-image" />
+
+        <h2 class="subtitle">Voordelen van HTTPS</h2>
+        <ul class="paragraph">
+          <li>
+            <strong>Beveiliging</strong>: HTTPS beschermt de integriteit en
+            vertrouwelijkheid van gegevens tussen de gebruiker en de site.
+          </li>
+          <li>
+            <strong>Vertrouwen</strong>: Gebruikers zijn eerder geneigd om een
+            site te vertrouwen die HTTPS gebruikt, vooral bij het invoeren van
+            gevoelige informatie zoals wachtwoorden of creditcardgegevens.
+          </li>
+          <li>
+            <strong>SEO</strong>: Zoekmachines zoals Google geven de voorkeur
+            aan HTTPS-sites, wat kan leiden tot een betere ranking in
+            zoekresultaten.
+          </li>
+        </ul>
+
+        <h2 class="subtitle">Samenvatting</div>
+        <p class="paragraph">
+          HTTP en HTTPS zijn essentiële protocollen voor het web. HTTP is
+          eenvoudig en snel, maar biedt geen beveiliging. HTTPS voegt een
+          cruciale laag van beveiliging toe door gegevens te versleutelen en de
+          identiteit van de server te verifiëren, wat essentieel is voor het
+          beschermen van gebruikersgegevens en het opbouwen van vertrouwen.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+// Pas zelf niets aan deze file!
+
+{
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  }
+}

@@ -3,7 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+        <link rel="stylesheet" href="../../styles/style.css" type="text/css" />
     <title>Status Codes</title>
   </head>
-  <body></body>
+  <body>
+
+<div class="info-page-container">
+  <div class="content">
+    <div class="header">
+      <h1 class="title">HTTP Status Codes</h1>
+      <img class="label-img" src="../../imgs/need-to-know.png" alt="Need to know" />
+    </div>
+
+    <div class="link-bar">
+      <a href="/pages/lessons/https.html" >Introductie</a>
+      <a href="/pages/lessons/request-methods.html">Request Methods</a>
+      <a href="#" >Status Codes</a>
+      <a href="/pages/exercises/opdracht-status-codes.html" target="_blank">Opdracht</a>
+    </div>
+
+    <p class="paragraph">
+      HTTP-statuscodes zijn drie-cijferige codes die worden verzonden door een
+      server als reactie op een verzoek van een client. Deze codes geven aan of
+      een specifieke HTTP-verzoek is geslaagd, mislukt of een andere status heeft.
+      Statuscodes worden gebruikt om de communicatie tussen de client en de server
+      te vergemakkelijken en om de oorzaak van eventuele problemen te identificeren.
+      Er zijn vijf verschillende categorieën van statuscodes, elk met een specifieke
+      betekenis en reeks codes.
+  </div>
+
+  <div class="paragraph card">
+    <h2 class="subtitle">1xx - Informatief (Informational)</h2>
+    <p><strong>Betekenis:</strong> Informatieve statuscodes geven aan dat het verzoek is ontvangen en wordt verwerkt.</p>    
+    <p><strong>Voorbeeld:</strong> 100 Continue, 101 Switching Protocols.</p>
+    <p><strong>Kenmerken:</strong>
+        <ul>
+            <li>De server heeft het verzoek ontvangen en is bezig met het verwerken ervan.</li>
+            <li>De client moet wachten op verdere instructies van de server.</li>
+        </ul>
+    </p>
+</div>
+
+<div class="paragraph card">
+    <h2 class="subtitle">2xx - Succes (Success)</h2>
+    <p><strong>Betekenis:</strong> Succesvolle statuscodes geven aan dat het verzoek succesvol is verwerkt en voltooid.</p>    
+    <p><strong>Voorbeeld:</strong> 200 OK, 201 Created.</p>
+    <p><strong>Kenmerken:</strong>
+        <ul>
+            <li>Het verzoek is succesvol verwerkt en de server heeft een geldige reactie gegeven.</li>
+            <li>De client kan de ontvangen gegevens gebruiken of verdergaan met andere acties.</li>
+        </ul>
+    </p>
+</div>
+
+<div class="paragraph card">
+    <h2 class="subtitle">3xx - Omleiding (Redirection)</h2>
+    <p><strong>Betekenis:</strong> Omleidingsstatuscodes geven aan dat de client extra actie moet ondernemen om het verzoek te voltooien.</p>    
+    <p><strong>Voorbeeld:</strong> 301 Moved Permanently, 302 Found.</p>
+    <p><strong>Kenmerken:</strong>
+        <ul>
+            <li>De client moet een andere locatie of URI gebruiken om het verzoek te voltooien.</li>
+            <li>De server geeft aan waar de client het verzoek opnieuw kan indienen.</li>
+        </ul>
+    </p>
+  </div>
+
+  <div class="paragraph card">
+    <h2 class="subtitle">4xx - Clientfout (Client Error)</h2>
+    <p><strong>Betekenis:</strong> Clientfoutstatuscodes geven aan dat er een probleem is met het verzoek van de client.</p>    
+    <p><strong>Voorbeeld:</strong> 400 Bad Request, 404 Not Found.</p>
+    <p><strong>Kenmerken:</strong>
+        <ul>
+            <li>De client heeft een ongeldig verzoek ingediend of er is een fout in de URI.</li>
+            <li>De server kan het verzoek niet verwerken vanwege een fout van de client.</li>
+        </ul>
+    </p>
+  </div>
+
+  <div class="paragraph card">
+    <h2 class="subtitle">5xx - Serverfout (Server Error)</h2>
+    <p><strong>Betekenis:</strong> Serverfoutstatuscodes geven aan dat er een probleem is met de server die het verzoek verwerkt.</p>    
+    <p><strong>Voorbeeld:</strong> 500 Internal Server Error, 503 Service Unavailable.</p>
+    <p><strong>Kenmerken:</strong>
+        <ul>
+            <li>De server heeft een fout gemaakt bij het verwerken van het verzoek van de client.</li>
+            <li>De client moet wachten tot de server het probleem heeft opgelost.</li>
+        </ul>
+    </p>
+    </div>
+
+<img class="responsive-image" src="/imgs/http-status-codes.jpg" alt="http-status-codes">
+
+<div class="paragraph card">
+    <h2 class="subtitle">418 - I'm a teapot</h2>
+    <div class="img-div">
+      <img  class="responsive-image center" src="/imgs/good-to-know.png" alt="">
+    </div>  
+
+    <p><strong>Verhaal:</strong> HTTP-statuscode 418 I'm a teapot is een grap die is ontstaan uit het Hyper Text Coffee Pot Control Protocol (HTCPCP), 
+      een aprilgrap die in 1998 werd gepubliceerd door de Internet Engineering Task Force (IETF). Het protocol beschrijft een protocol voor het besturen van koffiepotten, 
+      en statuscode 418 werd toegevoegd om aan te geven dat een theepot geen koffie kan zetten.</p>
+
+    <p><strong>Betekenis:</strong> De server weigert koffie te zetten omdat het een theepot is.</p>    
+    <p><strong>Voorbeeld:</strong> 418 I'm a teapot.</p>
+    <p><strong>Kenmerken:</strong>
+        <ul>
+            <li>De server is een theepot en kan geen koffie zetten.</li>
+            <li>De client moet een ander verzoek indienen om koffie te krijgen.</li>
+        </ul>
+    </p>    
+  </div>
+
+  <div class="paragraph">
+    <p>
+      <h2 class="subtitle">Conclusie</h2>
+      HTTP-statuscodes zijn een essentieel onderdeel van het HTTP-protocol en
+      spelen een cruciale rol in de communicatie tussen clients en servers. Door
+      de betekenis en het gebruik van statuscodes te begrijpen, kunnen
+      ontwikkelaars problemen identificeren, fouten oplossen en de prestaties van
+      webapplicaties verbeteren. Het is belangrijk om vertrouwd te raken met de
+      verschillende categorieën van statuscodes en hun specifieke codes, zodat je
+      effectief kunt reageren op de reacties van servers en de gebruikerservaring
+      kunt optimaliseren.
+    </p>
+    <p>
+      Uitgebereide informatie over HTTP-statuscodes kan je vinden op volgende website:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">Mozilla Developer Network</a>
+    </p>
+  </div>
+
+  </body>
 </html>

@@ -107,6 +107,10 @@ body {
   text-align: center;
 }
 
+.card .img-div {
+  text-align: center;
+}
+
 .aha-card {
   border: 2px solid orange;
   border-radius: 10px;
@@ -115,6 +119,18 @@ body {
 
 .aha-card p {
   margin-left: 30px;
+}
+
+.exercise-card{
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.student-template{
+  border: 3px dotted lightgrey;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 /* een afbeelding die responsief groeit of krimp relatief aan de parent */
@@ -127,4 +143,8 @@ body {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.center-text {
+  text-align: center;
 }

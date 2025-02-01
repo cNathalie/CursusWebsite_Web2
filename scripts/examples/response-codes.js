@@ -1,15 +1,10 @@
-import { httpResponses } from './functions/functions.js';
+import { httpResponses } from './functions/httpResponses.js';
 
 const setup = () => {
 
     // EVENT LISTENERS
     const link1 = document.getElementById('link1');
-
-    link1.addEventListener('click', (event) => {
-        event.preventDefault();
-        httpResponses.simulate200OK();
-    });
-    //link1.addEventListener('click', httpResponses.simulate200OK);    
+    link1.addEventListener('click', httpResponses.simulate200OK);    
 
     const link2 = document.getElementById('link2');
     link2.addEventListener('click', () => httpResponses.simulate404Error());   

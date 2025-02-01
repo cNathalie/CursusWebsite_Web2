@@ -37,6 +37,11 @@ body {
   flex-direction: column;
 }
 
+.lessons .folder-title:hover{
+  background-color: rgb(150, 148, 148);
+  cursor: pointer;
+}
+
 .lessons a {
   padding: 5px;
   color: #000;
@@ -44,6 +49,13 @@ body {
 }
 .lessons a:hover {
   background-color: lightgray;
+}
+
+
+.folder {
+  display: flex;
+  flex-direction: column;
+  background-color: lightslategray;
 }
 
 .info-page-container {
@@ -111,6 +123,10 @@ body {
   text-align: center;
 }
 
+.border-red {
+  border: 2px solid rgb(214, 48, 48);
+}
+
 .aha-card {
   border: 2px solid orange;
   border-radius: 10px;
@@ -147,4 +163,21 @@ body {
 
 .center-text {
   text-align: center;
+}
+
+.hidden{
+  display: none;
+}
+
+.click-me:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.centered-img{
+  text-align: center;
+}
+
+li {
+  margin-bottom: 10px;
 }

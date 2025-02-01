@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+        <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Developer Tools</title>
+</head>
+<body>
+
+    <div class="info-page-container">
+
+            <div class="header">
+                <h1 class="title">Developer Tools</h1>
+                <img class="label-img" src="/imgs/need-to-know.png" alt="Need to know" />
+              </div>
+        
+
+        <div class="paragraph card">
+            <h2 class="subtitle">Wat zijn Developer Tools?</h2>
+            <p><strong>Betekenis:</strong> Developer Tools zijn een set van webontwikkelingstools die zijn ingebouwd in de meeste webbrowsers. Deze tools zijn ontworpen om webontwikkelaars te helpen bij het debuggen, testen en analyseren van websites. Met Developer Tools kunnen ontwikkelaars de structuur, stijl en prestaties van een website inspecteren en bewerken.</p>    
+            <p><strong>Kenmerken:</strong>
+                <ul>
+                    <li>Inspecteer HTML, CSS en JavaScript van een webpagina.</li>
+                    <li>Test en debug JavaScript-code.</li>
+                    <li>Simuleer verschillende netwerkomstandigheden.</li>
+                    <li>Meet de prestaties van een website.</li>
+                    <li>Optimaliseer de laadtijd van een website.</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="paragraph card">
+            <h2 class="subtitle">Hoe Developer Tools openen?</h2>
+            <p><strong>Stap 1:</strong> Open een webpagina in je browser.</p>    
+            <p><strong>Stap 2:</strong> Klik met de rechtermuisknop op de webpagina.</p>
+            <p><strong>Stap 3:</strong> Selecteer "Inspecteren" / "Inspect" in het contextmenu.</p>
+            <p><strong>Stap 4:</strong> De Developer Tools worden geopend aan de onderkant of zijkant van het browservenster.</p>
+            <p>(Shortcut: F12)</p>
+        </div>
+
+        <div class="centered-img">
+            <img class="responsive-image"  src="/imgs/dev-tools.png" alt="Developer tools">
+        </div>
+
+        <h1>Onderdelen van Developer Tools</h1>
+        <div class="paragraph card">
+            <h2 class="subtitle">Elements</h2>
+            <p>
+                De Elements-tab geeft een visuele weergave van de HTML-structuur van de webpagina. 
+                Hier kun je de DOM (Document Object Model) inspecteren en bewerken, CSS-stijlen toevoegen of verwijderen, en de lay-out van de pagina aanpassen.
+                Deze wijzigingen zijn alleen zichtbaar in de lokale kopie van de webpagina en worden niet opgeslagen op de server.
+            </p>
+            <p>
+                Selecteer een element in de Elements-tab om de bijbehorende HTML- en CSS-code te bekijken en te bewerken.
+            </p>
+        </div>
+
+        <div class="paragraph card border-red">
+            <h2 class="subtitle">Console</h2>
+            <p>
+                De Console-tab toont foutmeldingen, waarschuwingen en logberichten die worden gegenereerd door de webpagina.
+                Hier kun je JavaScript-code uitvoeren en testen, variabelen controleren en debuggen, en interactieve opdrachten invoeren.
+                De Console is een krachtige tool voor het testen en debuggen van JavaScript-code, maak hier dus zeker gebruik van!
+            </p>
+            <p>
+                Typ JavaScript-code in de Console en druk op Enter om de code uit te voeren. De uitvoer wordt weergegeven in de Console.                
+            </p>
+            <p>
+                Voorbeelden: 
+                <ul>
+                    <code>
+                        <li>console.log("Hello, world!");</li>
+                        <li>const element = document.getElementById("selectMe"); console.log(element.textContent)</li>
+                        <li>const x = 5; console.log(x);</li>
+                    </code>
+                </ul>
+            </p>
+
+            <p>
+                Wanneer je een (web)applicatie ontwikkelt en de applicatie doet niet wat je verwacht, dan is de Console-tab de eerste plaats waar 
+                je moet kijken om eventuele fouten op te sporen want daar worden foutmeldingen en waarschuwingen weergegeven.
+            </p>
+            <p id="error" class="click-me">
+                Klik hier om te zien hoe een error er in de Console uitziet.                
+            </p>
+            <p id="warning" class="click-me">
+                Klik hier om te zien hoe een warning er in de Console uitziet.                
+            </p>
+        </div>
+
+        <div class="paragraph card">
+            <h2 class="subtitle">Sources</h2>
+            <p>
+                De Sources-tab geeft een overzicht van alle bronbestanden die worden gebruikt door de webpagina, zoals HTML-, CSS- en JavaScript-bestanden.
+                Hier kun je door de bestanden navigeren, breakpoints instellen, code wijzigen en opslaan, en de bestanden debuggen.
+                De Sources-tab is handig voor het analyseren en bewerken van de broncode van een webpagina.
+            </p>
+        </div>
+
+        <div class="paragraph card border-red">
+            <h2 class="subtitle">Network</h2>
+            <p>
+                De Network-tab toont alle netwerkverzoeken die worden gedaan door de webpagina, zoals HTTP-requests en -responses, afbeeldingen, scripts en stylesheets (CSS).
+            </p>
+            <p>
+                Open de Netwerk-tab en laad deze webpagina opnieuw om alle netwerkverzoeken te bekijken.
+                Er zijn er maar een paar, maar als je bijvoorbeeld naar een website zoals Google gaat, dan zul je zien dat er veel meer netwerkverzoeken worden gedaan.
+            </p>
+        </div>
+
+        <div class="paragraph card">
+            <h2 class="subtitle">Performance</h2>
+            <p>
+                De Performance-tab biedt inzicht in de laadtijd en prestaties van de webpagina.
+                Hier kun je de laadtijd van de pagina meten, netwerkanalyses uitvoeren, geheugenprofielen bekijken, en bottlenecks identificeren.
+                De Performance-tab is handig voor het optimaliseren van de prestaties van een website en het verbeteren van de gebruikerservaring.
+            </p>            
+        </div>
+
+        <div class="paragraph card border-red">
+            <h2 class="subtitle">Memory</h2>
+            <p>
+                De Memory-tab toont het geheugengebruik van de webpagina en identificeert geheugenlekken.
+                Hier kun je het geheugengebruik van de pagina monitoren, geheugenprofielen maken, en geheugenlekken opsporen.
+                De Memory-tab is handig voor het optimaliseren van de geheugenprestaties van een website en het voorkomen van geheugenlekken.
+            </p>
+        </div>
+
+        <div class="paragraph card">
+            <h2 class="subtitle">Application</h2>
+            <p>
+                De Application-tab geeft een overzicht van de lokale opslag van de webpagina, zoals cookies, cachegegevens en databases.
+                Hier kun je cookies beheren, cachegegevens wissen, databases bekijken en bewerken, en offlinegegevens beheren.
+                De Application-tab is handig voor het beheren en debuggen van de lokale opslag van een website.
+            </p>
+        </div>
+
+        <div class="paragraph">
+            <h2>Nooit meer vergeten</h2>
+            <p>
+                Developer Tools zijn een krachtige set van webontwikkelingstools die zijn ingebouwd in de meeste webbrowsers.
+                Gebruik je Developer Tools om je webontwikkelingsvaardigheden te verbeteren en efficiënter te werken.
+                Tijdens deze volledige opleiding én je toekomstige carrière als ontwikkelaar zul je vaak gebruik maken van Developer Tools, 
+                vooral de in het rood gemarkeerde onderdelen.
+            </p>
+        </div>
+    
+        <div class="centered-img">
+            <img class="responsive-image" src="/imgs/dev-tools-worship.jpg" alt="Be smart, use DevTools">
+        </div>
+    </div>
+    
+</body>
+<script src="/scripts/examples/dev-tools.js" type="module"></script>
+</html>

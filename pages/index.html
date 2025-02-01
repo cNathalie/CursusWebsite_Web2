@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
-    <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
 
     <title>Web-2</title>
   </head>
@@ -37,12 +37,27 @@
 
     <div class="lessons">
       <h1>Lessen</h1>
-      <a href="lessons/internet.html" target="_blank">Het internet</a>
-      <a href="lessons/devtools.html" target="_blank">Developer Tools</a>
-      <a href="lessons/https.html" target="_blank">HTTP(S)</a>
-      <a href="lessons/.html" target="_blank"></a>
+      <a href="lessons/internet-and-http/internet.html" target="_blank">Het internet</a>
+      <a href="lessons/internet-and-http/developer-tools.html" target="_blank">Developer Tools</a>      
+      <!-- HTTPS FOLDER -->
+      <span class="folder-title" id="https-title">HTTPS</span>
+      <div class="hidden folder" id="https-folder">
+        <a href="/pages/lessons/internet-and-http/https.html" target="_blank">Introductie</a>
+          <a href="/pages/lessons/internet-and-http/request-methods.html" target="_blank">Request Methods</a>
+          <a href="/pages/lessons/internet-and-http/status-codes.html" target="_blank">Status Codes</a>
+          <a href="/pages/lessons/internet-and-http/browser-cache.html" target="_blank">Browser Cache</a>
+          <a href="/pages/exercises/internet-and-http/opdracht-status-codes.html" target="_blank">Opdracht</a>
+      </div>
+      <!-- JAVASCRIPT INTRO -->
+      <span class="folder-title" id="js-intro-title">JavaScript - Introductie</span>
+      <div class="hidden folder" id="js-intro-folder">
+        <a href="lessons/javascript/introduction/introduction.html" target="_blank">Introductie</a>
+        <a href="lessons/javascript/introduction/ecma-script.html" target="_blank">ECMA-Script</a>
+        <a href="lessons/javascript/introduction/js-engine.html" target="_blank">JavaScript Engine</a>
+      </div>
       <a href="lessons/.html" target="_blank"></a>
       <a href="lessons/.html" target="_blank"></a>
     </div>
   </body>
+  <script src="/scripts/examples/index.js" type="module"></script>
 </html>

@@ -156,6 +156,297 @@
 </pre>
       </div>
 
+      <div class="card paragraph border-red">
+        <h2 class="subtitle">Arrow functies</h2>
+        <p>
+          Arrow functies zijn een nieuwe manier om functies te schrijven in ES6.
+          Ze zijn korter en hebben een andere syntax dan reguliere functies.
+        </p>
+        <p>
+          Een arrow functie wordt gedeclareerd met een arrow operator
+          <code>=></code>.
+        </p>
+        <pre>
+<code>
+    const greet = () => {
+        console.log('Hello, world!');
+    }
+
+    greet();
+</code>
+</pre>
+        <p>
+          Deze functie heet <code>greet</code> en zal de string
+          <code>'Hello, world!'</code> loggen naar de console wanneer deze wordt
+          aangeroepen.
+        </p>
+        <p>
+          Als de functie maar één statement bevat, kan je de accolades en het
+          <code class="return">return</code> keyword weglaten.
+        </p>
+        <pre>   
+<code>
+    const greet = () => console.log('Hello, world!');
+    greet();
+</code>
+</pre>
+        <p>
+          Als de functie één parameter heeft, kan je de ronde haakjes weglaten.
+        </p>
+        <pre>
+<code>
+    const greet = name => console.log(`Hello, ${name}!`);
+    greet('John');
+</code>
+</pre>
+        <p>
+          Als de functie enkel de return waarde van één expressie is, kan je het
+          <code class="return">return</code>
+          statement weglaten.
+        </p>
+        <pre>
+<code>
+    const add = (a, b) => a + b;
+    const sum = add(2, 3);
+    console.log(sum); <span class="comment">// 5</span>
+</code>
+</pre>
+
+        <h2>Opgelet</h2>
+        <p>Via een array functie ken je een waarde toe aan variabele.</p>
+        <p>De waarde van die variabele is de functie (een functie object).</p>
+        <p>
+          Wanneer je de variabele gebruikt zonder ronde haakjes (); dan refereer
+          je naar de waarde van de variabele = het functie object. Maar je roept
+          de functie niet aan!
+        </p>
+        <pre>
+<code>
+    const greet = () => console.log('Hello, world!');
+
+    greet; 
+
+    greet(); <span class="comment">// Hello, world!</span>
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Function body</h2>
+        <p>
+          De body van een functie is de code die tussen de accolades staat. Dit
+          is de code die wordt uitgevoerd wanneer de functie wordt aangeroepen.
+        </p>
+        <p>
+          De body van een functie kan bestaan uit één of meerdere statements.
+        </p>
+        <p class="important">Opgelet:</p>
+        <p>
+          Veranderingen in de function body aan parameters van een primitief
+          type zijn niet zichtbaar in de scope van de aanroeper:
+        </p>
+        <pre>
+<code>
+    function changeValue(value) {
+        value = 10;
+    }
+
+    let x = 5;
+
+    changeValue(x);
+
+    console.log(x); <span class="comment">// Wat verwacht je hier?</span>
+</code>
+</pre>
+        <p>
+          Veranderingen in de function body aan parameters van een object type
+          zijn wel zichtbaar in de scope van de aanroeper:
+        </p>
+        <pre>
+<code>
+    function changeValue(obj) {
+        obj.value = 10;
+    }
+
+    let x = { value: 5 };
+
+    changeValue(x);
+
+    console.log(x.value); <span class="comment">// Wat verwacht je hier?</span>
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Rest parameter</h2>
+        <p>
+          De rest parameter syntax laat je een onbepaald aantal argumenten
+          doorgeven aan een functie als een array.
+        </p>
+        <p>
+          De rest parameter wordt aangeduid met drie puntjes <code>...</code>{'
+          '} gevolgd door de naam van de array waarin de argumenten worden
+          opgeslagen.
+        </p>
+        <pre>
+<code>
+    function printEveryArg(...args) {
+        for(let arg of args) {
+            console.log(arg);
+        }
+    }
+
+    printEveryArg(1, 2, 3, 4, 5);
+    printEveryArg('a', 'b', 'c');
+    printEveryArg(true, false);
+</code>
+</pre>
+        <p>
+          Deze functie heet <code>printEveryArg</code> en zal elk argument
+          loggen naar de console wanneer deze wordt aangeroepen.
+        </p>
+        <p>
+          De rest parameter kan enkel de laatste parameter zijn in de
+          functiedeclaratie.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Hoisting</h2>
+        <p>
+            Functie-declaraties worden gehoist. Dit betekent dat je een functie kan aanroepen voordat je deze hebt gedeclareerd.
+        </p>
+        <pre>
+<code>
+    greet();
+    function greet() {
+        console.log('Hello, world!');
+    }
+</code>
+</pre>
+        <p>
+          Deze code zal de string <code>'Hello, world!'</code> loggen naar de
+          console wanneer deze wordt aangeroepen.
+        </p>       
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Doorgeven als parameter</h2>
+        <p>
+          Functies kunnen ook worden doorgegeven als parameters aan andere
+          functies.
+        </p>
+        <pre>
+<code>
+    function greet() {
+        console.log('Hello, world!');
+    }
+
+    function callGreet(parameter) {
+        parameter();
+    }
+
+    callGreet(greet);
+</code>
+</pre>
+        <p>
+          Deze code zal de string <code>'Hello, world!'</code> loggen naar de
+          console wanneer deze wordt aangeroepen.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Scope</h2>
+        <p>
+          De scope van een variabele is de context waarin de variabele bestaat.
+          In JavaScript zijn er twee soorten scope: globale scope en block/lokale
+          scope.
+        </p>
+        <p>
+          Variabelen die gedeclareerd zijn buiten een functie hebben een
+          globale scope. Deze variabelen zijn beschikbaar in de gehele code.   
+        </p>
+        <p>
+          Variabelen die gedeclareerd zijn binnen een functie hebben een lokale
+          scope. Deze variabelen zijn enkel beschikbaar binnen de functie.
+        </p>
+        <p class="important">Block scope:</p>
+        <p>
+          Variabelen die gedeclareerd zijn binnen een block hebben een block
+          scope. Een block is een set van accolades <code>{}</code> en kan
+          bijvoorbeeld een functie body of een if statement zijn.
+        </p>
+        <p>
+            Bekijk onderstaande situaties heel goed; goei ze zeker ook eens afzonderlijk in de Console en bekijk de output.
+        </p>
+        <pre>
+<code>
+    <span class="comment">// Situatie 1</span>
+    function myFunc() {
+        let bool = true;
+
+        if (true) {
+            let x = 5;
+            console.log(bool); <span class="comment">// true</span>
+            console.log(x); <span class="comment">// 5</span>
+        }
+    }
+    myFunc()
+
+    <span class="comment">// Situatie 2</span>
+    function myFunc2() {
+        let bool = true;
+
+        if (true) {
+            let x = 5;
+            console.log(bool); <span class="comment">// true</span>
+            console.log(x); <span class="comment">// 5</span>
+        }
+
+        console.log(bool); <span class="comment">// true</span>
+    }
+    myFunc2();
+
+    <span class="comment">// Situatie 3</span>
+    function myFunc3() {
+        let bool = true;
+
+        if (true) {
+            let x = 5;
+            console.log(bool); <span class="comment">// true</span>
+            console.log(x); <span class="comment">// 5</span>
+        }
+
+        console.log(bool); <span class="comment">// true</span>
+        console.log(x); <span class="comment">// ReferenceError: x is not defined</span>
+    }
+    myFunc3();
+
+    <span class="comment">// Situatie 4</span>
+    function myFunc3() {
+        let bool = true;
+
+        if (true) {
+            let x = 5;
+        }
+    }
+    console.log(bool); <span class="comment">// ReferenceError: bool is not defined</span>
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Vervuiling van de Scope</h2>
+        <p>
+          Vervuiling van de scope treedt op wanneer er variabelen worden
+          gedeclareerd in de globale scope die dezelfde naam hebben als variabelen
+          in de lokale scope.
+        </p>
+        <p>
+          Dit kan leiden tot onverwachte resultaten en bugs in je code. Om
+          vervuiling van de scope te voorkomen, gebruik je best unieke, betekenisvolle namen voor je variabelen.
+      </div>
+
       <a id="back-to-top" href="#">Terug naar boven</a>
     </div>
   </body>

@@ -1,24 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
-     <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
 
-    <title></title>
-</head>
-<body>
+    <title>Arrays</title>
+  </head>
+  <body>
     <div class="info-page-container">
-        <div class="header">
-            <h1 class="title"></h1>
-            <img class="label-img" src="" alt="" />
-        </div>
+      <div class="header">
+        <h1 class="title">Arrays</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/basics/intro-basics.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/basics/variables.html">Variabelen</a>
+        <a href="/pages/lessons/javascript/basics/datatypes.html">Datatypes</a>
+        <a href="/pages/lessons/javascript/basics/objects.html">Objecten</a>
+        <a href="/pages/lessons/javascript/basics/functions.html">Functies</a>
+        <a href="/pages/lessons/javascript/basics/arrays.html">Arrays</a>
+      </div>
 
-        <div class="paragraph">
+      <div class="paragraph">
+        <p>Arrays zijn geordende veramelingen van elementen.</p>
+        <p>De elementen mogen in JavaScript van een verschillend type zijn.</p>
+      </div>
 
-        </div>
-        <a id="back-to-top" href="#">Terug naar boven</a>
+      <div class="card paragraph">
+        <h2 class="subtitle">Array declareren</h2>
+        <p>Om een array te declareren, gebruik je de volgende syntax:</p>
+        <pre>
+<code>
+    <span class="comment">// Een lege array</span>
+    const emptyArray = [];
+    
+    <span class="comment">// Een array met waardes</span>
+    const fruits = ['apple', 'banana', 'orange'];
+</code>
+</pre>
+        <p>Je kan ook een array declareren met de Array constructor:</p>
+        <pre>
+<code>    
+    const array = new Array();
+    const fruits = new Array('apple', 'banana', 'orange');
+</code>
+</pre>
+        <p>
+          JavaScript arrays zijn <span class="important">dynamisch</span>. Dit
+          betekend dat je bij het declareren geen grootte hoeft mee te geven en
+          dat de grootte van een array kan veranderen nadat deze is
+          gedeclareerd. Ze kunnen dus groeien en krimpen.
+        </p>
+        <pre>
+<code>
+    const fruits = ['apple', 'banana', 'orange'];
+    fruits.push('pear');
+    console.log(fruits); <span class="comment">// ['apple', 'banana', 'orange', 'pear']</span>
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Index</h2>
+        <p>
+          De elementen in een array worden geïndexeerd. De index van een element
+          is een numerieke waarde die de positie van het element in de array
+          aangeeft.
+        </p>
+        <p>
+          De index van een array begint ALTIJD bij 0. Dit betekent dat het
+          eerste element in een array de index 0 heeft, het tweede element de
+          index 1, enzovoort.
+        </p>
+        <p>Index is niet hetzelfde als <code>length</code>!</p>
+      </div>
+
+      <div class="centered">
+        <img class="responsive-image" src="/imgs/zero-based-fun.png" />
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Methodes voor arrays</h2>
+        <p>
+          JavaScript arrays hebben verschillende methodes die je kan gebruiken
+          om elementen toe te voegen, te verwijderen, te sorteren, te filteren,
+          enzovoort.
+        </p>
+
+        <p>Hier zijn enkele van de meest gebruikte array methodes:</p>
+        <ul>
+          <li>
+            <code>length</code>: geeft het aantal elementen in de array terug
+          </li>
+          <li><code>indexOf</code>: geeft de index van een element terug</li>
+          <li><code>concat</code>: voegt twee arrays samen</li>
+          <li><code>reverse</code>: draait de volgorde van de elementen om</li>
+          <li><code>sort</code>: sorteert de elementen van de array</li>
+        </ul>
+
+        <p>Zo gebruik je ze op een array:</p>
+        <pre>
+<code>
+    const fruits = ['apple', 'banana', 'orange'];
+
+    console.log(fruits.length); <span class="comment">// 3</span>
+    console.log(fruits.indexOf('banana')); <span class="comment">// 1</span>
+
+    const vegetables = ['carrot', 'tomato'];
+
+    const food = fruits.concat(vegetables);
+    console.log(food); 
+    <span class="comment">// ['apple', 'banana', 'orange', 'carrot', 'tomato']</span>
+
+    console.log(food.reverse()); 
+    <span class="comment">// ['tomato', 'carrot', 'orange', 'banana', 'apple']</span>
+
+    console.log(food.sort()); 
+    <span class="comment">// ['apple', 'banana', 'carrot', 'orange', 'tomato']</span>
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Stack</h2>
+        <p>
+          Een stack is een datastructuur waarin elementen worden toegevoegd en
+          verwijderd volgens het Last In First Out (LIFO) principe. Dit betekent
+          dat het laatste element dat aan de stack wordt toegevoegd, het eerste
+          element is dat wordt verwijderd.
+        </p>
+        <p>
+          Je kan een stack implementeren met een array. De <code>push()</code>
+          methode voegt een element toe aan het einde van de array en de
+          <code>pop()</code> methode verwijdert het laatste element van de
+          array.
+        </p>
+        <p>Dit zijn alle stack methodes:</p>
+        <ul>
+          <li>
+            <code>push()</code>: voegt een element toe aan het einde van de
+            array
+          </li>
+          <li>
+            <code>pop()</code>: verwijdert het laatste element van de array en
+            returnt het
+          </li>
+          <li>
+            <code>peek()</code>: geeft het laatste element van de array terug
+            zonder het te verwijderen
+          </li>
+          <li><code>isEmpty()</code>: controleert of de stack leeg is</li>
+          <li>
+            <code>size()</code>: geeft het aantal elementen in de stack terug
+          </li>
+          <li>
+            <code>shift()</code>: verwijdert het eerste element van de array en
+            returnt het
+          </li>
+          <li>
+            <code>unshift()</code>: voegt een element toe aan het begin van de
+            array en returnt de nieuwe lengte van de array
+          </li>
+        </ul>
+        <p>Zo gebruik je ze op een array:</p>
+        <pre>
+<code>
+    const stack = [];
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    console.log(stack); <span class="comment">// [1, 2, 3]</span>
+
+    const last = stack.pop();
+
+    console.log(last); <span class="comment">// 3</span>
+    console.log(stack); <span class="comment">// [1, 2]</span>
+
+    stack.push(4);
+
+    console.log(stack); <span class="comment">// [1, 2, 4]</span>
+
+    let index = 1;
+    console.log(stack[index]); <span class="comment">// 2</span>
+
+    index = 3;
+    console.log(stack[index]); <span class="comment">// undefined</span>
+
+    console.log(stack[stack.length - 1]); <span class="comment">// 2</span>
+
+    const newLength = stack.unshift(0);
+    console.log(newLength); <span class="comment">// 4</span>
+
+    console.log(stack); <span class="comment">// [0, 1, 2, 4]</span>
+
+    const first = stack.shift();
+    console.log(first); <span class="comment">// 0</span>
+
+    console.log(stack); <span class="comment">// [1, 2, 4]</span>
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Multidimensionele arrays</h2>
+        <p>
+          Een multidimensionele array is een array waarvan de elementen ook
+          arrays zijn. Hiermee kan je complexe datastructuren maken zoals
+          matrices en tabellen.
+        </p>
+        <p>
+          Je kan een multidimensionele array declareren door arrays in arrays te
+          nesten:
+        </p>
+        <pre>
+<code>
+    const multiArray = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+</code>
+</pre>
+        <p>
+          Je kan de elementen van een multidimensionele array benaderen door
+          meerdere indexen te gebruiken:
+        </p>
+        <pre>
+<code>
+    console.log(multiArray[0][0]); <span class="comment">// 1</span>
+    console.log(multiArray[1][2]); <span class="comment">// 6</span>
+    console.log(multiArray[2][1]); <span class="comment">// 8</span>
+</code>
+</pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
     </div>
-</body>
+  </body>
 </html>

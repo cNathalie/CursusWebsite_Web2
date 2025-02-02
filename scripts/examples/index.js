@@ -33,6 +33,13 @@ const setup = () => {
     toggleElementVisibility(domFolder);
     toggleElementBackgroundColor(domTitle, folderColor);
   });
+
+  const eventsFolder = document.getElementById("events-folder");
+  const eventsTitle = document.getElementById("events-title");
+  eventsTitle.addEventListener("click", () => {
+    toggleElementVisibility(eventsFolder);
+    toggleElementBackgroundColor(eventsTitle, folderColor);
+  });
 };
 
 window.addEventListener("load", setup);

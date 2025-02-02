@@ -15,4 +15,5 @@
 
 ## JAVASCRIPT BEST PRACTICES
 
--
+- Gebruik alleen let en const om variabelen te declareren, nooit var!
+

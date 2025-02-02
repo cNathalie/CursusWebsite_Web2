@@ -6,7 +6,7 @@ export const toggleElementVisibility = (element) => {
     }
 };
 
-export const toggleBackgroundColor = (element, color) => {
+export const toggleElementBackgroundColor = (element, color) => {
     if(element.style.backgroundColor === color) {
         element.style.backgroundColor = "";
     } else {

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+
+    <title>JS Basics Intro</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JavaScript Basics - Introductie</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/basics/intro-basics.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/basics/variables.html">Variabelen</a>
+        <a href="/pages/lessons/javascript/basics/datatypes.html">Datatypes</a>
+        <a href="/pages/lessons/javascript/basics/objects.html">Objecten</a>
+        <a href="/pages/lessons/javascript/basics/functions.html">Functies</a>
+        <a href="/pages/lessons/javascript/basics/arrays.html">Arrays</a>
+      </div>
+
+      <div class="paragraph">
+        <h2 class="subtitle">JavaScript run-time omgeving</h2>
+        <p>
+          JavaScript is een programmeertaal die gebruikt wordt om webpagina's
+          interactief te maken. JavaScript wordt uitgevoerd in de browser van de
+          gebruiker. De browser is de run-time omgeving van JavaScript.
+        </p>
+        <div class="centered">
+          <img
+            class="responsive-image"
+            src="/imgs/browsers.png"
+            alt="Browsers"
+          />
+        </div>
+        <p>
+          JavaScript kan ook gebruikt worden om servers te programmeren. In dat
+          geval wordt JavaScript uitgevoerd in een server-side run-time omgeving
+          zoals Node.js.
+        </p>
+        <div class="centered">
+          <img class="responsive-image" src="/imgs/nodejs.jpg" alt="Node js" />
+        </div>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Wat doet JavaScript</h2>
+        <p>
+          JavaScript kan gebruikt worden om de inhoud van een webpagina te
+          veranderen.
+        </p>
+        <p>
+          Je brengt de statische html-pagina, door middel van Dom Manipulatie,
+          tot leven door het stylen van elementen, het toevoegen van interactie
+          en het manipuleren van de inhoud. Het kan ook gebruikt worden voor het
+          versturen van HTTP-requests en het verwerken van de response.
+        </p>
+      </div>
+
+      <div class="paragraph card border-red">
+        <h2 class="subtitle">
+          JavaScript en HTML: het <code>script</code> element
+        </h2>
+        <p>
+          JavaScript kan in een HTML bestand geplaatst worden. Je kan JavaScript
+          code in een HTML bestand schrijven tussen de
+          <code class="good">&lt;script&gt;</code> tags.
+        </p>
+        <p>
+          Je kan ook een extern JavaScript bestand linken aan een HTML bestand.
+          Dit doe je door een <code class="good">&lt;script&gt;</code> tag te
+          gebruiken met een <code class="good">src</code> attribuut.
+        </p>
+        <p>Bijvoorbeeld:</p>
+        <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+        <p>
+          Het is belangrijk om de uitvoering van de JavaScript code te laten
+          wachten tot de HTML pagina volledig geladen is. Daarom plaats je de
+          <code class="good">&lt;script&gt;</code> tag volledig onderaan, vlak
+          voor de <code class="good">&lt;/body&gt;</code> tag.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Console.log()</h2>
+        <p>
+          De <code class="good">console.log()</code> methode wordt gebruikt om
+          berichten te loggen naar de console van de browser. Dit is handig om
+          te controleren of je code correct werkt en om waarden van variabelen
+          te bekijken. Tussen de haakjes van
+          <code class="good">console.log()</code> plaats je de waarde of de naam
+          van de variabele die je wil loggen.
+        </p>
+        <p>Vergelijk met C#: <code>Console.WriteLine()</code></p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+
+    <title>Datatypes</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Datatypes</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/basics/intro-basics.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/basics/variables.html">Variabelen</a>
+        <a href="/pages/lessons/javascript/basics/datatypes.html">Datatypes</a>
+        <a href="/pages/lessons/javascript/basics/objects.html">Objecten</a>
+        <a href="/pages/lessons/javascript/basics/functions.html">Functies</a>
+        <a href="/pages/lessons/javascript/basics/arrays.html">Arrays</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          JavaScript is een dynamisch getypeerde taal, wat betekent dat je niet
+          moet aangeven welk type gegevens je in een variabele zal opslaan.
+          JavaScript zal automatisch het type van de gegevens bepalen.
+        </p>
+        <p>JavaScript heeft een aantal primitieve datatypes, zoals:</p>
+        <ul>
+          <li>Number</li>
+          <li>String</li>
+          <li>Boolean</li>
+          <li>Undefined</li>
+          <li>Null</li>
+        </ul>
+        <p>Er zijn ook objecttypes</p>
+        <ul>
+          <li>Object</li>
+          <li>Array</li>
+          <li>Function</li>
+        </ul>
+      </div>
+      <!-- NUMBER -->
+      <div class="card paragraph">
+        <h2 class="subtitle">Number</h2>
+        <p>
+          Numbers zijn getallen. Ze kunnen zowel gehele getallen als
+          kommagetallen zijn.
+        </p>
+        <p>Enkele voorbeelden van numbers:</p>
+<pre>
+<code>
+    const x = 5; 
+    const y = 3.14;
+    const z = -10;
+</code>
+</pre>
+        <p>Operatoren:</p>
+        <ul>
+          <li>+</li>
+          <li>-</li>
+          <li>*</li>
+          <li>/</li>
+          <li>% (modulo)</li>
+        </ul>
+      </div>
+      <!-- STRING -->
+      <div class="card paragraph">
+        <h2 class="subtitle">String</h2>
+        <p>
+          Strings zijn teksten. Ze worden gedefinieerd tussen enkele of dubbele
+          aanhalingstekens.
+        </p>
+        <p>Enkele voorbeelden van strings:</p>
+        <pre>
+<code>
+    const x = "Hello"; 
+    const y = 'World'; 
+    const z = "42";
+</code>
+</pre>
+        <p>
+          De operator '+' kan gebruikt worden om twee strings te concateneren.
+        </p>
+        <pre>
+<code>
+    const greeting = x + " " + y;
+    console.log(greeting); // "Hello World"
+</code>
+</pre>
+        <p>
+          Op een variabele van het type string kan je altijd
+          <code class="good">.length</code> oproepen om het aantal karakters te
+          tellen.
+        </p>
+        <pre>
+<code>
+    const text = "Hello"; 
+    console.log(text.length); // 5
+</code>
+</pre>
+        <p>
+          Je kan ook een number omzetten naar een string met de methode
+          <code class="good">toString()</code>.
+        </p>
+        <pre>
+<code>
+    const number = 42;
+    console.log(number);
+    console.log(typeof(number)) 
+
+    const string = number.toString(); 
+
+    console.log(string);
+    console.log(typeof(string)); 
+</code>
+</pre>
+      </div>
+      <!-- BOOLEAN -->
+      <div class="card paragraph">
+        <h2 class="subtitle">Boolean</h2>
+        <p>
+          Booleans zijn waarden die waar of onwaar kunnen zijn. Ze worden
+          gebruikt om beslissingen te nemen in je code.
+        </p>
+        <p>Enkele voorbeelden van booleans:</p>
+        <pre>
+<code>
+    const x = true;
+    const y = false;
+</code>
+</pre>
+        <p>
+          Booleans worden vaak gebruikt in combinatie met conditionele
+          statements zoals if en else.
+        </p>
+        <pre>
+<code>
+    if (x) {
+    console.log("Dit wordt uitgevoerd"); 
+    } else { 
+    console.log("Dit wordt niet uitgevoerd");
+    }
+</code>
+</pre>
+        <p>Elke waarde heeft ook een boolean equivalent:</p>
+        <ul>
+          <li>0 is false</li>
+          <li>1 is true</li>
+          <li>"" is false</li>
+          <li>"Hello" is true</li>
+          <li>null is false</li>
+          <li>undefined is false</li>
+          <li>NaN is false</li>
+        </ul>
+        <p>
+          Zo kan je bevoorbeeld snel controleren of een string variable een
+          waarde heeft:
+        </p>
+        <pre>
+<code>
+    const text = ""; 
+    if (text) { 
+    console.log("Text heeft een waarde"); 
+    } else { 
+    console.log("Text heeft geen waarde"); 
+    }
+</code>
+</pre>
+      </div>
+      <!-- UNDEFINED EN NULL -->
+      <div class="card paragraph">
+        <h2 class="subtitle">Undefined en null</h2>
+        <p>
+          Undefined en null zijn speciale waarden in JavaScript. Undefined
+          betekent dat een variabele niet is gedefinieerd, terwijl null betekent
+          dat een variabele geen waarde heeft.
+        </p>
+        <p>Enkele voorbeelden:</p>
+        <pre>
+<code>
+    let x; 
+    console.log(x); // undefined 
+
+    const y = null; 
+    console.log(y); // null
+</code>
+</pre>
+        <p>Null staat voor een lege object pointer.</p>
+        <p>Het type van een variable met de waarde null, is een object.</p>
+        <pre>
+<code>
+    Console.log(typeof(y)); // object
+</code>
+</pre>
+        <p>
+          Geen zorgen, het verschil tussen beide zal naarmate je meer codeert,
+          duidelijker worden.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

@@ -82,10 +82,21 @@ body {
 .link-bar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px;
   border: 2px solid lightskyblue;
   padding: 10px;
+}
+
+.link-bar a {
+  padding: 5px;
+  color: #000;
+  text-decoration: none;
+}
+
+.link-bar a:hover {
+  background-color: lightgray;
 }
 
 .title {
@@ -161,10 +172,6 @@ body {
   flex-direction: row;
 }
 
-.center-text {
-  text-align: center;
-}
-
 .hidden{
   display: none;
 }
@@ -174,10 +181,49 @@ body {
   text-decoration: underline;
 }
 
-.centered-img{
+.centered{
   text-align: center;
 }
 
 li {
   margin-bottom: 10px;
+}
+
+.important {
+  font-weight: bold;
+  color: red;
+}
+
+.good{
+  font-weight: bold;
+  color: green;
+}
+
+.bad {
+  font-weight: bold;
+  color: red;
+  text-decoration: line-through;
+}
+
+#back-to-top{
+  color:gray;
+  text-decoration: none;
+}
+
+pre {
+  white-space: pre-wrap; /* Wraps the content */
+  word-wrap: break-word; /* Breaks long words */
+  overflow-x: auto; /* Adds horizontal scroll if needed */
+  background-color: rgb(245, 239, 239);
+  border-radius: 10px;
+}
+
+code span{
+  color: darkgreen;
+  font-style: italic;
+  font-weight: light;
+}
+
+.return {
+  color: purple;
 }

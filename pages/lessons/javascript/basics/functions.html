@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+
+    <title>Functions</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Functies</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/basics/intro-basics.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/basics/variables.html">Variabelen</a>
+        <a href="/pages/lessons/javascript/basics/datatypes.html">Datatypes</a>
+        <a href="/pages/lessons/javascript/basics/objects.html">Objecten</a>
+        <a href="/pages/lessons/javascript/basics/functions.html">Functies</a>
+        <a href="/pages/lessons/javascript/basics/arrays.html">Arrays</a>
+      </div>
+
+      <div class="paragraph">
+        <p>Functies zijn één van de fundamentele bouwblokken in JavaScript.</p>
+        <p>
+          Een functie is een JavaScript procedure; een verzameling van
+          instructies dat een taak uitvoert of een waarde berekent.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Declaratie</h2>
+        <p>
+          Om een functie te gebruiken, moet je deze eerst declareren. Dit doe je
+          door de functie een naam te geven en de instructies die de functie
+          moet uitvoeren tussen accolades te plaatsen.
+        </p>
+        <pre>
+<code>
+    function greet() {
+        console.log('Hello, world!');
+    }
+</code>
+</pre>
+        <p>
+          Deze functie heet <code>greet</code> en zal de string
+          <code>'Hello, world!'</code> loggen naar de console wanneer deze wordt
+          aangeroepen.
+        </p>
+        <p>
+          We maken gebruik van het keyword <code class="good">function</code>
+        </p>
+        .
+        <p>
+          We kunnen ook een functie maken waarmee we één of meerdere parameters
+          meegeven:
+        </p>
+        <pre>
+<code>
+    function greet(name) {
+        console.log(`Hello, ${name}!`);
+    }
+
+    greet('John');
+</code>
+</pre>
+        <p>
+          Deze functie heet <code>greet</code> en zal de string
+          <code>'Hello, John!'</code> loggen naar de console wanneer deze wordt
+          aangeroepen. De parameter in een string.
+        </p>
+        <p>Een functie heeft vaak een <code>return</code> waarde:</p>
+        <pre>
+<code>
+    function add(a, b) {
+        return a + b;
+    }
+
+    const sum = add(2, 3);
+    console.log(sum); <span class="comment">// 5</span>
+</code>
+</pre>
+        <p>
+          Deze functie heet <code>add</code> en zal de som van de twee
+          parameters <code>a</code> en <code>b</code> teruggeven.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Functies aanroepen</h2>
+        <p>
+          Om een functie aan te roepen, schrijf je de naam van de functie
+          gevolgd door ronde haakjes. Als de functie parameters verwacht, geef
+          je deze mee tussen de haakjes.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">
+          Het <code class="return">return</code> keyword begrijpen
+        </h2>
+        <p>
+          Het <code class="return">return</code> keyword wordt gebruikt om een
+          waarde terug te geven vanuit een functie. Wanneer de functie een
+          waarde teruggeeft, kan je deze waarde opslaan in een variabele.
+        </p>
+        <p>
+          Een <code class="return">return</code> statement stopt verdere
+          uitvoering van de function body.
+        </p>
+        <pre>
+<code>
+    function add(a, b) {
+        return a + b;
+        console.log('Deze code wordt niet uitgevoerd');
+    }
+</code>
+</pre>
+        <p>
+          <code class="return">return</code> kan meerdere malen in de function
+          body voorkomen:
+        </p>
+        <pre>
+<code>
+    function add(a, b) {
+        if (a < 0) {
+            return 'a is negatief';
+        }
+        return a + b;
+    }
+</code>
+</pre>
+        <p>
+          Als je een <code class="return">return</code> statement gebruikt
+          zonder waarde, zal de functie onmiddellijk stoppen en
+          <code class="return">undefined</code> teruggeven.
+        </p>
+
+        <p></p>
+        <pre>
+<code>
+    function myFunc() {
+        return; 
+    }
+
+    const result = myFunc();
+
+    console.log(result); <span class="comment">// undefined</span>
+</code>
+</pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+
+    <title>Variabelen</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Variabelen</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/basics/intro-basics.html">Introductie</a>
+        <a href="/pages/lessons/javascript/basics/variables.html">Variabelen</a>
+        <a href="/pages/lessons/javascript/basics/datatypes.html">Datatypes</a>
+        <a href="/pages/lessons/javascript/basics/objects.html">Objecten</a>
+        <a href="/pages/lessons/javascript/basics/functions.html">Functies</a>
+        <a href="/pages/lessons/javascript/basics/arrays.html">Arrays</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          JavaScript is een programmeertaal die gebruik maakt van variabelen.
+          Een variabele is een container waarin je gegevens kan opslaan. Deze
+          gegevens kunnen van verschillende types zijn, zoals een getal, een
+          tekst of een boolean.
+        </p>
+        <p>
+          JavaScript is een dynamisch getypeerde taal, wat betekent dat je niet
+          moet aangeven welk type gegevens je in een variabele zal opslaan.
+          JavaScript zal automatisch het type van de gegevens bepalen.
+        </p>
+      </div>
+
+      <!-- DECLAREREN VAN EEN VARIABELE -->
+      <div class="card paragraph">
+        <h2 class="subtitle">
+          Declareren van een variabele met <code class="good">let</code>
+        </h2>
+        <p>
+          Om een variabele te declareren, gebruik je het keyword
+          <code class="good">let</code>. Daarna geef je de variabele een naam en
+          ken je er een waarde aan toe. Bijvoorbeeld:
+        </p>
+        <pre>
+<code>
+    let x = 5;
+</code>
+</pre>
+        <p>
+          Deze code maakt een variabele <code>x</code> aan en kent er de waarde
+          <code>5</code> aan toe.
+        </p>
+        <p>
+          Je kan ook een variabele declareren zonder er een waarde aan toe te
+          kennen. Bijvoorbeeld:
+        </p>
+        <pre>
+<code> 
+    let y;
+</code>
+</pre>
+        <p>
+          Deze code maakt een variabele <code>y</code> aan zonder er een waarde
+          aan toe te kennen. De waarde van <code>y</code> is nu
+          <code class="important">undefined</code>.
+        </p>
+        <p>Je kan de waarde van een variabele ook wijzigen. Bijvoorbeeld:</p>
+        <pre>
+    <code>
+    let z = 10;
+    z = 20;
+</code>
+</pre>
+      </div>
+      <div class="student-template paragraph">
+        <h4>Probeer het zelf</h4>
+        <p>
+          Open in dit venster je developer tools Console en probeer de volgende
+          code uit:
+        </p>
+        <p>Het declareren met een waarde en aanpassen van de waarde én type:</p>
+        <pre>
+<code>
+    let x = 5;
+    console.log(x);
+
+    x = 10;
+    console.log(x);
+
+    x = "Hello"; 
+    console.log(x); 
+</code>
+</pre>
+        <p>
+          Het declareren zonder waarde, geeft
+          <code class="important">undefined</code> terug:
+        </p>
+        <pre>
+<code>
+    let y;
+    console.log(y);
+</code>
+</pre>
+      </div>
+
+      <!-- DECLAREREN VAN EEN CONSTANTE -->
+      <div class="paragraph card">
+        <h2 class="subtitle">
+          Declareren van een variabele met <code class="good">const</code>
+        </h2>
+        <p>
+          Naast variabelen kan je ook constanten declareren. Een constante is
+          een variabele waarvan de waarde niet kan veranderen. Om een constante
+          te declareren, gebruik je het keyword <code class="good">const</code>.
+          Bijvoorbeeld:
+        </p>
+
+        <pre>
+<code>
+    const PI = 3.14;
+</code>
+</pre>
+        <p>
+          Deze code maakt een constante <code>PI</code> aan en kent er de waarde
+          <code>3.14</code> aan toe. Je kan de waarde van een constante niet
+          wijzigen. Bijvoorbeeld:
+        </p>
+        <pre>
+<code>
+    const PI = 3.14;
+    PI = 3.14159;
+</code>
+</pre>
+        <p>
+          Deze code zal een foutmelding geven omdat je de waarde van een
+          constante niet kan wijzigen.
+        </p>
+      </div>
+
+      <!-- VAR -->
+      <div class="paragraph card">
+        <h2 class="subtitle">
+          Declareren van een variabele met <code>var</code>
+        </h2>
+        <p>
+          Voor de introductie van ES6 (ECMAScript 2015) was het gebruikelijk om
+          variabelen te declareren met het keyword <code>var</code>. Het gebruik
+          van <code>var</code> is echter niet meer aangeraden. Het is beter om
+          <code>let</code> en <code>const</code> te gebruiken. Het gebruik van
+          <code>var</code> kan leiden tot onverwachte resultaten. Bijvoorbeeld:
+        </p>
+        <pre>
+<code>
+    var a = 5;
+    console.log(a);
+
+    var a = 10; 
+    console.log(a);
+</code>
+</pre>
+        <p>
+          Deze code zal geen foutmelding geven, maar het is beter om
+          <code class="good">let</code> of <code class="good">const</code> te
+          gebruiken.
+        </p>
+        <p>Waarom gebruik je beter geen var?</p>
+        <ul>
+          <li>
+            Declaraties met <code>var</code> worden gehoist. Dit betekent dat de
+            declaratie naar boven wordt verplaatst. Dit kan leiden tot
+            onverwachte resultaten.
+          </li>
+          <li>
+            Declaraties met <code>var</code> hebben geen block scope. Dit
+            betekent dat de variabele overal in de functie beschikbaar is.
+          </li>
+        </ul>
+
+        <p>
+          Wanneer je dus in een functie een variabele declareert met
+          <code>var</code>, is deze variabele overal in de functie beschikbaar,
+          zelfs voor de declaratie. Ergens anders in de code kan je deze
+          variabele ook gebruiken, en dus aanpassen. Dit betekent dat je de
+          waarde van de variabele kan aanpassen, zelfs voor de declaratie. Dan
+          kan je onverwachte resultaten krijgen. Of je kan per ongeluk een
+          variabele overschrijven.
+        </p>
+
+        <p>
+          Zo kan je ook name clashes krijgen. Dit betekent dat je per ongeluk
+          een variabele kan overschrijven die al bestaat. Bijvoorbeeld:
+        </p>
+        <pre>
+<code>
+    var a = 5;
+
+    function example() { 
+        var a = 10; 
+        console.log(a);
+    } 
+
+    example();
+
+    console.log(a);
+</code>
+</pre>
+        <p>
+          In dit voorbeeld zal de eerste <code>console.log(a)</code> in de
+          functie <code>example</code> de waarde <code>10</code> weergeven,
+          terwijl de tweede <code>console.log(a)</code> buiten de functie de
+          waarde <code>5</code> weergeeft. Dit kan verwarrend zijn en leiden tot
+          bugs in je code. Daarom is het beter om
+          <code class="good">let</code> en <code class="good">const</code> te
+          gebruiken.
+        </p>
+      </div>
+
+      <div class="card border-red paragraph">
+        <h2>Belangrijk!</h2>
+        <p>
+          Het is dus best practice om nooit <code>var</code> te gebruiken. We
+          spreken dan ook af om in deze cursus vanaf nu
+          <span class="important">NOOIT meer <code>var</code> te gebruiken</span
+          >. Wie in opdrachten of evaluaties toch <code>var</code> gebruikt, zal
+          <span class="important">punten verliezen</span>!
+        </p>
+        <p>
+          Gebruik <code class="good">let</code> en
+          <code class="good">const</code> in plaats van
+          <code class="bad">var</code>.
+        </p>
+        <p>
+          Het is daarnaast ook aangeraden om in eerste instantie
+          <code class="good">const</code> te gebruiken. Wanneer je zeker weet
+          dat de waarde van de variabele zal veranderen, kan je de declaratie
+          nadien nog aanpassen naar <code class="good">let</code>. Zo vermijd je
+          onverwachte resultaten en bugs in je code.
+        </p>
+      </div>
+
+      <div class="centered">
+        <img
+          class="responsive-image"
+          src="/imgs/var-in-prison.jpg"
+          alt="Never use var!"
+        />
+      </div>
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

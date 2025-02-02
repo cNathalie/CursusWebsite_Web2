@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+
+    <title>Objecten</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Objecten</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/basics/intro-basics.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/basics/variables.html">Variabelen</a>
+        <a href="/pages/lessons/javascript/basics/datatypes.html">Datatypes</a>
+        <a href="/pages/lessons/javascript/basics/objects.html">Objecten</a>
+        <a href="/pages/lessons/javascript/basics/functions.html">Functies</a>
+        <a href="/pages/lessons/javascript/basics/arrays.html">Arrays</a>        
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Een object is een container voor gegevens. Een object kan meerdere
+          waarden bevatten, die we eigenschappen of properties noemen. Een
+          eigenschap bestaat uit een naam en een waarde (key-value pair). De
+          naam van een eigenschap is een string, en de waarde kan van elk type
+          zijn.
+        </p>
+        <p>
+          Aangezien de waarde van een property van elk soort type kan zijn, kan
+          het ook een functie zijn. Dan wordt deze property een methode genoemd.
+          Een methode is dus een functie die is opgeslagen als een eigenschap
+          van een object.
+        </p>
+      </div>
+      <div class="card paragraph">
+        <p>
+          Een JavaScript object is een variabele met meerdere waardes in
+          opgeslagen:
+        </p>
+        <pre>
+<code>
+    const person = { 
+        name: 'John', 
+        age: 30, 
+        isMarried: false,
+        greet: function() { 
+            console.log('Hello, my name is ' + this.name);
+        } 
+    };
+</code>
+</pre>
+        <p>
+          In dit voorbeeld hebben we een object <code>person</code> gemaakt met
+          vier eigenschappen: <code>name</code>, <code>age</code>,
+          <code>isMarried</code> en <code>greet</code>. De laatste eigenschap is
+          een methode die een bericht logt naar de console.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Een object instantiëren</h2>
+        <p>
+          Om een object te maken, gebruiken we de object literal syntax. Dit is
+          een set van accolades <code>{}</code> met daarin de eigenschappen en
+          waarden van het object, zoals in het voorbeeld hierboven.
+        </p>
+        <p>
+          Je kan ook een object instantiëren met de <code>new</code> operator en
+          een constructor functie.
+        </p>
+        <pre>
+<code>
+<span class="comment">// Declareer eerst je constructor functie:</span>
+    function Person(name, age, isMarried) {
+        this.name = name;
+        this.age = age;
+        this.isMarried = isMarried;
+        this.greet = function() {
+            console.log('Hello, my name is ' + this.name);
+        }
+    }
+
+<span class="comment">// Roep je functie op met parameters:</span>
+    const person = new Person('John', 30, false);
+
+<span class="comment">// Roep de methode greet aan:</span>
+    person.greet();
+
+<span class="comment">// Log het resultaat:</span>
+    console.log(person);
+</code>
+</pre>
+        <p>
+          In dit voorbeeld hebben we een constructor functie
+          <code>Person</code> gemaakt die een nieuw object aanmaakt met de
+          gegeven eigenschappen. We hebben een nieuw object
+          <code>person</code> aangemaakt met de <code>new</code> operator en de
+          constructor functie <code>Person</code> opgeroepen met de parameters
+          <code>'John'</code>, <code>30</code> en <code>false</code>.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Eigenschappen en Methoden</h2>
+        <p>
+          Om de eigenschappen en methoden van een object te benaderen, gebruiken
+          we de dot-notatie of de bracket-notatie.
+        </p>
+        <pre>
+<code>
+    console.log(person.name); <span class="comment">// John</span>
+    console.log(person['age']); <span class="comment">// 30</span>
+    person.greet(); <span class="comment">// Hello, my name is John</span>
+</code>
+</pre>
+        <p>
+          In dit voorbeeld hebben we de eigenschappen <code>name</code> en{' '}
+          <code>age</code> benaderd met de dot-notatie en de bracket-notatie. We
+          hebben ook de methode <code>greet</code> aangeroepen met de
+          dot-notatie en door het toevoegen van de ronde haakjes wordt de
+          functie uitgevoerd.
+        </p>
+        <p>
+          Wanneer een property niet bestaat in een object, zal de waarde
+          <code class="important">undefined</code> worden geretourneerd.
+        </p>
+        <pre>
+<code>
+    console.log(person.city); <span class="comment">// undefined</span>
+</code>
+</pre>
+        <p>Je kan ook een property verwijderen uit een object:</p>
+        <pre>
+<code>
+    delete person.isMarried;
+    console.log(person); 
+    <span class="comment">// { name: 'John', age: 30, greet: [Function: greet] }</span>
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Vergelijken van objecten</h2>
+        <p>
+          Objecten worden vergeleken door referentie, niet door waarde. Dit
+          betekent dat twee objecten alleen gelijk zijn als ze naar dezelfde
+          locatie in het geheugen verwijzen.
+        </p>
+        <pre>
+<code>
+    const person1 = { name: 'John' };
+    const person2 = { name: 'John' };
+
+    console.log(person1 === person2); <span class="comment">// false</span>
+</code>
+</pre>
+        <p>
+          In dit voorbeeld hebben we twee objecten <code>person1</code> en
+          <code>person2</code> gemaakt met dezelfde eigenschap <code>name</code>
+          . Omdat ze naar verschillende locaties in het geheugen verwijzen, zijn
+          ze niet gelijk.
+        </p>
+
+        <p>
+          Wanneer we person2 gelijk maken aan person1, dan verwijzen ze naar
+          dezelfde locatie in het geheugen en zijn ze wel gelijk:
+        </p>
+        <pre>
+<code>
+    const person1 = { name: 'John' };
+    const person2 = person1;
+
+    console.log(person1 === person2); <span class="comment">// true</span>
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Date objecten</h2>
+        <p>
+          JavaScript heeft een ingebouwd <code>Date</code> object dat wordt
+          gebruikt om datums en tijden te representeren. Je kan een nieuw
+          <code>Date</code> object maken met de <code>new</code> operator en de
+          constructor functie <code>Date</code>.
+        </p>
+<pre>
+<code>
+    const today = new Date();
+    console.log(today);
+</code>
+</pre>
+        <p>
+          Dit zal het huidige datum en tijd weergeven in de console. Je kan ook
+          een specifieke datum en tijd instellen door parameters mee te geven aan
+          de constructor functie.
+        </p>
+        <p>
+            Datum en tijd is een complex onderwerp in het ontwikkelen van software.
+            Gelukkig zijn er ook libraries zoals <a href="https://momentjs.com/" target="_blank">Moment.js</a> die je kan gebruiken om met datums en tijden te werken.
+        </p>
+      </div>
+
+      <div class="centered">
+        <img class="responsive-image" src="/imgs/timezones.png" alt="timezones">
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

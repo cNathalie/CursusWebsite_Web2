@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>DOM-Tree</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">DOM-Manipulatie</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/DOM/dom-tree.html">Introductie</a>
+        <a href="/pages/lessons/DOM/family-tree.html">Stamboom-structuur</a>
+        <a href="/pages/lessons/DOM/get-element.html">Elementen opvragen</a>
+        <a href="/pages/exercises/DOM/opdracht-dom-tree.html">Opdracht</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          De DOM (Document Object Model) is een object georiënteerde
+          representatie van je HTML document. Het is een boomstructuur van nodes
+          die elk een deel van je HTML document voorstellen. De DOM maakt het
+          mogelijk om de structuur, stijl en inhoud van je HTML document te
+          manipuleren.
+        </p>
+        <p>
+          Met JavaScript kan je de DOM manipuleren. Je kan elementen toevoegen,
+          verwijderen of aanpassen.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Waaruit bestaat de DOM-Tree</h2>
+        <p>
+          De DOM-Tree bestaat uit verschillende nodes. Elke node stelt een deel
+          van je HTML document voor. De nodes zijn van boven naar onder als
+          volgt georganiseerd:
+        </p>
+        <ul>
+          <li>Document Node</li>
+          <li>Element Node</li>
+          <li>Attribute Node</li>
+          <li>Text Node</li>
+        </ul>
+        <div class="centered">
+          <img src="/imgs/dom.png" alt="" />
+        </div>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Document Node</h2>
+        <p>
+          De document node is de root node van de DOM-Tree. Het is het bovenste
+          element van de boomstructuur en stelt het volledige HTML document
+          voor.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Element Node</h2>
+        <p>
+          Element nodes stellen de HTML elementen voor. Elk HTML element zoals
+          een div, p, h1, ... is een element node.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Attribute Node</h2>
+        <p>
+          Attribute nodes stellen de attributen van een HTML element voor. Elk
+          attribuut zoals class, id, src, ... is een attribute node.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Text Node</h2>
+        <p>
+          Text nodes stellen de tekst van een HTML element voor. Elke tekst die
+          in een HTML element staat is een text node. Bijvoorbeeld de tekst in
+          deze paragraaf is een text node, ookal zie je in de html-structuur van
+          deze pagina geen aparte node voor deze tekst.
+        </p>
+      </div>
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

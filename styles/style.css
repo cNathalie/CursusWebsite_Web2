@@ -227,3 +227,12 @@ code span{
 .return {
   color: purple;
 }
+
+.node{
+  color: darkblue;
+}
+
+.answer{
+  color: rgb(24, 24, 126);
+  font-family: "Courier New", Courier, monospace;
+}

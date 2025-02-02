@@ -26,6 +26,13 @@ const setup = () => {
     toggleElementVisibility(jsBasicsFolder);
     toggleElementBackgroundColor(jsBasicsTitle, folderColor);
   });
+
+  const domFolder = document.getElementById("dom-folder");
+  const domTitle = document.getElementById("dom-title");
+  domTitle.addEventListener("click", () => {
+    toggleElementVisibility(domFolder);
+    toggleElementBackgroundColor(domTitle, folderColor);
+  });
 };
 
 window.addEventListener("load", setup);

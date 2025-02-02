@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Elementen opvragen</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">DOM: Elementen opvragen</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+      <div class="link-bar">
+        <a href="/pages/lessons/DOM/dom-tree.html">Introductie</a>
+        <a href="/pages/lessons/DOM/family-tree.html">Stamboom-structuur</a>
+        <a href="/pages/lessons/DOM/get-element.html">Elementen opvragen</a>
+        <a href="/pages/exercises/DOM/opdracht-dom-tree.html">Opdracht</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Met JavaScript kan je elementen opvragen uit de DOM-Tree. Dit kan je
+          doen met de <code class="node">document</code> object. Het
+          <code>document</code>
+          object is een object dat de volledige DOM-Tree voorstelt. Met
+          JavaScript kan je elementen opvragen, toevoegen, verwijderen of
+          aanpassen.
+        </p>
+        <p>
+          In de volgende voorbeelden gaan we elementen opvragen uit de DOM-Tree.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">JavaScript methodes</h2>
+        <p>
+          Met JavaScript kan je elementen opvragen uit de DOM-Tree. Dit kan je
+          doen met de volgende methodes:
+        </p>
+
+        <ul>
+          <li>
+            <code>document.getElementById('id')</code> - Haal een element op met
+            een specifieke id.
+          </li>
+          <li>
+            <code>document.getElementsByClassName('class')</code> - Haal een
+            element op met een specifieke class.
+          </li>
+          <li>
+            <code>document.getElementsByTagName('tag')</code> - Haal een element
+            op met een specifieke tag.
+          </li>
+        </ul>
+      </div>
+
+      <div class="student-template paragraph">
+        <h2 class="subtitle">
+          Voorbeelden uitvoerbaar in de console op deze pagina
+        </h2>
+        <pre>
+<code>
+<span class="comment">// Haal het element op met de id 'my-element'</span>
+const element = document.getElementById('my-element');  
+console.log(element);
+
+<span class="comment">// Haal alle elementen op met de class 'my-class'</span>
+const elements1 = document.getElementsByClassName('my-class');
+console.log(elements1);
+
+<span class="comment">// Haal alle elementen op met de tag 'ol'</span>
+const elements2 = document.getElementsByTagName('ol');
+console.log(elements2);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Opvragen van inhoud: tekst vs html</h2>
+        <p>
+          Met JavaScript kan je de inhoud van een element opvragen. Dit kan je
+          doen met de <code>textContent</code>, <code>innerText</code> en
+          <code>innerHTML</code> properties van een element.
+        </p>
+        <p>
+          <code>textContent</code> vraagt de tekst-node op van het element, deze
+          wordt dus niet geparset als HTML maar blijft ‘raw’ tekst. <br />
+          <code>innerText</code> geeft de tekst van een element terug, terwijl
+          <code>innerHTML</code> de HTML code van een element teruggeeft.
+        </p>
+      </div>
+
+      <div class="student-template paragraph">
+        <h2 class="subtitle">Probeer uit en zie het vershil</h2>
+        <pre>
+<code>
+<span class="comment">// Haal het element op met de id 'link'</span>
+const linkText = document.getElementById('link');
+console.log(linkText.textContent);
+
+<span class="comment">// Haal het element op met de id 'txt-demo'</span>
+const element = document.getElementById('txt-demo');
+console.log(element.innerText);
+console.log(element.innerHTML);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Aanpassen van de inhoud</h2>
+        <p>
+          Met JavaScript kan je de inhoud van een element aanpassen. Dit kan je
+          doen met de <code>textContent</code>, <code>innerText</code> en
+          <code>innerHTML</code> properties van een element.
+        </p>
+        <p>
+            Het vernaamste verschil tussen textContent en innerHTML is dat textContent de tekst van een element als raw tekst aanpast, 
+            terwijl innerHTML de HTML code verwerkt en toepast.
+        </p>
+<pre>
+<code>
+    <h3 id="change-me" class="centered">Ik ben de inhoud van een element, change me!</h3>
+</code>
+</pre>
+      </div>
+
+      <div class="student-template paragraph">
+        <h2 class="subtitle">Pas de inhoud aan</h2>
+        <pre>
+<code>
+<span class="comment">// Haal het element op met de id 'change-me'</span>
+const changeMe = document.getElementById('change-me');
+
+<span class="comment">// Pas de textContent van het element aan</span>
+changeMe.textContent = 'Dit is een &lt;strong style="color:red">nieuwe&lt;/strong> tekst';
+
+<span class="comment">// Pas de innerHTML van het element aan</span>
+changeMe.innerHTML = 'Dit is een &lt;strong style="color:red">nieuwe&lt;/strong> tekst';
+
+</code>
+</pre>
+      </div>
+
+      <!-- Een verborgen div om dienst te doen als voorbeelden -->
+      <div class="hidden">
+        <p id="my-element">Paragraaf met id <span>"my-element"</span></p>
+        <p id="txt-demo">
+          Dit is een <a id="link" href="...">hyperlink</a> waarop je kan klikken
+        </p>
+        <h1 class="my-class">Heading met de class "my-class"</h1>
+        <h1 class="my-class">Nog een heading met de class "my-class"</h1>
+        <ol>
+          Ordered list met de tag "ol"
+        </ol>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

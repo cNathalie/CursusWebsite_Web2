@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Stamboom-structuur</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">DOM: Stamboomstructuur</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+      <div class="link-bar">
+        <a href="/pages/lessons/DOM/dom-tree.html">Introductie</a>
+        <a href="/pages/lessons/DOM/family-tree.html">Stamboom-structuur</a>
+        <a href="/pages/lessons/DOM/get-element.html">Elementen opvragen</a>
+        <a href="/pages/exercises/DOM/opdracht-dom-tree.html">Opdracht</a>
+      </div>
+
+      <div class="paragraph">
+        <p>Ja kan de DOM-Tree een beetje vergelijken met een familieboom.</p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Top-node</h2>
+        <p>
+          De top-node in de DOM-tree is altijd de
+          <code class="node">document</code> node. Deze stelt het volledige
+          document voor. Je tekent het in een schema net boven het
+          <code class="node">html</code> element.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Root</h2>
+        <p>
+          Het top-level element van een document waarvan alle andere elementen
+          descendants (kinderen) zijn. In dit geval is dat het
+          <code class="node">html</code> element.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Parent</h2>
+        <p>
+          Een parent is een element dat een ander element bevat. In een
+          familieboom is dat bijvoorbeeld een ouder die kinderen heeft.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Child</h2>
+        <p>
+          Een child is een element dat door een ander element bevat wordt. In
+          een familieboom is dat bijvoorbeeld een kind dat ouders heeft.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Sibling</h2>
+        <p>
+          Een sibling is een element dat dezelfde parent heeft als een ander
+          element. In een familieboom zijn dat bijvoorbeeld broers en zussen.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Descendant</h2>
+        <p>
+          Een descendant is een element dat een parent heeft. In een familieboom
+          zijn dat alle directe kinderen en kleinkinderen.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Ancestor</h2>
+        <p>
+          Een ancestor is een element dat een child heeft. In een familieboom
+          zijn dat bijvoorbeeld grootouders.
+        </p>
+      </div>
+      <div class="centered">
+        <img class="responsive-image" src="/imgs/family-tree.png" alt="Familieboom">
+    </div>
+        <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+ </body>
+</html>

@@ -1,11 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+
     <title>Formulieren</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">DOM: Formulieren</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/DOM/dom-tree.html">Introductie</a>
+        <a href="/pages/lessons/DOM/family-tree.html">Stamboom-structuur</a>
+        <a href="/pages/lessons/DOM/get-element.html">Elementen opvragen</a>
+        <a href="/pages/lessons/DOM/forms.html">Formulieren</a>
+        <a href="/pages/exercises/DOM/opdracht-dom-tree.html">Opdracht</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Met JavaScript kan je formulieren manipuleren. Je kan formulieren
+          opvragen, aanpassen en controleren. In de volgende voorbeelden gaan we
+          de inhoud van formulieren opvragen en aanpassen.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Het <code>&lt;input></code> veld</h2>
+        <p>
+          Het <code>&lt;input></code> element is een van de meest gebruikte
+          elementen in een formulier. Het element kan verschillende types hebben
+          zoals <code>text</code>, <code>password</code>, <code>email</code>,
+          <code>number</code>, <code>checkbox</code>, <code>radio</code>,
+          <code>submit</code>, <code>reset</code>, <code>button</code>, etc.
+        </p>
+        <p>
+          Om de waarde van een <code>&lt;input></code> element op te vragen, kan
+          je de <code class="good">value</code> property gebruiken.
+        </p>
+        <p>
+          De waarde is altijd van het type string. Als je een nummer verwacht,
+          moet je de waarde nog omzetten naar een nummer!
+        </p>
+        <p>
+          Je kan de waarde ook aanpassen door de
+          <code class="good">value</code> property te wijzigen met de assignment
+          operator =.
+        </p>
+      </div>
+
+      <div class="paragraph student-template">
+        <h2 class="subtitle">Voorbeeld</h2>
+        <p>
+          In dit voorbeeld gaan we de waarde van een
+          <code>&lt;input></code> element opvragen en aanpassen.
+        </p>
+
+        <p class="centered">
+          <label for="input-field">Text input:</label>
+          <input
+            type="text"
+            id="input-field"
+            value=""
+            placeholder="Vul hier iets in"
+          />
+        </p>
+
+        <p></p>
+        <pre>
+<code>
+<span class="comment">// Haal het input element op uit de DOM-tree</span>
+const inputField = document.getElementById('input-field');
+
+<span class="comment">// Log de value in de console</span>
+console.log(inputField.value); 
+
+<span class="comment">// Verander de waarde van het input veld</span>
+inputField.value = 'Hello World'; 
+
+<span class="comment">// Log de nieuwe waarde in de console</span>
+console.log(inputField.value);
+</code>
+</pre>
+      </div>
+      <div class="paragraph card border-red">
+        <h2 class="subtitle">Opgelet</h2>
+        <p>
+          Gebruik nooit <code>textContent</code> of <code>innerHTML</code> bij
+          <code>&lt;input></code>, tenzij je bv. de tekst in een button wil
+          veranderen of opvragen.
+        </p>
+
+        <ul>
+          <li>
+            Veiligheid: <br />
+            innerHTML kan kwetsbaar zijn voor cross-site scripting (XSS)
+            aanvallen, omdat het HTML-code als tekst invoegt. Dit kan leiden tot
+            beveiligingsproblemen als de invoer niet goed wordt gevalideerd.
+          </li>
+          <li>
+            Compatibiliteit: <br />
+            textContent en innerHTML werken niet consistent met
+            <code>&lt;input></code>-elementen in alle browsers. De
+            value-eigenschap is daarentegen specifiek ontworpen voor
+            <code>&lt;input></code>-elementen en werkt betrouwbaar.
+          </li>
+          <li>
+            Functionaliteit: <br />
+            De value-eigenschap is bedoeld om de waarde van een invoerveld te
+            lezen of te wijzigen. Het gebruik van textContent of innerHTML kan
+            leiden tot onverwacht gedrag, omdat deze methoden niet zijn
+            ontworpen voor invoervelden.
+          </li>
+        </ul>
+
+        Als je bijvoorbeeld de tekst in een knop wilt veranderen, kun je
+        textContent gebruiken omdat knoppen geen invoervelden zijn:
+
+        <p class="centered">
+          <button id="button">Ik ben een knop</button>
+        </p>
+        <pre>
+<code>
+<span class="comment">// Verander de tekst in de knop</span>
+document.getElementById('button').textContent = 'Ik ben een knop met een nieuwe tekst';
+</code>
+</pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
 </html>

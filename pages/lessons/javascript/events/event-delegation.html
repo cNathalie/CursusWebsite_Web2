@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>JavaScript Event Delegation</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JavaScript Events: Delegation</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/events/intro-events.html"
+          >Intro Events</a
+        >
+        <a href="/pages/lessons/javascript/events/event-listeners.html"
+          >Event Listeners</a
+        >
+        <a href="/pages/lessons/javascript/events/event-object.html"
+          >Event Object</a
+        >
+        <a href="/pages/lessons/javascript/events/methods-bubbling.html"
+          >Methodes & Bubbling</a
+        >
+        <a href="/pages/lessons/javascript/events/event-delegation.html"
+          >Event Delegation</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Event delegation is een techniek die je kan gebruiken om events te
+          behandelen op meerdere elementen met slechts één event handler. Dit is
+          handig wanneer je meerdere elementen hebt die dezelfde event listener
+          nodig hebben.
+        </p>
+        <p>
+          In plaats van een event listener toe te voegen aan elk element, kan je
+          een event listener toevoegen aan een parent element en dan de events
+          delegeren naar de children elementen.
+        </p>
+        <p>
+          Dit is handig wanneer je bijvoorbeeld een lijst hebt met items die
+          allemaal dezelfde actie moeten uitvoeren wanneer erop geklikt wordt.
+          In plaats van een event listener toe te voegen aan elk item, kan je
+          een event listener toevoegen aan de parent lijst en dan de events
+          delegeren naar de children items.
+        </p>
+        <p>
+          We zagen hiervan reeds een practisch voorbeeld in het
+          <a
+            href="/pages/lessons/javascript/events/event-object.html#delegation"
+            >deel over het Event object</a
+          >.
+        </p>
+        <p>
+            Je maakt dus gebruik van de event bubbling om events te delegeren.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

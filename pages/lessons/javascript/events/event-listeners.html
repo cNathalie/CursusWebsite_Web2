@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>JavaScript Event Listeners</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JavaScript Events: Event Listeners</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/events/intro-events.html"
+          >Intro Events</a
+        >
+        <a href="/pages/lessons/javascript/events/event-listeners.html"
+          >Event Listeners</a
+        >
+        <a href="/pages/lessons/javascript/events/event-object.html"
+          >Event Object</a
+        >
+        <a href="/pages/lessons/javascript/events/methods-bubbling.html"
+          >Methodes & Bubbling</a
+        >
+        <a href="/pages/lessons/javascript/events/event-delegation.html"
+          >Event Delegation</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Event listeners zijn functies die worden uitgevoerd wanneer een
+          bepaald event plaatsvindt. Ze worden gebruikt om te reageren op acties
+          van de gebruiker, zoals het klikken op een knop of het hoveren over
+          een element.
+        </p>
+      </div>
+
+      <div class="paragraph card border-red">
+        <h2 class="subtitle">Het window load event</h2>
+        <div class="centered">
+          <img
+            class="responsive-image"
+            src="/imgs/exclamation-mark.png"
+            alt="Zeer belangrijk"
+          />
+        </div>
+        <p>
+          Het <code>load</code> event wordt geactiveerd wanneer een webpagina
+          volledig is geladen. Dit event kan worden gebruikt om bepaalde acties
+          uit te voeren nadat de pagina volledig is geladen, zoals het
+          initialiseren van variabelen of het toevoegen van event listeners.
+        </p>
+        <p>
+          Wanneer je een JavaScript bestand hebt dat je wil laten uitvoeren
+          nadat de html pagina volledig is geladen, kan je dit doen door een
+          event listener toe te voegen aan het window object.
+        </p>
+        <p>
+          Om een event listener toe te voegen aan het <code>load</code> event
+          van het window object, gebruik je de
+          <code>addEventListener()</code> methode op het <code>window</code>
+          object.
+        </p>
+        <p>
+          Vanaf nu zal dus elke JavaScript file die je aanmaakt er om te
+          beginnen zo uitzien:
+        </p>
+        <div class="centered">
+          <img class="responsive-image" src="/imgs/load-event.png" alt="" />
+        </div>
+        <p>
+          Het <code>window</code> object is een globaal object dat standaard
+          beschikbaar is in JavaScript. Het bevat eigenschappen en methoden die
+          betrekking hebben op het browservenster. Je bevestigd aan het
+          <code>window</code> object een event listener die luistert naar het
+          <code>load</code> event. Wanneer dit event plaatsvindt, wordt de
+          functie die je meegeeft aan de <code>addEventListener()</code> methode
+          uitgevoerd.
+        </p>
+        <p>
+          Deze functie wordt doorgaans 'setup' genoemd, omdat het de
+          initialisatie van je JavaScript code bevat, maar je kan het ook een
+          andere naam geven. In deze functie komt alle code die je wil uitvoeren
+          te staan.
+        </p>
+        <p>
+          Je vindt deze template ook terug in dit project onder scripts > base >
+          template.js
+        </p>
+        <p>
+          <strong>Opgelet:</strong> Het is belangrijk dat je de event listener
+          toevoegt aan het window object voordat je andere JavaScript code
+          schrijft. Anders kan het zijn dat de code wordt uitgevoerd voordat de
+          pagina volledig is geladen. Dit omdat code die de DOM-tree uitleest of
+          aanpast, pas mag uitgevoerd worden wanneer de DOM-tree volledig is
+          opgebouwd door de browser.
+        </p>
+        <p>
+          <strong>Dubbel opgelet:</strong> Wie voor oefeningen of
+          examenprojecten geen window load event en 'setup' functie gebruikt,
+          zal <span class="important">punten verliezen</span>.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Event listeners toevoegen</h2>
+        <p>
+          Om een event listener toe te voegen aan een element, gebruik je de
+          <code>addEventListener()</code> methode. Deze methode neemt twee
+          argumenten: het type event dat je wil luisteren en de functie die moet
+          worden uitgevoerd wanneer het event plaatsvindt.
+        </p>
+        <p>
+          Hier is een voorbeeld van hoe je een event listener toevoegt aan een
+          knopelement:
+        </p>
+
+        <div class="centered">
+          <button id="btn">Hier klikken</button>
+        </div>
+        <pre>
+<code>
+<span class="comment">// Haal het element op waar je een event listener aan wil koppelen</span>
+const button = document.getElementById('btn');
+
+<span class="comment">// Registreer de event listener</span>
+button.addEventListener('click', () => {
+    alert('Er werd op de knop geklikt!!');
+});
+</code>
+</pre>
+        <p>
+          In dit voorbeeld wordt een event listener toegevoegd aan een knop.
+          Wanneer de gebruiker op de knop klikt, wordt de functie die de alert
+          'Er werd op de knop geklikt!!' uitvoert, geactiveerd.
+        </p>
+        <p>
+          De methode die moet uitgevoerd worden kan meegegeven worden als een
+          anonieme functie, zoals in het voorbeeld hierboven, of als een aparte
+          functie die elders in je code gedefinieerd is.
+        </p>
+        <pre>
+<code>
+<span class="comment">// Haal het element op waar je een event listener aan wil koppelen</span>
+const button = document.getElementById('btn');
+
+<span class="comment">// Definieer een functie</span>
+function handleClick() {
+    alert('Er werd op de knop geklikt!!');
+}
+
+<span class="comment">// Registreer de event listener</span>
+button.addEventListener('click', handleClick);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card border-red">
+        <h2 class="subtitle">
+          <code>onClick</code> vs <code>addEventListener</code>
+        </h2>
+        <p>
+          In HTML kan je ook events toevoegen aan elementen door gebruik te
+          maken van de <code>onClick</code> attribuut. Dit attribuut bevat de
+          code die moet worden uitgevoerd wanneer het event plaatsvindt.
+        </p>
+        <p>
+          Hoewel het gebruik van <code>onClick</code> in sommige gevallen handig
+          kan zijn, is het gebruik van <code>addEventListener</code>
+          over het algemeen de betere keuze. Hier zijn enkele redenen waarom:
+        </p>
+        <ul>
+          <li>
+            <strong>Scheiding van HTML en JavaScript:</strong> <br />
+            Door JavaScript code in een apart bestand te schrijven en event
+            listeners toe te voegen met <code>addEventListener</code>, houd je
+            je HTML en JavaScript code gescheiden. Dit maakt je code
+            overzichtelijker en gemakkelijker te onderhouden.
+          </li>
+          <li>
+            <strong>Meerdere event listeners:</strong> <br />
+            Met <code>addEventListener</code> kan je meerdere event listeners
+            toevoegen aan hetzelfde element. Dit is handig als je meerdere
+            acties wil uitvoeren wanneer een event plaatsvindt.
+          </li>
+          <li>
+            <strong>Flexibiliteit:</strong> <br />
+            Met <code>addEventListener</code> kan je events toevoegen en
+            verwijderen zonder de bestaande HTML code te wijzigen. Dit maakt je
+            code flexibeler en gemakkelijker aan te passen.
+          </li>
+        </ul>
+        <p>
+            We spreken dus af om nooit meer <code>onClick</code> attributen te gebruiken in onze HTML code!
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

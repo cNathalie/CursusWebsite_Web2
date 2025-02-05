@@ -37,7 +37,7 @@ body {
   flex-direction: column;
 }
 
-.lessons .folder-title:hover{
+.lessons .folder-title:hover {
   background-color: rgb(150, 148, 148);
   cursor: pointer;
 }
@@ -50,7 +50,6 @@ body {
 .lessons a:hover {
   background-color: lightgray;
 }
-
 
 .folder {
   display: flex;
@@ -148,13 +147,13 @@ body {
   margin-left: 30px;
 }
 
-.exercise-card{
+.exercise-card {
   border: 2px solid red;
   border-radius: 10px;
   padding: 5px;
 }
 
-.student-template{
+.student-template {
   border: 3px dotted lightgrey;
   border-radius: 10px;
   padding: 5px;
@@ -172,16 +171,16 @@ body {
   flex-direction: row;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.click-me:hover{
+.click-me:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.centered{
+.centered {
   text-align: center;
 }
 
@@ -194,7 +193,7 @@ li {
   color: red;
 }
 
-.good{
+.good {
   font-weight: bold;
   color: green;
 }
@@ -205,8 +204,8 @@ li {
   text-decoration: line-through;
 }
 
-#back-to-top{
-  color:gray;
+#back-to-top {
+  color: gray;
   text-decoration: none;
 }
 
@@ -216,9 +215,10 @@ pre {
   overflow-x: auto; /* Adds horizontal scroll if needed */
   background-color: rgb(245, 239, 239);
   border-radius: 10px;
+  padding: 10px;
 }
 
-code span{
+code span {
   color: darkgreen;
   font-style: italic;
   font-weight: light;
@@ -228,11 +228,23 @@ code span{
   color: purple;
 }
 
-.node{
+.node {
   color: darkblue;
 }
 
-.answer{
+.answer {
   color: rgb(24, 24, 126);
   font-family: "Courier New", Courier, monospace;
+}
+
+.border-purple {
+  border: 2px solid purple;
+}
+
+.border-blue {
+  border: 2px solid blue;
+}
+
+.padding-40 {
+  padding: 40px;
 }

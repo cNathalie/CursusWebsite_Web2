@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>JavaScript Event Object</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JavaScript Events: Event Object</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/events/intro-events.html"
+          >Intro Events</a
+        >
+        <a href="/pages/lessons/javascript/events/event-listeners.html"
+          >Event Listeners</a
+        >
+        <a href="/pages/lessons/javascript/events/event-object.html"
+          >Event Object</a
+        >
+        <a href="/pages/lessons/javascript/events/methods-bubbling.html"
+          >Methodes & Bubbling</a
+        >
+        <a href="/pages/lessons/javascript/events/event-delegation.html"
+          >Event Delegation</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Het event object is een object dat wordt doorgegeven aan de event
+          handler wanneer een event plaatsvindt. Dit object bevat informatie
+          over het event, zoals de locatie van de cursor, welke toetsen zijn
+          ingedrukt, enzovoort.
+        </p>
+        <p>
+          Het event object wordt standaard meegegeven aan de event handler, maar
+          als je het wilt gebruiken, moet je het expliciet doorgeven als
+          parameter aan de event handler. Je geeft het dan ook best een
+          duidelijke naam, zoals "event".
+        </p>
+        <pre id="code1">
+<code >
+<span class="comment">// Haal het element op</span>
+const element = document.getElementById('code1');
+
+<span class="comment">// Definieer het event object als parameter</span>
+element.addEventListener('click', (event) => {
+    console.log(event.type); 
+});
+</code>
+</pre>
+
+        <p>
+          Als je in je functie gebruik wil maken van nog andere parameters, wees
+          er dan zeker van dat je het event object als eerste parameter
+          definieert. Duidelijke en correcte naamgeving van variabelen en
+          parameters is altijd belangrijk, maar zeker in dit geval.
+        </p>
+        <pre id="code2">
+<code>
+<span class="comment">// Haal het element op</span>
+const element2 = document.getElementById('code2');
+
+<span class="comment">// Definieer het event object als eerste parameter</span>
+element2.addEventListener('click', (konijntje, event) => {
+    console.log(konijntje.type);
+    console.log(event.type); <span class="comment">// Undefined error</span>
+});
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Properties van het event object</h2>
+        <p>
+          Het event object bevat verschillende properties die je kan gebruiken
+          om informatie over het event op te vragen. Enkele van de meest
+          gebruikte properties zijn:
+        </p>
+        <ul>
+          <li>
+            <code>type</code>: het type event dat plaatsvindt (bijv. "click",
+            "mouseover", "keydown")
+          </li>
+          <li><code>target</code>: het element waarop het event plaatsvindt</li>
+          <li>
+            <code>currenTarget</code>: het element waarop de event listener is
+            geplaatst
+          </li>
+        </ul>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>event.target</code></h2>
+        <p>
+          Het <code>event.target</code> property geeft het element terug waarop
+          het event plaatsvindt. Dit kan handig zijn als je wil weten welk
+          element de actie heeft getriggerd.
+        </p>
+
+        <pre id="target">
+<code>
+<span class="comment">// Haal het element op</span>
+const element = document.getElementById('target');
+
+<span class="comment">// Registreer de event listener</span>
+element.addEventListener('click', (event) => {
+    console.log(event.target); <span class="comment">// Het element waarop geklikt werd</span>
+});
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card" id="currentTarget">
+        <h2 class="subtitle"><code>event.currentTarget</code></h2>
+        <p>
+          Het <code>event.currentTarget</code> property geeft het element terug
+          waarop de event listener is geplaatst. Dit kan handig zijn als je wil
+          weten op welk element de event listener is toegevoegd.
+        </p>
+
+        <pre>
+<code>
+<span class="comment">// Haal het element op</span>
+const element = document.getElementById('currentTarget');
+
+<span class="comment">// Registreer de event listener</span>
+element.addEventListener('click', (event) => {
+console.log(event.currentTarget); <span class="comment">// Het element waarop de event listener is geplaatst</span>
+});
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph student-template" id="delegation">
+        <h2 class="subtitle">Practisch voorbeeld</h2>
+        <p>
+          Het verschil tussen en de kracht van <code>.target</code> en
+          <code>.currentTarget</code> wordt duidelijker in het volgende
+          voorbeeld.
+        </p>
+        <p>
+          Je hebt een lijst van producten en je wil wanneer er op een product
+          geklikt wordt, een actie ondernemen. Dan kan je een event listener
+          toevoegen aan elk product in de lijst of je kan een event listener
+          toevoegen aan de lijst zelf. Wanneer je op een product klikt, zal de
+          event listener op de lijst geactiveerd worden en zal je met
+          <code>.target</code>
+          het exacte product kunnen identificeren.
+        </p>
+
+        <p>
+          Voer eerst de code uit in de console en klik dan op een product in de
+          lijst. Bekijk de console om te zien welk product je hebt aangeklikt.
+        </p>
+
+        <ul id="product-list">
+          <li id="apples">Appels</li>
+          <li id="bread">Brood</li>
+          <li id="milk">Melk</li>
+        </ul>
+
+        <pre>
+<code>
+<span class="comment">// Haal de lijst op</span>
+const productList = document.getElementById('product-list');
+
+<span class="comment">// Registreer de event listener</span>
+productList.addEventListener('click', (event) => {
+    <span class="comment">// Het element waarop geklikt werd</span>
+    console.log(event.target); 
+    <span class="comment">// De id van het product</span>
+    console.log(`target: ${event.target.id}`); 
+    <span class="comment">// De id van de lijst</span>
+    console.log(`currentTarget: ${event.currentTarget.id} is het element waar de event listener aanhangt`);
+});
+</code>
+</pre>
+        <p>
+          Op deze manier kan je met één event listener meerdere elementen in de
+          gaten houden en acties ondernemen wanneer er op een element geklikt
+          wordt. Je kan nadien de properties van het target doorgeven aan een
+          andere functie om verdere acties te ondernemen. Zoals bijvoorbeeld het
+          toevoegen van een product aan een winkelmandje.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

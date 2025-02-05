@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>JavaScript Methodes & Bubbling</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JavaScript Events: Methodes & Bubbling</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/events/intro-events.html"
+          >Intro Events</a
+        >
+        <a href="/pages/lessons/javascript/events/event-listeners.html"
+          >Event Listeners</a
+        >
+        <a href="/pages/lessons/javascript/events/event-object.html"
+          >Event Object</a
+        >
+        <a href="/pages/lessons/javascript/events/methods-bubbling.html"
+          >Methodes & Bubbling</a
+        >
+        <a href="/pages/lessons/javascript/events/event-delegation.html"
+          >Event Delegation</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Een event zet hier wat dingen in gang, maar je kan ook enkele methodes
+          aanroepen om de standaard actie van een event te voorkomen of te
+          stoppen. Deze zijn de twee meest gebruikte methodes:
+        </p>
+        <ul>
+          <li>
+            <code>event.preventDefault()</code>: voorkomt de standaard actie van
+            een event. Bijvoorbeeld, als je een formulier verstuurt, zal de
+            pagina herladen. Met <code>preventDefault()</code> kan je dit
+            voorkomen.
+          </li>
+          <li>
+            <code>event.stopPropagation()</code>: stopt de event bubbling. Dit
+            betekent dat het event niet verder zal gaan naar de parent
+            elementen.
+          </li>
+        </ul>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>event.preventDefault()</code></h2>
+        <p>
+          <code>event.preventDefault()</code> is een methode die wordt gebruikt
+          om de standaard actie van een event te voorkomen. Dit kan handig zijn
+          als je bepaalde acties wil uitvoeren voordat de standaard actie
+          plaatsvindt.
+        </p>
+        <p>
+          Het grootste voorbeeld hiervan is het submitten van een formulier.
+          Wanneer je op een submit knop klikt, wordt de ingevoerde data naar de
+          server gestuurd en wordt de pagina herladen. Als je bijvoorbeeld eerst
+          de data wil valideren, kan je
+          <code>event.preventDefault()</code> gebruiken om de standaard actie te
+          voorkomen.
+        </p>
+
+        <p>Vul het onderstaande formulier in en klik op submit.</p>
+
+        <form id="form" class="centered">
+          <input type="text" placeholder="Naam" />
+          <input type="number" placeholder="Leeftijd" />
+          <button type="submit">Verstuur</button>
+        </form>
+
+        <p>
+          De pagina herlaadt en je gegevens zijn verdwenen. Dit is de standaard
+          actie van een formulier.
+        </p>
+
+        <p>
+          Voer nu eerst de volgende code uit in de console en vul daarna het
+          formulier in en klik op submit.
+        </p>
+
+        <pre>
+  <code >
+<span class="comment">// Haal het formulier op</span>
+const form = document.getElementById('form');
+
+<span class="comment">// Voeg een event listener toe</span>
+form.addEventListener('submit', (event) => {
+
+    <span class="comment">// Voorkom de standaard actie</span>
+    event.preventDefault();
+
+    <span class="comment">// Controleer of de velden zijn ingevuld</span>
+    if (form[0].value === '' || form[1].value === '') {
+        alert('Gelieve alle velden in te vullen');
+        return;
+    }
+
+    <span class="comment">// Voer je eigen acties uit</span>
+    console.log('Naam: ', form[0].value);
+    console.log('Leeftijd: ', form[1].value);
+  });
+  </code>
+</pre>
+
+        <p>
+          De pagina herlaadt niet meer en de ingevoerde data wordt in de console
+          gelogd.
+        </p>
+        <p>
+          In een real-life scenario zou je na het valideren van de ingevoerde
+          data een POST request naar de server sturen om de data op te slaan.
+        </p>
+      </div>
+
+      <div class="paragraph card border-red" id="ancestor">
+        <h2 class="subtitle">Event Bubbling</h2>
+        <p>
+          Alvorens we het over <code>event.stopPropagation</code> kunnen hebben,
+          moet je begrijpen wat Event Bubbling is.
+        </p>
+        <p>
+          Event Bubbling is een mechanisme waarbij een event dat plaatsvindt op
+          een element, ook plaatsvindt op alle parent elementen van dat element.
+        </p>
+        <p>
+          Stel dat je een knop hebt binnen een div. Wanneer je op de knop klikt,
+          zal het click event ook plaatsvinden op de div. Voer onderstaande code
+          uit in de console en klik op de knop in het blauwe kader.
+        </p>
+
+<pre>
+<code>
+<span class="comment">// Haal de rode Event bubbling card op</span>
+const ancestor = document.getElementById('ancestor');
+
+<span class="comment">// Haal de paarse div op</span>
+const parent = document.getElementById('parent');
+
+<span class="comment">// Haal de blauwe knop op</span>
+const child = document.getElementById('child');
+
+<span class="comment">// Voeg een event listener toe aan de card (ancestor)</span>
+ancestor.addEventListener('click', () => {
+  console.log('Ancestor clicked');
+  });
+
+<span class="comment">// Voeg event listener toe aan de div (parent)</span>
+parent.addEventListener('click', () => {
+  console.log('Parent clicked');
+  });
+
+<span class="comment">// Voeg event listener toe aan de knop (child)</span>
+child.addEventListener('click', () => {
+  console.log('Child clicked');
+  });
+</code>
+</pre>
+        <div id="parent" class="centered border-purple padding-40">
+          <button id="child" class="border-blue padding-40">Klik hier</button>
+        </div>
+
+        <p>
+          Je merkt dat zowel 'Parent clicked' als 'Child clicked' in de console
+          worden gelogd. Dit is omdat het click event op de knop blijft omhoog
+          gegooid worden. Elke ancestor van de knop, waar een click-event
+          listener opstaat, zal ook activeren en uitgevoerd worden.
+        </p>
+
+        <p>
+          Dit kan handig zijn, maar soms wil je niet dat het event verder gaat
+          naar de parent elementen. Dit is waar
+          <code>event.stopPropagation()</code> van pas komt.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>event.stopPropagation</code></h2>
+        <p>
+          Wanneer je in een event listener functie gebruik maakt van
+          <code>event.preventDefault()</code> dan zal je merken dat het event
+          niet voorbij dat element wordt opgegooid.
+        </p>
+        <p>
+          Clear je console en voer onderstaande code uit in de console en klik
+          nogmaals op de knop in het blauwe kader.
+        </p>
+        <pre>
+<code>
+<span class="comment">// Haal de rode Event bubbling card op</span>
+const ancestor = document.getElementById('ancestor');
+
+<span class="comment">// Haal de paarse div op</span>
+const parent = document.getElementById('parent');
+
+<span class="comment">// Haal de blauwe knop op</span>
+const child = document.getElementById('child');
+
+<span class="comment">// Voeg een event listener toe aan de card (ancestor)</span>
+ancestor.addEventListener('click', () => {
+  console.log('Ancestor clicked');
+  });
+
+<span class="comment">// Voeg event listener toe aan de div (parent)</span>
+parent.addEventListener('click', () => {
+    console.log('Parent clicked');
+  });
+
+<span class="comment">// Voeg event listener toe aan de knop (child)</span>
+child.addEventListener('click', () => {
+
+    <span class="comment">// Voorkom dat het event verder gaat naar de parent elementen</span>
+    event.stopPropagation();
+
+    console.log('Child clicked');
+  });
+</code>
+</pre>
+        <p>
+          Deze keer wordt enkel 'Child clicked' in de console gelogd. Het event
+          wordt gestopt bij de knop en gaat niet verder naar de parent
+          elementen.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

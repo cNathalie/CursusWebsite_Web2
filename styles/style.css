@@ -37,6 +37,10 @@ body {
   flex-direction: column;
 }
 
+.lessons .folder-title {
+  padding: 5px;
+}
+
 .lessons .folder-title:hover {
   background-color: rgb(150, 148, 148);
   cursor: pointer;
@@ -247,4 +251,12 @@ code span {
 
 .padding-40 {
   padding: 40px;
+}
+
+.background-red {
+  background-color: red;
+}
+
+.underline {
+  text-decoration: underline;
 }

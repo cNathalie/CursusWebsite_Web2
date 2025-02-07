@@ -47,10 +47,10 @@
         </p>
         <pre id="code1">
 <code >
-<span class="comment">// Haal het element op</span>
+<span>// Haal het element op</span>
 const element = document.getElementById('code1');
 
-<span class="comment">// Definieer het event object als parameter</span>
+<span>// Definieer het event object als parameter</span>
 element.addEventListener('click', (event) => {
     console.log(event.type); 
 });
@@ -65,13 +65,13 @@ element.addEventListener('click', (event) => {
         </p>
         <pre id="code2">
 <code>
-<span class="comment">// Haal het element op</span>
+<span>// Haal het element op</span>
 const element2 = document.getElementById('code2');
 
-<span class="comment">// Definieer het event object als eerste parameter</span>
+<span>// Definieer het event object als eerste parameter</span>
 element2.addEventListener('click', (konijntje, event) => {
     console.log(konijntje.type);
-    console.log(event.type); <span class="comment">// Undefined error</span>
+    console.log(event.type); <span>// Undefined error</span>
 });
 </code>
 </pre>
@@ -107,12 +107,12 @@ element2.addEventListener('click', (konijntje, event) => {
 
         <pre id="target">
 <code>
-<span class="comment">// Haal het element op</span>
+<span>// Haal het element op</span>
 const element = document.getElementById('target');
 
-<span class="comment">// Registreer de event listener</span>
+<span>// Registreer de event listener</span>
 element.addEventListener('click', (event) => {
-    console.log(event.target); <span class="comment">// Het element waarop geklikt werd</span>
+    console.log(event.target); <span>// Het element waarop geklikt werd</span>
 });
 </code>
 </pre>
@@ -128,12 +128,12 @@ element.addEventListener('click', (event) => {
 
         <pre>
 <code>
-<span class="comment">// Haal het element op</span>
+<span>// Haal het element op</span>
 const element = document.getElementById('currentTarget');
 
-<span class="comment">// Registreer de event listener</span>
+<span>// Registreer de event listener</span>
 element.addEventListener('click', (event) => {
-console.log(event.currentTarget); <span class="comment">// Het element waarop de event listener is geplaatst</span>
+console.log(event.currentTarget); <span>// Het element waarop de event listener is geplaatst</span>
 });
 </code>
 </pre>
@@ -169,16 +169,16 @@ console.log(event.currentTarget); <span class="comment">// Het element waarop de
 
         <pre>
 <code>
-<span class="comment">// Haal de lijst op</span>
+<span>// Haal de lijst op</span>
 const productList = document.getElementById('product-list');
 
-<span class="comment">// Registreer de event listener</span>
+<span>// Registreer de event listener</span>
 productList.addEventListener('click', (event) => {
-    <span class="comment">// Het element waarop geklikt werd</span>
+    <span>// Het element waarop geklikt werd</span>
     console.log(event.target); 
-    <span class="comment">// De id van het product</span>
+    <span>// De id van het product</span>
     console.log(`target: ${event.target.id}`); 
-    <span class="comment">// De id van de lijst</span>
+    <span>// De id van de lijst</span>
     console.log(`currentTarget: ${event.currentTarget.id} is het element waar de event listener aanhangt`);
 });
 </code>

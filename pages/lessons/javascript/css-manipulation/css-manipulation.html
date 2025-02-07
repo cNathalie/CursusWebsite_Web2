@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>JavaScript - CSS Manipulatie</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JavaScript: CSS Manipulatie</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Met JavaScript kunnen we ook onze CSS manipuleren. Dit betekent dat we
+          'on the fly' de stijl van onze HTML elementen kunnen veranderen.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">
+          Via de <code class="good">.style</code> property
+        </h2>
+        <p>
+          We kunnen de stijl van een element veranderen door de
+          <code class="good">.style</code> property te gebruiken. Deze property
+          bevat een object met alle CSS eigenschappen van het element.
+        </p>
+
+        De namen van de CSS eigenschappen zijn in JavaScript in camelCase
+        geschreven, in tegenstelling tot de kebab-case in CSS. Hier heb je eens
+        de meest gebruikte cases op een rijtje:
+        <ul>
+          <li><code>camelCase</code></li>
+          <li><code>lowercase</code></li>
+          <li><code>UPPERCASE</code></li>
+          <li><code>lower-kebab-case</code></li>
+          <li><code>UPPER-KEBAB-CASE</code></li>
+          <li><code>lower_snake_case</code></li>
+          <li><code>UPPER_SNAKE_CASE</code></li>
+        </ul>
+
+        De CSS properties worden in JavaScript dus als volgt geschreven:
+        <ul>
+          <li>
+            <code class="good">background-color</code> wordt
+            <code class="good">backgroundColor</code>
+          </li>
+          <li>
+            <code class="good">font-size</code> wordt
+            <code class="good">fontSize</code>
+          </li>
+          <li>
+            <code class="good">border-radius</code> wordt
+            <code class="good">borderRadius</code>
+          </li>
+          <li>Enzovoort...</li>
+        </ul>
+        Probeer het uit:
+        <pre id="style-property">
+            <code>
+<span>// Haal deze code-block div op</span>
+const card = document.getElementById('style-property');
+
+<span>// Verander de achtergrondkleur naar rood</span>
+card.style.backgroundColor = 'red';
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">
+          Aan de hand van CSS classes: <code class="good">.className</code>
+        </h2>
+        <p>
+          We kunnen ook de CSS van een element veranderen door een CSS class toe
+          te voegen of te verwijderen. Dit kunnen we doen we door de
+          <code class="good">.className</code> property te gebruiken.
+        </p>
+        <p>
+          Deze property bevat een string met alle CSS classes van het element.
+          Net hetzelfde als je in je HTML zou schrijven. Je kan dus meerder
+          klasses tegelijk instellen door ze te scheiden met een spatie.
+        </p>
+        <p>
+          Je zou dus in een string moeten knoppen en plakken om bepaalde klassen
+          toe te voegen of te verwijderen.
+        </p>
+        <p>Probeer het uit:</p>
+        <pre id="class-name" class="underline">
+<code>
+<span>// Haal deze code-block div op</span>
+const card = document.getElementById('class-name');
+
+<span>// Voeg de klasse 'red' toe</span>
+card.className = 'background-red';
+</code>
+</pre>
+        <p>
+          <span class="important">Opgelet:</span> als je de
+          <code class="good">.className</code> property gebruikt, zal je alle
+          klassen van het element overschrijven. Zoals je in het voorbeeld kon
+          zien, was de tekst in het code block origineel onderlijnd. Omdat we
+          een waarde aan className toeschreven, werdt de originele waarde
+          overschreven.
+        </p>
+        <p>
+          Om het overschrijven te vermijden zouden we de originele klasse-string
+          moeten concateneren met de nieuwe klasse-string:
+        </p>
+        <pre id="class-name-concat" class="underline">
+<code>
+<span>// Haal deze code-block div op</span>
+const card = document.getElementById('class-name-concat');
+
+<span>// Voeg de klasse 'red' toe</span>
+card.className += ' background-red';
+</code>
+</pre>
+        <p>
+          Je ziet dat nu onze tekst onderlijnd blijft, maar de achtergrondkleur
+          is wel rood geworden.
+        </p>
+        <p>
+          Je voelt aan dat deze manier van werken omslachtig en gevoelig voor
+          bugs is. Daarom is het beter om de
+          <code class="good">.classList</code> property te gebruiken.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">
+          Aan de hand van CSS classes: <code class="good">.classList</code>
+        </h2>
+        <p>
+          De <code class="good">.classList</code> property is een object dat
+          methodes bevat om klassen toe te voegen, te verwijderen of te togglen.
+          Dit natuurlijk op voorwaarde dat deze CSS klasses gedefinieerd zijn in
+          je CSS bestand!
+        </p>
+        <p>De meest gebruikte methodes zijn:</p>
+
+        <ul>
+          <li>
+            <code class="good">.add('className')</code> - voegt een klasse toe
+          </li>
+          <li>
+            <code class="good">.remove('className')</code> - verwijdert een
+            klasse
+          </li>
+          <li>
+            <code class="good">.toggle('className')</code> - voegt een klasse
+            toe als deze nog niet bestaat, verwijdert de klasse als deze wel
+            bestaat
+          </li>
+        </ul>
+        <p>
+          De betekenis van toggle: In programmeren betekent "toggle" het
+          wisselen tussen twee toestanden, zoals aan en uit, met één actie.
+        </p>
+      </div>
+
+      <div class="paragraph student-template">
+        <h2 class="subtitle">Probeer het uit:</h2>
+        <p>
+          Probeer de methodes van de
+          <code class="good">.classList</code> property één voor één uit op de
+          onderstaande div.
+        </p>
+
+        <pre id="class-list" class="underline">
+<code>
+<span>// Haal deze code-block div op</span>
+const card = document.getElementById('class-list');
+
+<span>// Voeg de klasse 'red' toe</span>
+card.classList.add('background-red');
+
+<span>// Verwijder de klasse 'background-red'</span>
+card.classList.remove('background-red');
+
+<span>// Toggle de klasse 'underline'</span>
+card.classList.toggle('underline');
+</code>
+</pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

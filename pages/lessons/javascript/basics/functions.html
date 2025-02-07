@@ -83,7 +83,7 @@
     }
 
     const sum = add(2, 3);
-    console.log(sum); <span class="comment">// 5</span>
+    console.log(sum); <span>// 5</span>
 </code>
 </pre>
         <p>
@@ -151,7 +151,7 @@
 
     const result = myFunc();
 
-    console.log(result); <span class="comment">// undefined</span>
+    console.log(result); <span>// undefined</span>
 </code>
 </pre>
       </div>
@@ -208,7 +208,7 @@
 <code>
     const add = (a, b) => a + b;
     const sum = add(2, 3);
-    console.log(sum); <span class="comment">// 5</span>
+    console.log(sum); <span>// 5</span>
 </code>
 </pre>
 
@@ -226,7 +226,7 @@
 
     greet; 
 
-    greet(); <span class="comment">// Hello, world!</span>
+    greet(); <span>// Hello, world!</span>
 </code>
 </pre>
       </div>
@@ -255,7 +255,7 @@
 
     changeValue(x);
 
-    console.log(x); <span class="comment">// Wat verwacht je hier?</span>
+    console.log(x); <span>// Wat verwacht je hier?</span>
 </code>
 </pre>
         <p>
@@ -272,7 +272,7 @@
 
     changeValue(x);
 
-    console.log(x.value); <span class="comment">// Wat verwacht je hier?</span>
+    console.log(x.value); <span>// Wat verwacht je hier?</span>
 </code>
 </pre>
       </div>
@@ -314,7 +314,8 @@
       <div class="card paragraph">
         <h2 class="subtitle">Hoisting</h2>
         <p>
-            Functie-declaraties worden gehoist. Dit betekent dat je een functie kan aanroepen voordat je deze hebt gedeclareerd.
+          Functie-declaraties worden gehoist. Dit betekent dat je een functie
+          kan aanroepen voordat je deze hebt gedeclareerd.
         </p>
         <pre>
 <code>
@@ -327,7 +328,7 @@
         <p>
           Deze code zal de string <code>'Hello, world!'</code> loggen naar de
           console wanneer deze wordt aangeroepen.
-        </p>       
+        </p>
       </div>
 
       <div class="card paragraph">
@@ -359,12 +360,12 @@
         <h2 class="subtitle">Scope</h2>
         <p>
           De scope van een variabele is de context waarin de variabele bestaat.
-          In JavaScript zijn er twee soorten scope: globale scope en block/lokale
-          scope.
+          In JavaScript zijn er twee soorten scope: globale scope en
+          block/lokale scope.
         </p>
         <p>
-          Variabelen die gedeclareerd zijn buiten een functie hebben een
-          globale scope. Deze variabelen zijn beschikbaar in de gehele code.   
+          Variabelen die gedeclareerd zijn buiten een functie hebben een globale
+          scope. Deze variabelen zijn beschikbaar in de gehele code.
         </p>
         <p>
           Variabelen die gedeclareerd zijn binnen een functie hebben een lokale
@@ -377,52 +378,53 @@
           bijvoorbeeld een functie body of een if statement zijn.
         </p>
         <p>
-            Bekijk onderstaande situaties heel goed; goei ze zeker ook eens afzonderlijk in de Console en bekijk de output.
+          Bekijk onderstaande situaties heel goed; goei ze zeker ook eens
+          afzonderlijk in de Console en bekijk de output.
         </p>
         <pre>
 <code>
-    <span class="comment">// Situatie 1</span>
+    <span>// Situatie 1</span>
     function myFunc() {
         let bool = true;
 
         if (true) {
             let x = 5;
-            console.log(bool); <span class="comment">// true</span>
-            console.log(x); <span class="comment">// 5</span>
+            console.log(bool); <span>// true</span>
+            console.log(x); <span>// 5</span>
         }
     }
     myFunc()
 
-    <span class="comment">// Situatie 2</span>
+    <span>// Situatie 2</span>
     function myFunc2() {
         let bool = true;
 
         if (true) {
             let x = 5;
-            console.log(bool); <span class="comment">// true</span>
-            console.log(x); <span class="comment">// 5</span>
+            console.log(bool); <span>// true</span>
+            console.log(x); <span>// 5</span>
         }
 
-        console.log(bool); <span class="comment">// true</span>
+        console.log(bool); <span>// true</span>
     }
     myFunc2();
 
-    <span class="comment">// Situatie 3</span>
+    <span>// Situatie 3</span>
     function myFunc3() {
         let bool = true;
 
         if (true) {
             let x = 5;
-            console.log(bool); <span class="comment">// true</span>
-            console.log(x); <span class="comment">// 5</span>
+            console.log(bool); <span>// true</span>
+            console.log(x); <span>// 5</span>
         }
 
-        console.log(bool); <span class="comment">// true</span>
-        console.log(x); <span class="comment">// ReferenceError: x is not defined</span>
+        console.log(bool); <span>// true</span>
+        console.log(x); <span>// ReferenceError: x is not defined</span>
     }
     myFunc3();
 
-    <span class="comment">// Situatie 4</span>
+    <span>// Situatie 4</span>
     function myFunc3() {
         let bool = true;
 
@@ -430,7 +432,7 @@
             let x = 5;
         }
     }
-    console.log(bool); <span class="comment">// ReferenceError: bool is not defined</span>
+    console.log(bool); <span>// ReferenceError: bool is not defined</span>
 </code>
 </pre>
       </div>
@@ -439,12 +441,14 @@
         <h2 class="subtitle">Vervuiling van de Scope</h2>
         <p>
           Vervuiling van de scope treedt op wanneer er variabelen worden
-          gedeclareerd in de globale scope die dezelfde naam hebben als variabelen
-          in de lokale scope.
+          gedeclareerd in de globale scope die dezelfde naam hebben als
+          variabelen in de lokale scope.
         </p>
         <p>
           Dit kan leiden tot onverwachte resultaten en bugs in je code. Om
-          vervuiling van de scope te voorkomen, gebruik je best unieke, betekenisvolle namen voor je variabelen.
+          vervuiling van de scope te voorkomen, gebruik je best unieke,
+          betekenisvolle namen voor je variabelen.
+        </p>
       </div>
 
       <a id="back-to-top" href="#">Terug naar boven</a>

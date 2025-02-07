@@ -90,22 +90,22 @@
 
         <pre>
   <code >
-<span class="comment">// Haal het formulier op</span>
+<span>// Haal het formulier op</span>
 const form = document.getElementById('form');
 
-<span class="comment">// Voeg een event listener toe</span>
+<span>// Voeg een event listener toe</span>
 form.addEventListener('submit', (event) => {
 
-    <span class="comment">// Voorkom de standaard actie</span>
+    <span>// Voorkom de standaard actie</span>
     event.preventDefault();
 
-    <span class="comment">// Controleer of de velden zijn ingevuld</span>
+    <span>// Controleer of de velden zijn ingevuld</span>
     if (form[0].value === '' || form[1].value === '') {
         alert('Gelieve alle velden in te vullen');
         return;
     }
 
-    <span class="comment">// Voer je eigen acties uit</span>
+    <span>// Voer je eigen acties uit</span>
     console.log('Naam: ', form[0].value);
     console.log('Leeftijd: ', form[1].value);
   });
@@ -138,28 +138,28 @@ form.addEventListener('submit', (event) => {
           uit in de console en klik op de knop in het blauwe kader.
         </p>
 
-<pre>
+        <pre>
 <code>
-<span class="comment">// Haal de rode Event bubbling card op</span>
+<span>// Haal de rode Event bubbling card op</span>
 const ancestor = document.getElementById('ancestor');
 
-<span class="comment">// Haal de paarse div op</span>
+<span>// Haal de paarse div op</span>
 const parent = document.getElementById('parent');
 
-<span class="comment">// Haal de blauwe knop op</span>
+<span>// Haal de blauwe knop op</span>
 const child = document.getElementById('child');
 
-<span class="comment">// Voeg een event listener toe aan de card (ancestor)</span>
+<span>// Voeg een event listener toe aan de card (ancestor)</span>
 ancestor.addEventListener('click', () => {
   console.log('Ancestor clicked');
   });
 
-<span class="comment">// Voeg event listener toe aan de div (parent)</span>
+<span>// Voeg event listener toe aan de div (parent)</span>
 parent.addEventListener('click', () => {
   console.log('Parent clicked');
   });
 
-<span class="comment">// Voeg event listener toe aan de knop (child)</span>
+<span>// Voeg event listener toe aan de knop (child)</span>
 child.addEventListener('click', () => {
   console.log('Child clicked');
   });
@@ -196,29 +196,29 @@ child.addEventListener('click', () => {
         </p>
         <pre>
 <code>
-<span class="comment">// Haal de rode Event bubbling card op</span>
+<span>// Haal de rode Event bubbling card op</span>
 const ancestor = document.getElementById('ancestor');
 
-<span class="comment">// Haal de paarse div op</span>
+<span>// Haal de paarse div op</span>
 const parent = document.getElementById('parent');
 
-<span class="comment">// Haal de blauwe knop op</span>
+<span>// Haal de blauwe knop op</span>
 const child = document.getElementById('child');
 
-<span class="comment">// Voeg een event listener toe aan de card (ancestor)</span>
+<span>// Voeg een event listener toe aan de card (ancestor)</span>
 ancestor.addEventListener('click', () => {
   console.log('Ancestor clicked');
   });
 
-<span class="comment">// Voeg event listener toe aan de div (parent)</span>
+<span>// Voeg event listener toe aan de div (parent)</span>
 parent.addEventListener('click', () => {
     console.log('Parent clicked');
   });
 
-<span class="comment">// Voeg event listener toe aan de knop (child)</span>
+<span>// Voeg event listener toe aan de knop (child)</span>
 child.addEventListener('click', () => {
 
-    <span class="comment">// Voorkom dat het event verder gaat naar de parent elementen</span>
+    <span>// Voorkom dat het event verder gaat naar de parent elementen</span>
     event.stopPropagation();
 
     console.log('Child clicked');

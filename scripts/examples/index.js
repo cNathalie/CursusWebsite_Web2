@@ -12,6 +12,7 @@ const setup = () => {
     ["js-basics-folder", "js-basics-title"],
     ["dom-folder", "dom-title"],
     ["events-folder", "events-title"],
+    ["js-types-folder","js-types-title"]
   ];
 
   topics.forEach(([folderId, titleId]) => {

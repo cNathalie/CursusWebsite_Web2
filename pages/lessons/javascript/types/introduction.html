@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Types in depth: Intro</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Types in depth: Introductie</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/types/introduction.html">
+          Introductie
+        </a>
+        <a href="/pages/lessons/javascript/types/number.html">Number</a>
+        <a href="/pages/lessons/javascript/types/string.html">String</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          In deze lessenreeks gaan we dieper in op de verschillende types in
+          JavaScript. We zullen kijken naar de belangrijkste types die
+          JavaScript ondersteunt en hoe je ze kan gebruiken in je code.
+        </p>
+        <p>
+          We zullen beginnen met het type <code>Number</code> en kijken naar hoe
+          je getallen kan gebruiken in JavaScript. Daarna zullen we kijken naar
+          het type <code>String</code> en hoe je tekst kan gebruiken in
+          JavaScript.
+        </p>
+        <p>
+          Het is belangrijk om de verschillende types in JavaScript te begrijpen
+          omdat dit je kan helpen om betere code te schrijven en bugs te
+          voorkomen.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Dynamisch</h2>
+        <p>
+          JavaScript is een dynamisch getypeerde programmeertaal, of in het
+          Engels: Dynamically Typed.
+        </p>
+        <p>
+          Dit wil zeggen dat er geen type wordt meegegeven bij het declareren
+          van een variabele, functie, paramater of functie return waarde. Pas
+          tijdens de uitvoering van de code wordt er gebruik gemaakt van types.
+        </p>
+        <p>
+          Dit in tegenstelling tot statisch getypeerde programmeertalen zoals
+          C#, waarbij je bij het declareren van een variabele het type moet
+          meegeven.
+        </p>
+      </div>
+
+      <div class="centered">
+        <img class="responsive-image" src="/imgs/types.png" alt="Types" />
+      </div>
+      <div class="paragraph card">
+        <h2 class="subtitle">Types</h2>
+        <p>
+          Je kan het type van een variable achterhalen door gebruik te maken van
+          de <code>typeof()</code> operator.
+        </p>
+        <p>
+          Plaats de lijst met variabelen in de console en vraag nadien één per
+          één hun type op.
+        </p>
+        <pre>
+<code>
+<span>// Declareer de variabelen</span>
+const leeftijd = 25;
+const interest = 0.12;
+const naam = "Jan";
+const isStudent = true;
+const print = (msg) => console.log(msg);
+
+<span>// Vraag nu van elke variabele zijn type op</span>
+typeof(<span>// naam van de variabele</span>);
+
+<span>// Vraag ook eens het type op van:</span>
+typeof(window);
+typeof(document);
+
+<span>// Wat zou hier van het type zijn?</span>
+const kleur = new String("rood");
+typeof(kleur);
+</code>
+</pre>
+        <p>
+          <span class="important">Opgelet:</span> Zoals je merkt is er een
+          verschil tussen de types van <code>naam</code> en <code>kleur</code>,
+          hoewel ze beiden een string bevatten. Dit komt omdat
+          <code>naam</code> een string is en <code>kleur</code> een object is.
+          Dit is een belangrijk verschil dat je moet onthouden.
+        </p>
+        <p>
+          Meer specifiek is <code>kleur</code> een object van het type String =
+          een String object. Elke variabele die een waarde krijgt aan de hand
+          van het keyword <code>new</code> is een object.
+        </p>
+        <p>
+          De string <code>naam</code> noemen we een string literal. Dit is een
+          string die rechtstreeks in de code wordt geschreven tussen
+          aanhalingstekens.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

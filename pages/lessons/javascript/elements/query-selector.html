@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Elementen & Attributen: Query Selector</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Elementen & Attributen: Query Selector</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/elements/intro.html">Introductie</a>
+        <a href="/pages/lessons/javascript/elements/query-selector.html"
+          >Query Selector</a
+        >
+        <a href="/pages/lessons/javascript/elements/css-selectors.html"
+          >CSS Selectoren</a
+        >
+        <a href="/pages/lessons/javascript/elements/inner-html.html"
+          >Inner HTML</a
+        >
+        <a href="/pages/lessons/javascript/elements/attributes.html"
+          >Attributen</a
+        >
+        <a href="/pages/exercises/javascript/elements/all-tasks.html">Oefeningen</a>
+      </div>
+      <div class="paragraph">
+        <p>
+          De querySelector methodes zijn een krachtige manier om elementen te
+          selecteren in de DOM.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle"><code>document.querySelector()</code></h2>
+        <p>
+          De querySelector methode is een methode die we kunnen gebruiken om een
+          element te selecteren op basis van een CSS selector. De methode geeft
+          het <strong>eerste element</strong> terug dat overeenkomt met de
+          gegeven selector. Als er geen elementen overeenkomen met de gegeven
+          selector, zal de methode null teruggeven.
+        </p>
+        <p>De querySelector methode heeft de volgende syntax:</p>
+        <pre>
+document.querySelector('selector');
+</pre
+        >
+        <p>
+          Hier is een voorbeeld van hoe we de querySelector methode kunnen
+          gebruiken om een element te selecteren met een bepaalde id:
+        </p>
+        <pre>
+const element = document.querySelector('#id');
+</pre
+        >
+        <p>
+          Hier is een voorbeeld van hoe we de querySelector methode kunnen
+          gebruiken om een element te selecteren met een bepaalde class:
+        </p>
+        <pre>
+const element = document.querySelector('.class');
+</pre
+        >
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle"><code>document.querySelectorAll()</code></h2>
+        <p>
+          De querySelectorAll methode is een methode die we kunnen gebruiken om
+          alle elementen te selecteren die overeenkomen met een gegeven CSS
+          selector. De methode geeft een <strong>NodeList</strong> terug met
+          alle elementen die overeenkomen met de gegeven selector. Als er geen
+          elementen overeenkomen met de gegeven selector, zal de methode een
+          lege NodeList teruggeven.
+        </p>
+        <p>De querySelectorAll methode heeft de volgende syntax:</p>
+        <pre>
+document.querySelectorAll('selector');
+</pre
+        >
+        <p>
+          Hier is een voorbeeld van hoe we de querySelectorAll methode kunnen
+          gebruiken om alle elementen te selecteren met een bepaalde class:
+        </p>
+        <pre>
+const elements = document.querySelectorAll('.class');
+</pre
+        >
+        <p>
+          <span class="good">Handig</span>: Op een NodeList kan je de forEach
+          methode gebruiken om over elk element in de NodeList te itereren.
+        </p>
+      </div>
+
+      <div class="card paragraph border-red" id="performance">
+        <h2 class="subtitle">Performantie</h2>
+        <p>
+          De querySelector methodes zijn performanter dan de andere methodes om
+          elementen te selecteren. Dit komt omdat de querySelector methodes
+          gebruik maken van de browser's interne querySelector engine. Deze
+          engine is geoptimaliseerd voor het selecteren van elementen in de DOM.
+        </p>
+        <p>
+          Je kan het selecteren van elementen nog performanter maken door te
+          zoeken naar kinderen van elementen die we reeds geselecteerd hebben.
+        </p>
+        <p>
+          Je kan dus selecteren vanuit het document object, of vanuit een
+          element zelf.
+        </p>
+        <p>Probeer het uit:</p>
+        <pre id="code">
+<code>
+<span>// Haal deze 'Performantie' div op</span>
+const element = document.querySelector('#performance');
+console.log(element);
+
+<span>// Haal het code block in de div op</span>
+const childElement = element.querySelector('#code');
+console.log(childElement);
+</code>
+</pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Elementen & Attributen:</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Elementen & Attributen:</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/elements/intro.html">Introductie</a>
+        <a href="/pages/lessons/javascript/elements/query-selector.html"
+          >Query Selector</a
+        >
+        <a href="/pages/lessons/javascript/elements/css-selectors.html"
+          >CSS Selectoren</a
+        >
+        <a href="/pages/lessons/javascript/elements/inner-html.html"
+          >Inner HTML</a
+        >
+        <a href="/pages/lessons/javascript/elements/attributes.html"
+          >Attributen</a
+        >
+        <a href="/pages/exercises/javascript/elements/all-tasks.html">Oefeningen</a>
+      </div>
+      <div class="paragraph">
+        <p>
+          We zagen eerder al dat we met de <code>innerHtml</code> property
+          kunnen gebruiken om nieuwe HTML elementen toe te voegen aan een
+          bestaand element.
+        </p>
+      </div>
+
+      <div class="card paragraph border-red">
+        <h2 class="subtitle">Dure zaak</h2>
+        <p>
+          Bij het opvragen van innerHtml van een element, moet de browser in de
+          DOM-tree alle descendants van het element opvragen. Nadien moet van
+          elke descendant een HTML-tekst voorstelling gemaakt worden. Dit kan
+          een dure zaak zijn, zeker als het element veel descendants heeft.
+        </p>
+        <p>
+          Bij het wijzigen van de waarde van innerHtml, moet de browser eerst
+          alle kinderen weggooien en vervolgens de nieuwe HTML-tekst ontleden om
+          de element en hun attributen te vinden. Daarna moet hij de nieuwe
+          DOM-tree nodes maken én toevoegen als descendants. Tot slot moet de
+          volledige pagina layout en styling volledig opnieuw berekend en
+          hertekend worden.
+        </p>
+        <p>
+          Het is dus af te raden om innerHtml te gebruiken als je veel elementen
+          'dynamisch' wil toevoegen aan een bestaand element, omdat dit de
+          performantie van je website sterk negatief kan beïnvloeden.
+        </p>
+        <p>Er zijn hiervoor andere methodes die veel performanter zijn.</p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle"><code>insertAdjacentHTML()</code></h2>
+        <p>
+          Alle DOM-tree elementen ondersteunen de
+          <code>insertAdjacentHTML()</code> methode. Deze methode laat toe om
+          HTML-tekst in te voegen op een specifieke plaats in de DOM-tree zonder
+          alles opnieuw te moeten berekenen.
+        </p>
+        <p>
+            De <code>insertAdjacentHTML()</code> methode heeft de volgende syntax:
+        </p>
+<pre>
+<code>
+element.insertAdjacentHTML(position, text);
+</code>
+</pre>
+        <p>
+          De <code>position</code> parameter is een string die aangeeft waar de
+          HTML-tekst moet ingevoegd worden. De mogelijke waarden zijn:
+        </p>
+        <ul>
+          <li><code>'beforebegin'</code>: voor het element zelf</li>
+          <li><code>'afterbegin'</code>: binnen het element, voor de eerste child</li>
+          <li><code>'beforeend'</code>: binnen het element, na de laatste child</li>
+          <li><code>'afterend'</code>: na het element zelf</li>
+        </ul>
+        <p>
+          Hier is een voorbeeld van hoe we de
+          <code>insertAdjacentHTML()</code> methode kunnen gebruiken om een
+          element toe te voegen aan een bestaand element:
+        </p>
+        <div>
+            <ul id="drinks">
+                <li>Koffie</li>
+                <li>Thee</li>
+                <li>Water</li>
+            </ul>
+        </div>
+        <pre>
+<code>
+<span>// We halen de lijst van drankjes op</span>
+const drinks = document.querySelector('#drinks');
+
+<span>// We voegen een nieuw drankje toe aan het einde van de lijst</span>
+drinks.insertAdjacentHTML('beforeend', '&lt;li&gt;Limonade&lt;/li&gt;');
+
+<span>// We voegen een nieuw drankje toe aan het begin van de lijst</span>
+drinks.insertAdjacentHTML('afterbegin', '&lt;li&gt;Cola&lt;/li&gt;');
+
+<span>// We voegen een title toe voor de lijst</span>
+drinks.insertAdjacentHTML('beforebegin', '&lt;h2&gt;Drankjes&lt;/h2&gt;');
+
+<span>// We voegen een footer toe na de lijst</span>
+drinks.insertAdjacentHTML('afterend', '&lt;footer&gt;Dit waren alle drankjes&lt;/footer&gt;');
+</code>
+</pre>
+      </div>
+
+      <div class="centered">
+        <img src="/imgs/positions.png" alt="Insert positions" class="responsive-image">
+      </div>
+      <div class="paragraph">
+        <h2 class="subtitle">Opdracht</h2>
+        <p>
+          Maak na deze les
+          <a
+            href="/pages/exercises/javascript/elements/task-2/description.html"
+            target="_blank"
+            >Opdracht 2: Boodschappenlijst - deel 2</a
+          >.
+        </p>
+      </div>
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

@@ -260,3 +260,7 @@ code span {
 .underline {
   text-decoration: underline;
 }
+
+.space-between{
+  justify-content: space-between;
+}

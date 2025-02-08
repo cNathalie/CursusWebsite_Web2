@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Elementen & Attributen:</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Elementen & Attributen:</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/elements/intro.html">Introductie</a>
+        <a href="/pages/lessons/javascript/elements/query-selector.html"
+          >Query Selector</a
+        >
+        <a href="/pages/lessons/javascript/elements/css-selectors.html"
+          >CSS Selectoren</a
+        >
+        <a href="/pages/lessons/javascript/elements/inner-html.html"
+          >Inner HTML</a
+        >
+        <a href="/pages/lessons/javascript/elements/attributes.html"
+          >Attributen</a
+        >
+        <a href="/pages/exercises/javascript/elements/all-tasks.html"
+          >Oefeningen</a
+        >
+      </div>
+      <div class="paragraph">
+        <p>
+          Attributen zijn stukjes data die we kunnen toevoegen aan HTML
+          elementen. Deze data kunnen we dan gebruiken om elementen te stylen of
+          om ze te manipuleren met JavaScript.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Gekende attributen</h2>
+        <p>
+          Er zijn een aantal attributen die we al kennen, zoals de 'id' en
+          'class' attributen. Deze attributen kunnen we gebruiken om elementen
+          te identificeren of om ze te stylen met CSS.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle" id="sub">Attributen opvragen</h2>
+        <p>
+          We kunnen de attributen van een element opvragen met de
+          <code class="good">getAttribute()</code> methode. Deze methode neemt
+          de naam van het attribuut als argument en geeft de waarde van het
+          attribuut terug.
+        </p>
+        <p>
+          Hier is een voorbeeld van hoe we de
+          <code>getAttribute()</code> methode kunnen gebruiken om de waarde van
+          een attribuut op te vragen:
+        </p>
+        <pre>
+<code>
+<span>// Haal de titel van deze div op</span>
+const element = document.querySelector('#sub');
+
+<span>// Haal de waarde van het 'class' attribuut op</span>
+const value = element.getAttribute('class');
+console.log(value);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle" id="sub2">Attributen wijzigen</h2>
+        <p>
+          We kunnen de waarde van een attribuut wijzigen met de
+          <code class="good">setAttribute()</code> methode. Deze methode neemt
+          de naam van het attribuut en de nieuwe waarde van het attribuut als
+          argumenten.
+        </p>
+        <p>
+          Hier is een voorbeeld van hoe we de
+          <code>setAttribute()</code> methode kunnen gebruiken om de waarde van
+          een attribuut te wijzigen:
+        </p>
+        <pre>
+<code>
+<span>// Haal de titel van deze div op</span>
+const element = document.querySelector('#sub2');
+
+<span>// Wijzig de waarde van het id attribuut</span>
+element.setAttribute('id', 'new-id');
+
+<span>// Haal de nieuwe waarde van het id attribuut op</span>
+const newId = element.getAttribute('id');
+console.log(newId);
+</code>
+</pre>
+        <p>
+          Je kan hier visuele effecten mee maken, zoals een afbeelding die
+          veranderd wanneer je erover hovert. Hieronder hebben we een afbeelding
+          staan. Voorlopig is ze gewoon statisch. Voer nu onderstaande code uit
+          in de console van je browser. Hover over de afbeelding en kijk wat er
+          gebeurt.
+        </p>
+        <pre>
+<code>
+<span>// Haal de afbeelding op</span>
+const img = document.querySelector('#changing-img');
+
+<span>// Voeg een event listener toe die de afbeelding verandert wanneer je erover hovert</span>
+img.addEventListener('mouseover', () => {
+    img.setAttribute('src', '/imgs/need-answers.png');
+    });
+
+<span>// Voeg een event listener toe die de originele afbeelding terug zet wanneer de muis uit de afbeelding gaat</span>
+img.addEventListener('mouseout', () => {
+    img.setAttribute('src', '/imgs/worthy.png');
+    });
+</code>
+</pre>
+      </div>
+
+      <div class="centered">
+        <img
+          id="changing-img"
+          class="responsive-image"
+          src="/imgs/worthy.png"
+          alt="Changing image"
+        />
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle" id="sub3">
+          Aanwezigheid van een attribuut controleren
+        </h2>
+        <p>
+          We kunnen controleren of een element een bepaald attribuut heeft met
+          de
+          <code class="good">hasAttribute()</code> methode. Deze methode neemt
+          de naam van het attribuut als argument en geeft
+          <code class="good">true</code> terug als het attribuut aanwezig is, en
+          <code class="good">false</code> als het attribuut niet aanwezig is.
+        </p>
+        <p>
+          Hier is een voorbeeld van hoe we de
+          <code>hasAttribute()</code> methode kunnen gebruiken om te controleren
+          of een element een bepaald attribuut heeft:
+        </p>
+        <pre>
+<code>
+<span>// Haal de titel van deze div op</span>
+const element = document.querySelector('#sub3');
+
+<span>// Controleer of het class attribuut aanwezig is</span>
+const hasClass = element.hasAttribute('class');
+console.log(hasClass);
+
+<span>// Controleer of het type attribuut aanwezig is</span>
+const hasType = element.hasAttribute('type');
+console.log(hasType);
+</code>
+</pre>
+      </div>
+
+      <div
+        class="card paragraph"
+        data-color="rgb(255,140,255)"
+        id="custom-data"
+      >
+        <h2 class="subtitle">Custom Data Attributen</h2>
+        <p>
+          We kunnen attributen toevoegen aan een element door de attribuutnaam
+          en de attribuutwaarde toe te voegen aan het HTML element. De
+          attribuutnaam en de attribuutwaarde worden gescheiden door een '='
+          teken. De attribuutwaarde moet tussen enkele of dubbele
+          aanhalingstekens staan. De attribuut naam moet altijd met 'data-'
+          beginnen.
+        </p>
+        <p>
+          Hier is een voorbeeld van hoe we een attribuut kunnen toevoegen aan
+          een element:
+        </p>
+        <pre>
+    <code>
+<span>&lt;!-- Een custom data attribuut dat een rgb-string waarde heeft --&gt;</span>
+&lt;div data-color="rgb(255,140,255)"&gt;&lt;/div&gt;
+    </code>
+   </pre>
+        <p>
+          Je kan deze custom data attributen ophalen en uitlezen zoals de
+          andere:
+        </p>
+        <pre>
+    <code>
+<span>// Haal de div op</span>
+const div = document.querySelector('#custom-data');
+
+<span>// Haal de waarde van het data-color attribuut op</span>
+const kleur = div.getAttribute('data-color');
+console.log(kleur);
+    </code>
+</pre>
+      </div>
+      <div class="paragraph">
+        <h2 class="subtitle">Opdracht</h2>
+        <p>
+          Maak na deze les
+          <a
+            href="/pages/exercises/javascript/elements/task-3/description.html"
+            target="_blank"
+            >Opdracht 3: Dynamische afbeelding</a
+          >.
+        </p>
+      </div>
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

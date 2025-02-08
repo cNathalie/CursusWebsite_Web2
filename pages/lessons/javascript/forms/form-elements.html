@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Forms: Elementen</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Forms: Elementen</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/forms/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-elements.html"
+          >Formulier Elementen</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-validation.html"
+          >Formulier Validatie</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-submission.html"
+          >Formulier Verzenden</a
+        >
+        <a
+          href="/pages/exercises/javascript/forms/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Er zijn verschillende input varianten die je kan gebruiken in een
+          invulformulier.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Text Input</h2>
+        <p>
+          Een tekstveld is een van de meest voorkomende input types. Hier kan de
+          gebruiker tekst invoeren. We halen de waarde van een tekstveld op met
+          de <code>.value</code> property.
+        </p>
+        <pre>
+<code>
+<span>HTML</span>
+&lt;input type="text" placeholder="Voer hier tekst in" /&gt;
+
+<span>JavaScript</span>
+const input = document.querySelector('input');
+const inputValue = input.value;
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Password Input</h2>
+        <p>
+          Een wachtwoordveld is een tekstveld waarvan de ingevoerde tekst
+          verborgen wordt. We halen de waarde van een wachtwoordveld op met de
+          <code>.value</code> property.
+        </p>
+        <pre>
+<code>
+<span>HTML</span>
+&lt;input type="password" placeholder="Voer hier je wachtwoord in" /&gt;
+
+<span>JavaScript</span>
+const password = document.querySelector('input[type="password"]');
+const passwordValue = password.value;
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Checkbox</h2>
+        <p>
+          Een checkbox is een vakje waar de gebruiker een vinkje in kan zetten.
+          We halen de waarde van een checkbox op met de
+          <code>.checked</code> property.
+        </p>
+        <pre>
+<code>
+<span>HTML</span>
+&lt;input type="checkbox" id="chk"/&gt;
+
+<label for="chk">Checkbox</label>
+<input type="checkbox" id="chk"/>
+
+<span>JavaScript</span>
+const checkbox = document.querySelector('#chk');
+const isChecked = checkbox.checked;
+console.log(isChecked);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Radio Button</h2>
+        <p>
+          Een radio button is een knop waar de gebruiker uit meerdere opties kan
+          kiezen. We halen de waarde van een radio button op met de
+          <code>.checked</code> property.
+        </p>
+        <pre>
+<code>
+<span>HTML</span>
+&lt;input type="radio" name="colors" value="red" /&gt;
+
+<div class="flex-row">
+<div>
+    <label for="red">Rood</label>
+    <input type="radio" name="colors" value="red" id="red"/>
+</div>
+<div>
+    <label for="green">Groen</label>
+    <input type="radio" name="colors" value="green" id="green"/>
+</div>
+</div>
+<span>JavaScript</span>
+const checkedRadioButton = document.querySelector('input[name="colors"]:checked');
+console.log(checkedRadioButton.value);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Select</h2>
+        <p>
+          Een select element is een dropdown menu waar de gebruiker een optie
+          uit kan kiezen. We halen de waarde van een select element op met de
+          <code>.value</code> property.
+        </p>
+        <pre>
+<code>
+<span>HTML: Single select</span>
+&lt;select name="fruits" id="fruits"&gt;
+    &lt;option value="apple"&gt;Appel&lt;/option&gt;
+    &lt;option value="banana"&gt;Banaan&lt;/option&gt;
+&lt;/select&gt;
+
+<select name="fruits" id="fruits">
+    <option value="apple">Appel</option>
+    <option value="banana">Banaan</option>
+    <option value="strawberries">Aardbeien</option>
+</select>
+
+<span>JavaScript: Single select</span>
+const select = document.querySelector('#fruits');
+const selectedOption = select.value;
+console.log(selectedOption);
+
+<span>HTML: Multiple select</span>
+&lt;select name="vegetables" id="vegetables" multiple&gt;
+    &lt;option value="carrot"&gt;Wortel&lt;/option&gt;
+    &lt;option value="cucumber"&gt;Komkommer&lt;/option&gt;
+    &lt;option value="tomato"&gt;Tomaat&lt;/option&gt;
+&lt;/select&gt;
+
+<select name="vegetables" id="vegetables" size="3" multiple>
+    <option value="carrot">Wortel</option>
+    <option value="cucumber">Komkommer</option>
+    <option value="tomato">Tomaat</option>
+</select>
+(Je moet CTRL inhouden om er meerdere te selecteren.)
+
+<span>JavaScript: Multiple select</span>
+const selectedOptions = document.querySelectorAll('#vegetables option:checked');
+console.log(selectedOptions);
+</code>
+</pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

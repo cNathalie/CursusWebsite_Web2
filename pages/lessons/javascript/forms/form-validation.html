@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Forms:</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Forms:</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/forms/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-elements.html"
+          >Formulier Elementen</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-validation.html"
+          >Formulier Validatie</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-submission.html"
+          >Formulier Verzenden</a
+        >
+        <a
+          href="/pages/exercises/javascript/forms/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Wanneer we input krijgen van de gebruiker, dan willen we die
+          valideren. Dit betekent dat we controleren of de input correct is. Als
+          de input niet correct is, dan willen we de gebruiker laten weten wat
+          er mis is. Dit kan bijvoorbeeld door een bericht te tonen of door de
+          gebruiker te laten weten welke velden nog ingevuld moeten worden.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Strings valideren</h2>
+        <p>
+          Een van de meest voorkomende validaties is het controleren of een
+          string niet leeg is. Dit kan je doen door de <code>.length</code>
+          property van een string te gebruiken. Als de lengte van de string
+          groter is dan 0, dan is de string niet leeg.
+        </p>
+        <pre>
+<code>
+const input = document.querySelector('input');
+const value = input.value;
+
+if (value.length > 0) {
+    console.log('De string is niet leeg');
+} else {
+    console.log('De string is leeg');
+}
+</code>
+</pre>
+<p>
+    Je kan ook een nullcheck doen:
+</p>
+<pre>
+<code>
+const input = document.querySelector('input');
+const value = input.value;
+
+if (value) {
+    console.log('De string is niet leeg');
+} else {
+    console.log('De string is leeg');
+}
+</code>
+</pre>
+        
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Strings vergelijken</h2>
+        <p>
+            Het kan ook zijn dat je strings met elkaar wil vergelijken. Dit kan op
+            twee manieren:
+          </p>
+          <ul>
+            <li>
+              Met de operatoren <code>===</code>, <code>!==</code>, &lt; en &gt;. 
+            </li>
+            <li>
+              Met de methode <code>.localeCompare()</code>
+            </li>
+            </ul>
+            <p>
+              Hieronder zie je een voorbeeld van hoe je strings kan vergelijken met
+              de operatoren:
+            </p>
+            <input type="text" id="comparing">
+            <pre>
+<code>
+const input = document.querySelector('#comparing');
+const value = input.value;
+
+if (value === 'hello') {
+    console.log('De string is gelijk aan "hello"');
+} else {
+    console.log('De string is niet gelijk aan "hello"');
+}
+</code>
+</pre>
+<p>
+    Hieronder zie je een voorbeeld van hoe je strings kan vergelijken met de
+    <code>.localeCompare()</code> methode:
+</p>
+<pre>
+<code>
+const input = document.querySelector('#comparing');
+const value = input.value;
+
+if (value.localeCompare('hello') === 0) {
+    console.log('De string is gelijk aan "hello"');
+} else {
+    console.log('De string is niet gelijk aan "hello"');
+}
+</code>
+</pre>
+    <p>
+        De methode geeft een getal terug dat aangeeft welke tekst lexicografisch eerst komt:
+    </p>
+    <ul>
+        <li>Het restultaat is negatief indien string 1 voor string 2 komt.</li>
+        <li>Het resultaat is positief indien string 1 na string 2 komt.</li>
+        <li>Het resultaat is 0 indien de strings gelijk zijn.</li>
+    </ul>
+
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

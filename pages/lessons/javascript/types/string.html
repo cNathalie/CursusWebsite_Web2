@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
     <link rel="stylesheet" href="/styles/style.css" type="text/css" />
-    <title>Types in depth: Intro</title>
+    <title>Types in depth: String</title>
   </head>
   <body>
     <div class="info-page-container">
       <div class="header">
-        <h1 class="title">Types in depth: Introductie</h1>
+        <h1 class="title">Types in depth: String</h1>
         <img class="label-img" src="/imgs/need-to-know.png" alt="" />
       </div>
 
@@ -19,12 +19,227 @@
           Introductie
         </a>
         <a href="/pages/lessons/javascript/types/number.html">Number</a>
+        <a href="/pages/lessons/javascript/types/math.html">Math Object</a>
         <a href="/pages/lessons/javascript/types/string.html">String</a>
       </div>
 
       <div class="paragraph">
-        </div>
+        <p>
+          Het type <code>String</code> in JavaScript wordt gebruikt om tekst te
+          representeren. Een string is een reeks van karakters, zoals letters,
+          cijfers, spaties, leestekens, enzovoort.
+        </p>
+      </div>
 
+      <div class="card paragraph">
+        <h2 class="subtitle">String declareren</h2>
+        <p>Er zijn drie manieren om een String aan te maken:</p>
+        <ul>
+          <li>Met enkele quotes: <code>'Hello, world!'</code></li>
+          <li>Met dubbele quotes: <code>"Hello, world!"</code></li>
+          <li>Met backticks: <code>`Hello, world!`</code></li>
+        </ul>
+        <p>
+          Je kan een String ook declareren met de
+          <code>String</code> constructor:
+        </p>
+        <pre>
+<code>
+<span>// Met het new keyword</span>
+const str = new String('Hello, world!');
+console.log(str);
+
+<span>// Zonder het new keyword</span>
+const str2 = String('Hello, world!');
+console.log(str2);
+</code>
+</pre>
+        <p>
+          De simpelste, en
+          <span class="good underline">aanbevolen manier</span> is het aanmaken
+          van een string literal.
+        </p>
+        <pre>
+<code>
+<span>// String literal</span>
+const str3 = 'Hello, world!';
+console.log(str3);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Concateneren</h2>
+        <p>
+          Soms is het nodig om dynamisch strings op te bouwen. Dit kan je doen
+          door de + operator te gebruiken.
+        </p>
+        <pre>
+<code>
+<span>// Concateneren met de + operator</span>
+const firstName = 'John';
+const lastName = 'Doe';
+const fullName = firstName + ' ' + lastName;
+console.log(fullName);
+</code>
+</pre>
+        <p>Je kan ook concateneren met de methode <code>concat()</code>:</p>
+        <pre>
+<code>
+<span>// Concateneren met de concat() methode</span>
+const firstName = 'John';
+const lastName = 'Doe';
+const fullName = firstName.concat(' ', lastName);
+console.log(fullName);
+</code>
+</pre>
+        <p>
+          Je voelt aan dat bovenstaande manieren omslachtig en gevoelig voor
+          bugs kunnen zijn. Het is daarom gemakkelijker en
+          <span class="good underline">aanbevolen</span> om een template literal
+          aan te maken met backticks (``) en variabelen in te voegen met
+          <code>${myVar}</code>.
+        </p>
+        <pre>
+<code>
+<span>// Template literal met variabelen</span>
+const firstName = 'John';
+const lastName = 'Doe';
+const fullName = `${firstName} ${lastName}`;
+console.log(fullName);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">String methodes</h2>
+        <p>
+          Strings hebben verschillende methodes die je kan gebruiken om
+          manipulaties uit te voeren. Hier zijn enkele voorbeelden:
+        </p>
+        <ul>
+          <li><code>length</code>: geeft de lengte van de string terug</li>
+          <li>
+            <code>toUpperCase()</code>: zet de string om naar hoofdletters
+          </li>
+          <li>
+            <code>toLowerCase()</code>: zet de string om naar kleine letters
+          </li>
+          <li>
+            <code>trim()</code>: verwijdert spaties aan het begin en einde van
+            de string
+          </li>
+          <li>
+            <code>split()</code>: splitst de string op in een array van
+            substrings, je geeft mee op welk karakter de splitsing moet
+            gebeuren.
+          </li>
+          <li>
+            <code>replace()</code>: vervangt een deel van de string door een
+            andere string
+          </li>
+          <li>
+            <code>charAt()</code>: geeft het karakter op een bepaalde index
+            terug
+          </li>
+          <li>
+            <code>indexOf()</code>: geeft de index van een bepaalde substring
+          </li>
+          <li>
+            <code>lastIndexOf()</code>: geeft de laatste index van een bepaalde
+            substring
+          </li>
+          <li>
+            <code>substring()</code>: geeft een deel van de string terug, je
+            geeft de start en eind index mee
+          </li>
+          <li>
+            <code>slice()</code>: geeft een deel van de string terug, je geeft
+            de start en eind index mee
+          </li>
+        </ul>
+        <p>Probeer enkele van deze methodes uit:</p>
+        <pre>
+<code>
+<span>// Een string met veel 'trailing spaces'</span>
+const str = 'Hello, world!     ';
+
+<span>// De lengte = het aantal karakters</span>
+console.log(str.length);
+
+<span>// Omzetten naar hoofdletters</span>
+console.log(str.toUpperCase());
+
+<span>// Omzetten naar kleine letters</span>
+console.log(str.toLowerCase());
+
+<span>// Spaties verwijderen</span>
+console.log(str.trim());
+
+<span>// Opsplitsen in een array</span>
+console.log(str.split(',')); 
+
+<span>// Vervangen van een deel van de string</span>
+console.log(str.replace('world', 'John'));
+
+<span>// Karakter op een bepaalde index</span>
+console.log(str.charAt(0));
+
+<span>// Index van een bepaalde substring</span>
+console.log(str.indexOf('world'));
+
+<span>// Laatste index van een bepaalde substring</span>
+console.log(str.lastIndexOf('world'));
+
+<span>// Deel van de string</span>
+console.log(str.substring(0, 5));
+
+<span>// Deel van de string</span>
+console.log(str.slice(0, 5));
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Speciale karakters</h2>
+        <p>
+          Strings kunnen speciale karakters bevatten die je niet zomaar kan
+          typen. Om deze karakters te gebruiken, moet je een escape karakter
+          gebruiken: de backslash (\).
+        </p>
+        <p>
+          Sommige karakters maken deel uit van de programmeertaal en worden niet dus
+          niet standaard letterlijk weergegeven in strings. Als je ze dus echt
+          wil zien, moet je ze escapen.
+        </p>
+        <p>Hier zijn enkele voorbeelden van speciale karakters:</p>
+        <ul>
+          <li><code>\n</code>: nieuwe lijn</li>
+          <li><code>\t</code>: tab</li>
+          <li><code>\'</code>: enkele quote</li>
+          <li><code>\"</code>: dubbele quote</li>
+          <li><code>\\</code>: backslash</li>
+        </ul>
+        <p>Probeer enkele van deze karakters uit:</p>
+        <pre>
+<code>
+<span>// Nieuwe lijn</span>
+console.log('Hello\nworld!');
+
+<span>// Tab</span>
+console.log('Hello\tworld!');
+
+<span>// Enkele quote</span>
+console.log('Hello\'world!');
+
+<span>// Dubbele quote</span>
+console.log('Hello\"world!');
+
+<span>// Backslash</span>
+console.log('Hello\\world!');
+</code>
+</pre>
+      </div>
 
       <a id="back-to-top" href="#">Terug naar boven</a>
     </div>

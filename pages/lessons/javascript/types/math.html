@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Types in depth: Math</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Types in depth: Math Object</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/types/introduction.html">
+          Introductie
+        </a>
+        <a href="/pages/lessons/javascript/types/number.html">Number</a>
+        <a href="/pages/lessons/javascript/types/math.html">Math Object</a>
+        <a href="/pages/lessons/javascript/types/string.html">String</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Het Math object is een ingebouwd object in JavaScript dat je toelaat
+          om wiskundige operaties uit te voeren. Het object bevat verschillende
+          methodes en eigenschappen die je kan gebruiken om berekeningen uit te
+          voeren.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Random getallen</h2>
+        <p>
+          Met het Math object kan je random getallen genereren. Dit kan je doen
+          met de <code>Math.random()</code> methode. Deze methode geeft een
+          willekeurig getal tussen 0 en 1 terug.
+        </p>
+        <p>
+          Door het resultaat van <code>Math.random()</code> verder te
+          manipuleren, kan je random getallen genereren binnen een bepaald
+          bereik.
+        </p>
+        <p>Probeer het uit:</p>
+        <pre>
+<code>
+<span>// Een random getal tussen 0 en 1</span>
+const random1 = Math.random();
+console.log(random1);
+
+<span>// Een random getal tussen 0 en 10</span>
+const random2 = Math.random() * 10;
+console.log(random2);
+
+<span>// Een random getal tussen 5 en 50</span>
+const random3 = 5 + Math.random() * 50;
+console.log(random3);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Afronden naar beneden</h2>
+        <p>
+          Je kan getallen afronden naar beneden met de
+          <code class="good">Math.floor()</code> methode. Deze methode rondt een getal af
+          naar het dichtsbijzijnde gehele getal dat <strong>kleiner</strong> is dan of gelijk is
+          aan het gegeven getal.
+        </p>
+        <p>Probeer het uit:</p>
+        <pre>
+<code>
+<span>// Afronden naar beneden van een positief getal</span>
+const number = 12.34;
+const rounded = Math.floor(number);
+console.log(rounded);
+
+<span>// Afronden naar beneden van een negatief getal</span>
+const negativeNumber = -12.34;
+const negativeRounded = Math.floor(negativeNumber);
+console.log(negativeRounded);
+</code>
+</pre>
+      </div>
+
+        <div class="card paragraph">
+            <h2 class="subtitle">Afronden naar boven</h2>
+            <p>
+            Je kan getallen afronden naar boven met de
+            <code class="good">Math.ceil()</code> methode. Deze methode rondt een getal af
+            naar het dichtsbijzijnde gehele getal dat <strong>groter</strong> is dan of gelijk is
+            aan het gegeven getal.
+            </p>
+            <p>Probeer het uit:</p>
+<pre>
+<code>
+<span>// Afronden naar boven van een positief getal</span>
+const number = 12.34;
+const rounded = Math.ceil(number);
+console.log(rounded);
+
+<span>// Afronden naar boven van een negatief getal</span>
+const negativeNumber = -12.34;
+const negativeRounded = Math.ceil(negativeNumber);
+console.log(negativeRounded);
+</code>
+</pre>
+        </div>
+
+        <div class="card paragraph">
+            <h2 class="subtitle">Afronden naar het dichtstbijzijnde gehele getal</h2>
+            <p>
+            Je kan getallen afronden naar het dichtstbijzijnde gehele getal met de
+            <code class="good">Math.round()</code> methode. Deze methode rondt een getal af
+            naar het dichtstbijzijnde gehele getal.
+            </p>
+            <p>Probeer het uit:</p>
+<pre>
+<code>
+<span>// Afronden naar het dichtstbijzijnde gehele getal van een positief getal</span>
+const number = 12.34;
+const rounded = Math.round(number);
+console.log(rounded);
+
+const number2 = 12.7;
+const rounded2 = Math.round(number2);
+console.log(rounded2);
+
+<span>// Afronden naar het dichtstbijzijnde gehele getal van een negatief getal</span>
+const negativeNumber = -12.34;
+const negativeRounded = Math.round(negativeNumber);
+console.log(negativeRounded);
+
+const negativeNumber2 = -12.7;
+const negativeRounded2 = Math.round(negativeNumber2);
+console.log(negativeRounded2);
+</code>
+</pre>
+<p>
+De <code class="good">Math.round()</code> methode rondt af naar het dichtstbijzijnde gehele getal. Als het getal 0.5 of hoger is, wordt er naar boven afgerond. 
+Als het getal lager is dan 0.5, wordt er naar beneden afgerond.
+</p>
+        </div>
+
+        <div class="card paragraph">
+            <h2 class="subtitle">Maximum en minimum</h2>
+            <p>
+            Je kan het maximum en minimum getal van een reeks getallen bepalen met de
+            <code class="good">Math.max()</code> en <code class="good">Math.min()</code> methodes.
+            </p>
+            <p>Probeer het uit:</p>
+<pre>
+<code>
+<span>// Maximum getal</span>
+const max = Math.max(1, 2, 3, 4, 5);
+console.log(max);
+
+<span>// Minimum getal</span>
+const min = Math.min(1, 2, 3, 4, 5);
+console.log(min);
+</code>
+</pre>
+        </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

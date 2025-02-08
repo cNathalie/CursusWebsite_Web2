@@ -13,12 +13,12 @@
         <h1 class="title">Types in depth: Number</h1>
         <img class="label-img" src="/imgs/need-to-know.png" alt="" />
       </div>
-
       <div class="link-bar">
         <a href="/pages/lessons/javascript/types/introduction.html">
           Introductie
         </a>
         <a href="/pages/lessons/javascript/types/number.html">Number</a>
+        <a href="/pages/lessons/javascript/types/math.html">Math Object</a>
         <a href="/pages/lessons/javascript/types/string.html">String</a>
       </div>
 
@@ -32,7 +32,7 @@
           Gehele getallen worden dus ook opgeslagen als kommagetallen.
           Bijvoorbeeld het gehele getal 42 zal intern opgeslagen worden als
           42.00 in het <code>Number</code> type, omdat JavaScript gebruikmaakt
-          van het IEEE 754-standaard voor dubbele precisie (64-bit)
+          van het IEEE 754-standaard voor dubbele precisie
           floating-point getallen. Dit betekent dat 42 en 42.00 dezelfde waarde
           vertegenwoordigen en op dezelfde manier worden behandeld.
         </p>
@@ -332,9 +332,7 @@ console.log(typeof(commaNumber));
           De unary plus operator zal de string omzetten naar een getal. Als de
           string geen getal is, zal de operator <code>NaN</code> teruggeven.
         </p>
-        <p>
-            Dit werkt zowel voor gehele getallen als kommagetallen.
-        </p>
+        <p>Dit werkt zowel voor gehele getallen als kommagetallen.</p>
         <p>Probeer het uit:</p>
         <pre>
 <code>
@@ -374,10 +372,30 @@ console.log(typeof(commaNumber));
       </div>
 
       <div class="card paragraph">
+        <h2 class="subtitle">Snel afronden</h2>
+        <p>
+          Je kan ook het aantal cijfers na de komma beperken door gebruik te
+          maken van de <code class="good">.toFixed(n)</code> methode.
+        </p>
+        <p>Probeer het uit:</p>
+        <pre>
+<code>
+<span>// Declareer een kommagetal</span>
+const float = 123.456789;
+
+<span>// Gebruik de toFixed() methode om het aantal cijfers na de komma te beperken</span>
+const roundedFloat = float.toFixed(2);
+console.log(roundedFloat);
+console.log(typeof(roundedFloat));
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
         <h2 class="subtitle">Van Number naar String</h2>
         <p>
-            Soms wil je een getal omzetten naar een string. Dit kan je doen met
-            de functie <code>toString()</code>.
+          Soms wil je een getal omzetten naar een string. Dit kan je doen met de
+          functie <code>toString()</code>.
         </p>
         <p>Probeer het uit:</p>
         <pre>

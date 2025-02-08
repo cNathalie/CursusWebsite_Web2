@@ -23,6 +23,8 @@ Deze cursus wordt je aangebracht onder de vorm van een project om verschillende 
 - Aan het einde van deze lessenreeksen heb je een volledig naslagwerk dat je in de toekomst kan raadplegen
 - Door deze cursus op GitHub (Classroom) te hebben, kan je er overal aan en kan ik als docent gemakkelijk je leertraject volgen en je oefeningen verbeteren.
 
+Je doet de cursus lokaal draaien door met de rechtermuisklik op pages > index.html te kiezen voor 'Open with Live Server'.
+
 ## WAAROM IS DE MAPPENSTRUCTUUR IN HET ENGELS   
 Dit is een zeer bewuste keuze.
 Engels is zowat de "universele" taal onder ontwikkelaars, en in de meeste bedrijven.
@@ -43,5 +45,5 @@ Niet indienen of te laat indienen resulteert in een 0 voor deze opdracht.
 
 Alle opdrachten van de permanente evaluatie tijdens het semester staan samen op 30% van je eindtotaal voor het vak Web 2.
 
-Aan het einde van het semester zal er een examen plaatsvinden die je zowel beproeft of theorie als praktijk.
+Aan het einde van het semester zal er een examen plaatsvinden die je beproeft op zowel theorie als praktijk.
 Dit examen telt mee voor de resterende 70% van je eindtotaal voor het vak Web 2.

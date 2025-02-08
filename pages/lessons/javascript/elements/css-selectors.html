@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Elementen & Attributen:</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header" id="header">
+        <h1 class="title">Elementen & Attributen:</h1>
+        <img class="label-img" src="/imgs/need-to-know.png" alt="" />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/elements/intro.html">Introductie</a>
+        <a href="/pages/lessons/javascript/elements/query-selector.html"
+          >Query Selector</a
+        >
+        <a href="/pages/lessons/javascript/elements/css-selectors.html"
+          >CSS Selectoren</a
+        >
+        <a href="/pages/lessons/javascript/elements/inner-html.html"
+          >Inner HTML</a
+        >
+        <a href="/pages/lessons/javascript/elements/attributes.html"
+          >Attributen</a
+        >
+        <a href="/pages/exercises/javascript/elements/all-tasks.html"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          CSS Selectoren zijn een krachtige manier om elementen te selecteren in
+          de DOM.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">De verschillende soorten</h2>
+        <p>Er zijn verschillende soorten CSS Selectoren:</p>
+        <ul>
+          <li><strong>Element Selector</strong>: <code>div</code></li>
+          <li><strong>ID Selector</strong>: <code>#header</code></li>
+          <li><strong>Class Selector</strong>: <code>.title</code></li>
+          <li>
+            <strong>Attribute Selector</strong>: <code>[type="text"]</code>
+          </li>
+          <li><strong>Child Selector</strong>: <code>ul > li</code></li>
+          <li><strong>Descendant Selector</strong>: <code>div p</code></li>
+          <li><strong>Pseudo-class</strong>: <code>a:visited</code></li>
+        </ul>
+
+        <p>
+          Bekijk voor een diepgaandere uitleg
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors"
+            >deze pagina</a
+          >.
+        </p>
+      </div>
+
+      <div class="paragraph student-template">
+        <h2 class="subtitle">Probeer het uit:</h2>
+        <p>
+          Probeer de verschillende soorten CSS Selectoren uit in de console van
+          je browser.
+        </p>
+
+        <pre>
+<code>
+<span>// Element Selector: alle divs op deze pagina</span>
+const divs = document.querySelectorAll('div');
+console.log(divs);
+
+<span>// ID Selector: het element met id 'header'</span>
+const header = document.querySelector('#header');
+console.log(header);
+
+<span>// Class Selector: alle elementen met class 'title'</span>
+const titles = document.querySelectorAll('.title');
+console.log(titles);
+
+<span>// Attribute Selector: alle elementen met het attribuut en waarde type="text"</span>
+const attr = document.querySelector('[href="#"]');
+console.log(attr);
+
+<span>// Child Selector: alle li elementen die het kind zijn van een ul element </span>
+const lis = document.querySelectorAll('ul > li');
+console.log(lis);
+
+<span>// Descendant Selector: het eerste p element dat zich onder de eerste div bevindt</span>
+const p = document.querySelector('div p');
+console.log(p);
+
+<span>// Pseudo-class: haal het derde a element op onder het eerste element dat de klasse 'link-bar' draagt</span>
+const thirdLink = document.querySelector('.link-bar a:nth-child(3)');
+console.log(thirdLink);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Selecteren met pseudo-klasses</h2>
+        <p>
+          Zoals je ziet kunnen de selectoren van pseudo-klassen complexer zijn.
+        </p>
+        <p>Hierbij heb je enkele veel gebruikte voorbeelden:</p>
+        <ul>
+          <li>
+            <strong>:first-child</strong>: selecteer het eerste kind van een
+            element
+          </li>
+          <li>
+            <strong>:last-child</strong>: selecteer het laatste kind van een
+            element
+          </li>
+          <li>
+            <strong>:nth-child(n)</strong>: selecteer het n-de kind van een
+            element
+          </li>
+        </ul>
+      </div>
+
+      <div class="paragraph">
+        <h2 class="subtitle">Opdracht</h2>
+        <p>
+          Maak na deze les
+          <a
+            href="/pages/exercises/javascript/elements/task-1/description.html"
+            target="_blank"
+            >Opdracht 1: Boodschappenlijst</a
+          >.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

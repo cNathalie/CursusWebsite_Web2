@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Forms: Data Manipulatie</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Forms: Data Manipulatie</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/forms/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-elements.html"
+          >Formulier Elementen</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-validation.html"
+          >Formulier Validatie</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-data-manipulation.html"
+          >Data Manipulatie</a
+        >
+        <a href="/pages/lessons/javascript/forms/form-submission.html"
+          >Formulier Verzenden</a
+        >
+        <a
+          href="/pages/exercises/javascript/forms/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Wanneer we een formulier hebben ingevuld, dan willen we de data die de
+          gebruiker heeft ingevoerd manipuleren. Dit kan bijvoorbeeld zijn om de
+          data te valideren, om de data te verwerken of om de data te tonen aan
+          de gebruiker.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Arrays sorteren</h2>
+        <p>
+          Een van de meest voorkomende manieren om data te manipuleren is door
+          arrays te sorteren. Dit kan je doen met de
+          <code>.sort()</code> methode. Deze methode sorteert de elementen van
+          een array in alfabetische volgorde.
+        </p>
+        <pre>
+<code>
+const animals = ['zebra', 'aap', 'giraf', 'ezel'];
+animals.sort();
+
+console.log(fruits); 
+</code>
+
+
+
+</pre>
+        <p>
+          Je kan ook een optionele parameter meegeven aan de
+          <code>.sort()</code> methode. Deze parameter is een functie die twee
+          argumenten krijgt. Deze argumenten zijn de twee elementen die met
+          elkaar vergeleken worden. De functie zal een negatief getal teruggeven
+          als het eerste element voor het tweede element moet komen, een
+          positief getal als het tweede element voor het eerste element moet
+          komen, en 0 als de elementen gelijk zijn.
+        </p>
+        <pre>
+<code>
+const numbers = [4, 2, 5, 1, 3];
+numbers.sort((a, b) => a - b);
+
+console.log(numbers);
+</code>
+</pre>
+
+        <p>
+          <span class="important">Wat gebeurt er hier?</span>
+        </p>
+
+        <p>
+          <strong>Array</strong>: We hebben een array genaamd numbers met de
+          waarden [4, 2, 5, 1, 3].
+        </p>
+        <p>
+          <strong>Sorteren</strong>: We roepen de sort functie aan op deze
+          array. De sort functie accepteert een optionele vergelijkingsfunctie
+          als argument. In dit geval geven we een functie (a, b) => a - b door.
+        </p>
+        <p>
+          <strong>Hoe werkt de vergelijkingsfunctie?</strong> <br />De
+          vergelijkingsfunctie bepaalt de volgorde van de elementen. <br />Hier
+          is hoe het werkt:
+        </p>
+        <ul>
+          <p>Vergelijking: (a, b) => a - b</p>
+          <li>Als a - b een negatief getal is, wordt a vóór b geplaatst.</li>
+          <li>
+            Als a - b nul is, blijven a en b in hun oorspronkelijke volgorde.
+          </li>
+          <li>Als a - b een positief getal is, wordt a na b geplaatst.</li>
+        </ul>
+        <p><strong>Stap-voor-stap</strong></p>
+        <ul>
+          <li>Vergelijk 4 en 2: 4 - 2 = 2 (positief), dus 2 komt vóór 4.</li>
+          <li>Vergelijk 2 en 5: 2 - 5 = -3 (negatief), dus 2 blijft vóór 5.</li>
+          <li>Vergelijk 5 en 1: 5 - 1 = 4 (positief), dus 1 komt vóór 5.</li>
+          <li>Vergelijk 1 en 3: 1 - 3 = -2 (negatief), dus 1 blijft vóór 3.</li>
+          <li>Vergelijk 3 en 4: 3 - 4 = -1 (negatief), dus 3 blijft vóór 4.</li>
+        </ul>
+
+        Na het doorlopen van alle vergelijkingen, wordt de array gesorteerd als
+        [1, 2, 3, 4, 5].
+
+        <p>
+          <span class="good">Opmerking:</span> De
+          <code>.sort()</code> methode sorteert de array in-place, wat betekent
+          dat de oorspronkelijke array wordt gewijzigd.
+        </p>
+
+        <p>
+          <span class="important">Opgelet !!</span> <br> De <code>.sort()</code> methode zonder
+          parameter geeft vaak nutteloze resultaten terug!
+        </p>
+        <p>
+          Je zou in het voorbeeld hieronder misschien verwachten dat de array
+          [24, 2, 5, 11, 302] gesorteerd wordt naar [2, 5, 11, 24, 302].
+          Logisch, van klein naar groot. Gooi de code in de Console en bekijk wat er gebeurt.
+        </p>
+<pre>
+<code>
+const numbers = [24, 2, 5, 11, 302];
+numbers.sort();
+console.log(numbers); 
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Objecten sorteren</h2>
+        <p>
+          Als je een array van objecten hebt, kan je deze sorteren op basis van
+          een specifiek eigenschap van het object. Dit kan je doen door een
+          vergelijkingsfunctie mee te geven aan de
+          <code>.sort()</code> methode.
+        </p>
+        <pre>
+<code>
+const animals = [
+    { name: 'zebra', legs: 4 },
+    { name: 'aap', legs: 2 },
+    { name: 'giraf', legs: 4 },
+    { name: 'ezel', legs: 4 },
+    { name: 'spin', legs: 8 },
+    {name: 'sprookjesdier', legs: 3}
+];
+
+animals.sort((a, b) => a.legs - b.legs);
+
+console.log(animals);
+</code>
+</pre>
+        <p>
+          In dit voorbeeld sorteren we de array van objecten op basis van het
+          aantal benen dat elk dier heeft. De vergelijkingsfunctie
+          <code>(a, b) => a.legs - b.legs</code> vergelijkt de
+          <code>legs</code> eigenschap van elk object.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

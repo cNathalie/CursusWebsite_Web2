@@ -18,7 +18,7 @@ Examenmateriaal betekend dat je op het examen zowel theoretische als practische 
 
 ## WAAROM IS DE CURSUS EEN WEBSITE
 Deze cursus wordt je aangebracht onder de vorm van een project om verschillende redenen:
-- Zo raak je het gewend om in een grotere project-structuur je weg te vinden
+- Zo raak je het gewend om in een grotere projectstructuur je weg te vinden
 - We leren om een website dynamisch op te bouwen, er is geen betere plek dan in een echt webproject om te leren hoe
 - Aan het einde van deze lessenreeksen heb je een volledig naslagwerk dat je in de toekomst kan raadplegen
 - Door deze cursus op GitHub (Classroom) te hebben, kan je er overal aan en kan ik als docent gemakkelijk je leertraject volgen en je oefeningen verbeteren.

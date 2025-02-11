@@ -28,6 +28,9 @@
         <a href="/pages/lessons/javascript/forms/form-validation.html"
           >Formulier Validatie</a
         >
+        <a href="/pages/lessons/javascript/forms/form-data-manipulation.html"
+          >Data Manipulatie</a
+        >
         <a href="/pages/lessons/javascript/forms/form-submission.html"
           >Formulier Verzenden</a
         >
@@ -68,10 +71,8 @@ if (value.length > 0) {
 }
 </code>
 </pre>
-<p>
-    Je kan ook een nullcheck doen:
-</p>
-<pre>
+        <p>Je kan ook een nullcheck doen:</p>
+        <pre>
 <code>
 const input = document.querySelector('input');
 const value = input.value;
@@ -83,29 +84,26 @@ if (value) {
 }
 </code>
 </pre>
-        
       </div>
 
       <div class="paragraph card">
         <h2 class="subtitle">Strings vergelijken</h2>
         <p>
-            Het kan ook zijn dat je strings met elkaar wil vergelijken. Dit kan op
-            twee manieren:
-          </p>
-          <ul>
-            <li>
-              Met de operatoren <code>===</code>, <code>!==</code>, &lt; en &gt;. 
-            </li>
-            <li>
-              Met de methode <code>.localeCompare()</code>
-            </li>
-            </ul>
-            <p>
-              Hieronder zie je een voorbeeld van hoe je strings kan vergelijken met
-              de operatoren:
-            </p>
-            <input type="text" id="comparing">
-            <pre>
+          Het kan ook zijn dat je strings met elkaar wil vergelijken. Dit kan op
+          twee manieren:
+        </p>
+        <ul>
+          <li>
+            Met de operatoren <code>===</code>, <code>!==</code>, &lt; en &gt;.
+          </li>
+          <li>Met de methode <code>.localeCompare()</code></li>
+        </ul>
+        <p>
+          Hieronder zie je een voorbeeld van hoe je strings kan vergelijken met
+          de operatoren:
+        </p>
+        <input type="text" id="comparing" />
+        <pre>
 <code>
 const input = document.querySelector('#comparing');
 const value = input.value;
@@ -117,11 +115,12 @@ if (value === 'hello') {
 }
 </code>
 </pre>
-<p>
-    Hieronder zie je een voorbeeld van hoe je strings kan vergelijken met de
-    <code>.localeCompare()</code> methode:
-</p>
-<pre>
+        <p>
+          Hieronder zie je een voorbeeld van hoe je strings kan vergelijken met
+          de
+          <code>.localeCompare()</code> methode:
+        </p>
+        <pre>
 <code>
 const input = document.querySelector('#comparing');
 const value = input.value;
@@ -133,15 +132,162 @@ if (value.localeCompare('hello') === 0) {
 }
 </code>
 </pre>
-    <p>
-        De methode geeft een getal terug dat aangeeft welke tekst lexicografisch eerst komt:
-    </p>
-    <ul>
-        <li>Het restultaat is negatief indien string 1 voor string 2 komt.</li>
-        <li>Het resultaat is positief indien string 1 na string 2 komt.</li>
-        <li>Het resultaat is 0 indien de strings gelijk zijn.</li>
-    </ul>
+        <p>
+          De methode geeft een getal terug dat aangeeft welke tekst
+          lexicografisch eerst komt:
+        </p>
+        <ul>
+          <li>
+            Het restultaat is negatief indien string 1 voor string 2 komt.
+          </li>
+          <li>Het resultaat is positief indien string 1 na string 2 komt.</li>
+          <li>Het resultaat is 0 indien de strings gelijk zijn.</li>
+        </ul>
+      </div>
 
+      <div class="paragraph card">
+        <h2 class="subtitle">Gelijkheid van twee waardes bepalen</h2>
+        <p>
+          Soms wil je controleren of twee waardes gelijk zijn aan elkaar. Dit
+          kan je doen met de <code>===</code> operator. Deze operator
+          controleert of de waardes gelijk zijn en of ze van hetzelfde type
+          zijn. Als je enkel wil controleren of de waardes gelijk zijn, dan kan
+          je de <code>==</code>
+          operator gebruiken.
+        </p>
+        <p>
+          Hieronder staan twee inputvelden, het eerste is van het type
+          <code>text</code> en het tweede is van het type <code>number</code>.
+          Vul zowel in de de tekst-input als in de number-input dezelfde waarde
+          in. Voer daarna de JavaScript-code uit in de Console-tab van de
+          Developer Tools om te zien of de waardes gelijk zijn.
+        </p>
+        <div class="centered">
+          <input type="text" id="input1" /> ?=
+          <input type="number" id="input2" />
+        </div>
+        <pre>
+<code>
+const input1 = document.querySelector('#input1');
+const input2 = document.querySelector('#input2');
+
+if (input1.value === input2.value) {
+    console.log('De waardes zijn gelijk');
+} else {
+    console.log('De waardes zijn niet gelijk');
+}
+</code>
+</pre>
+        <p>
+          De waardes zijn gelijk als ze van hetzelfde type zijn en dezelfde
+          waarde hebben. Inputvelden geven ALTIJD strings terug, ook wanneer het
+          type <code>number</code> is!
+        </p>
+
+        <p>
+          Als we onze number-input waarde echt als een getal willen behandelen,
+          moeten we het dus eerst omzetten naar een Number:
+        </p>
+        <pre>
+<code>
+const input1 = document.querySelector('#input1');
+const input2 = document.querySelector('#input2');
+
+<span>// Zet de string om naar een Number</span>
+const numberValue = Number(input2.value);
+
+if (input1.value === numberValue) {
+    console.log('De waardes zijn gelijk');
+} else {
+    console.log('De waardes zijn niet gelijk');
+}
+</code>
+</pre>
+
+        <p>
+          We vergelijken nu dit gedrag, met dat van de <code>==</code> operator:
+        </p>
+        <pre>
+<code>
+const input1 = document.querySelector('#input1');
+const input2 = document.querySelector('#input2');
+
+if (input1.value == input2.value) {
+    console.log('De waardes zijn gelijk');
+} else {
+    console.log('De waardes zijn niet gelijk');
+}
+
+<span>// Zet de string om naar een Number</span>
+const numberValue = Number(input2.value);
+
+if (input1.value == numberValue) {
+    console.log('De waardes zijn gelijk');
+} else {
+    console.log('De waardes zijn niet gelijk');
+}
+</code>
+</pre>
+
+        <p>
+          We merken op dat de <code>==</code> operator de waardes als gelijk
+          beschouwt, zelfs als ze van verschillende types zijn. Dit is niet
+          altijd wenselijk, dus gebruik de <code>===</code> operator wanneer je
+          zeker wil zijn dat twee waardes écht hetzelfde zijn.
+        </p>
+        <p class="good">
+          Doorgaans gebruiken we de <code>===</code> operator, tenzij we een
+          specifieke reden hebben om de <code>==</code> operator te gebruiken.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Gelijkheid van twee objecten bepalen</h2>
+        <p>
+          Als je twee objecten met elkaar wil vergelijken, dan kan je dit doen
+          met de <code>===</code> operator. Deze operator controleert of de
+          referenties naar de objecten gelijk zijn. Als je wil controleren of de
+          waardes van de objecten gelijk zijn, dan moet je de afzonderlijke
+          waardes van de objecten met elkaar vergelijken.
+        </p>
+        <p>
+          Hieronder zie je een voorbeeld van hoe je twee objecten kan
+          vergelijken:
+        </p>
+        <pre>
+<code>
+const object1 = { name: 'Alice' };
+const object2 = { name: 'Alice' };
+
+if (object1 === object2) {
+    console.log('De objecten zijn gelijk');
+} else {
+    console.log('De objecten zijn niet gelijk');
+}
+</code>
+</pre>
+        <p>
+          In dit geval zijn de objecten niet gelijk, omdat ze naar <strong>verschillende
+          referenties in het geheugen</strong> wijzen. Als je de waardes van de objecten
+          wil vergelijken, dan moet je de afzonderlijke waardes van de
+          properties van de objecten met elkaar vergelijken:
+        </p>
+
+        <pre>
+<code>
+const object1 = { name: 'Alice' };
+const object2 = { name: 'Alice' };
+
+if (object1.name === object2.name) {
+    console.log('De waardes van de objecten zijn gelijk');
+} else {
+    console.log('De waardes van de objecten zijn niet gelijk');
+}
+</code>
+</pre>
+      </div>
+      <div class="centered">
+        <img class="responsive-image" src="/imgs/equals.png" alt="Equals or not">
       </div>
 
       <a id="back-to-top" href="#">Terug naar boven</a>

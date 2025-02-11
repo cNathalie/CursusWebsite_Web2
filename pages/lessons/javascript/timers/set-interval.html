@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Timers: Set Interval</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Timers: Set Interval</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/timers/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/timers/set-timeout.html"
+          >Set Timeout</a
+        >
+        <a href="/pages/lessons/javascript/timers/set-interval.html"
+          >Set Interval</a
+        >
+        <a href="/pages/lessons/javascript/timers/clear-timer.html"
+          >Clear Timer</a
+        >
+        <a
+          href="/pages/exercises/javascript/timers/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div>
+        <p>De tweede timer functie is <code>setInterval</code>.</p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>.setInterval()</code></h2>
+        <p>
+          Met de <code>setInterval</code> functie kunnen we een bepaald stukje
+          code herhaaldelijk uitvoeren met een bepaalde interval. De functie
+          accepteert twee argumenten: een functie die uitgevoerd moet worden en
+          een getal dat aangeeft hoe lang we moeten wachten voordat de functie
+          wordt uitgevoerd. Dit getal wordt uitgedrukt in milliseconden.
+        </p>
+        <p>
+          In het onderstaande voorbeeld wordt de functie
+          <code>countdown</code> elke seconde uitgevoerd. De functie verlaagt de
+          waarde van de variabele <code>time</code> met 1 en stopt wanneer de
+          waarde 0 is.
+        </p>
+
+        <div class="centered">
+          <button id="start">Start countdown</button>
+          <p id="time">10</p>
+        </div>
+
+        <pre>
+<code>
+<span>// Declareer de variabele die de tijd bijhoudt</span>
+let time = 10;
+
+<span>// Declareer de functie die de countdown uitvoert</span>
+const countdown = () => {
+    <span>// Verlaag de waarde van time met 1</span>
+    time--;
+    <span>// Update de tekst van het element met id "time"</span>
+    document.getElementById("time").innerText = time;
+};
+
+<span>// Declareer de Interval functie</span>
+const intervalFn = () => {
+    setInterval(countdown, 1000);
+};
+
+<span>// Haal de knop op</span>
+const button = document.getElementById("start");
+
+<span>// Voeg een event listener toe aan de knop</span>
+button.addEventListener("click", () => {
+    <span>// Start de countdown</span>
+    intervalId = setInterval(countdown, 1000);
+});
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2></h2>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Timers: Set Timeout</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Timers: Set Timeout</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/timers/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/timers/set-timeout.html"
+          >Set Timeout</a
+        >
+        <a href="/pages/lessons/javascript/timers/set-interval.html"
+          >Set Interval</a
+        >
+        <a href="/pages/lessons/javascript/timers/clear-timer.html"
+          >Clear Timer</a
+        >
+        <a
+          href="/pages/exercises/javascript/timers/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+      <div class="paragraph">
+        <p>
+            De eerste timer functie is de <code>setTimeout</code>. 
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>.setTimeout()</code></h2>
+        <p>
+          Met de <code>setTimeout</code> functie kunnen we een bepaald stukje
+          code uitvoeren na een bepaalde tijd. De functie accepteert twee
+          argumenten: een functie die uitgevoerd moet worden en een getal dat
+          aangeeft hoe lang we moeten wachten voordat de functie wordt
+          uitgevoerd. Dit getal wordt uitgedrukt in milliseconden.
+        </p>
+        <p>
+          In het onderstaande voorbeeld wordt de functie <code>openGoogle</code>
+          pas uitgevoerd 5 seconden nadat er op de knop is geklikt.
+        </p>
+
+        <button id="google">Open Google</button>
+
+        <pre>
+<code>
+<span>// Declareer de functie die Google zal openen</span>
+const openGoogle = () => {
+window.open("https://www.google.com", "_blank");
+};
+
+<span>// Declareer de TimeOut functie</span>
+const timeOutFn = () => {
+     setTimeout(openGoogle, 5000)
+};
+
+<span>// Haal de knop op</span>
+const button = document.getElementById("google");
+
+<span>// Voeg een event listener toe aan de knop</span>
+button.addEventListener("click", timeOutFn);
+
+<span>// Klik op de knop en tel tot 5...</span>
+</code>
+</pre>
+        <p>
+          Het kan zijn dat je browser pop-ups blokkeert. Als dit het geval is,
+          zal de functie niet werken. Je kunt dit oplossen door de pop-up
+          blokkering uit te schakelen.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

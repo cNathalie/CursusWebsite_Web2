@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Advanced DOM:: Nodes Ophalen</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Advanced DOM: Nodes Ophalen</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/adv-dom/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-types.html"
+          >Node Types</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/get-elements.html"
+          >Nodes Ophalen</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-props.html"
+          >Node Properties</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-nav.html"
+          >Node Navigatie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-creation.html"
+          >Nodes Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-add.html"
+          >Nodes Toevoegen</a
+        >
+        <a href="">Oefeningen</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          We zagen al verschillende methodes op elementen op te halen. Maar we
+          hadden het nog niet uitgebreid over welk type deze methodes
+          teruggeven.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">HTML-collection</h2>
+        <p>
+          De methode <code class="good">getElementsByClassName()</code> geeft
+          een HTML-collection terug.
+        </p>
+        <p>
+          Een HTML-collection is een array-like object dat alle elementen bevat
+          die voldoen aan de query. Het is belangrijk om te weten dat een
+          HTML-collection geen array is, maar een object. Dit betekent dat je
+          niet zomaar array-methodes kan gebruiken op een HTML-collection. Je
+          kan wel een HTML-collection omzetten naar een array met de
+          Array.from() methode.
+        </p>
+        <p>Voorbeeld:</p>
+        <pre>
+<code>
+<span>// We halen alle ondertitels van deze pagine op</span>
+const elements = document.getElementsByClassName('subtitle');
+
+<span>// Log de opgehaalde HTML-collection</span>
+console.log(elements);
+
+<span>// We zetten de HTML-collection om naar een array</span>
+const elementsArray = Array.from(elements);
+
+<span>// Log de array</span>
+console.log(elementsArray);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">NodeList</h2>
+        <p>
+          De methode <code class="good">querySelectorAll()</code> geeft een
+          NodeList terug.
+        </p>
+        <p>
+          Een NodeList is een array-like object dat alle elementen bevat die
+          voldoen aan de query. Net zoals een HTML-collection is een NodeList
+          geen array, maar een object. Dit betekent dat je niet zomaar
+          array-methodes kan gebruiken op een NodeList. Je kan wel een NodeList
+          omzetten naar een array met de Array.from() methode.
+        </p>
+        <p>Voorbeeld:</p>
+        <pre>
+<code>
+<span>// We halen alle paragrafen van deze pagina op</span>
+const elements = document.querySelectorAll('p');
+
+<span>// Log de opgehaalde NodeList</span>
+console.log(elements);
+
+<span>// We zetten de NodeList om naar een array</span>
+const elementsArray = Array.from(elements);
+
+<span>// Log de array</span>
+console.log(elementsArray);
+</code>
+</pre>
+        <p>
+          Een Nodelist kan je wel gebruiken in een foreach. Dit is een handige
+          manier om over alle elementen in de Nodelist te itereren.
+        </p>
+        <p>Voorbeeld:</p>
+        <pre>
+<code>
+<span>// We halen alle paragrafen van deze pagina op</span>
+const elements = document.querySelectorAll('p');
+
+<span>// We loggen de tekst van elke paragraaf</span>
+elements.forEach((element) => {
+    console.log(element.textContent);
+});
+</code>
+</pre>
+        <p>
+          Wanneer je voor meerdere elementen in de DOM een bepaalde actie wil
+          uitvoeren, is het dus handig om een NodeList te gebruiken. Je kan dan
+          over alle elementen in de NodeList itereren en de actie uitvoeren,
+          zonder eerst een omzetting naar een array te moeten doen.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

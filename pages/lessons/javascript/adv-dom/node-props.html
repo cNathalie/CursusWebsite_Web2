@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Advanced DOM: Node Properties</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Advanced DOM: Node Properties</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/adv-dom/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-types.html"
+          >Node Types</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/get-elements.html"
+          >Nodes Ophalen</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-props.html"
+          >Node Properties</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-nav.html"
+          >Node Navigatie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-creation.html"
+          >Nodes Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-add.html"
+          >Nodes Toevoegen</a
+        >
+        <a href="">Oefeningen</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Een Node heeft veel properties. Je kan deze bekijken via de Developer
+          Tools in je browser, in het tabblad "Elements" en subtabblad
+          "Properties". We bespreken de meest gebruikte:
+        </p>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>nodeName</code></h2>
+        <p>De naam van de node, altijd in hoofdletters.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+console.log(node.nodeName); 
+</code>
+</pre>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>nodeValue</code></h2>
+        <p>De waarde van de node.</p>
+        <ul>
+          <li>Element nodes: null</li>
+          <li>Attribute nodes: de waarde van de attribute</li>
+          <li>Text nodes: de tekst van de node</li>
+        </ul>
+
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+console.log(node.nodeValue);
+</code>
+</pre>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>nodeType</code></h2>
+        <p>Het type van de node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+console.log(node.nodeType);
+</code>
+</pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

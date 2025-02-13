@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Advanced DOM:</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Advanced DOM:</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/adv-dom/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-types.html"
+          >Node Types</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/get-elements.html"
+          >Nodes Ophalen</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-props.html"
+          >Node Properties</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-nav.html"
+          >Node Navigatie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-creation.html"
+          >Nodes Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-add.html"
+          >Nodes Toevoegen</a
+        >
+        <a href="">Oefeningen</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Nieuwe nodes moeten toegevoegd worden aan de DOM om zichtbaar te
+          worden.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>appendChild()</code></h2>
+        <p>
+          Met de <code class="good">appendChild()</code> methode kunnen we een
+          node toevoegen aan een andere node.
+        </p>
+        <p>De methode neemt één argument: de node die je wil toevoegen.</p>
+        <p>
+          De node die je wil toevoegen wordt als laatste kind toegevoegd aan de
+          node waarop je de <code>appendChild()</code> methode uitvoert.
+        </p>
+        <p>Voorbeeld:</p>
+        <p>We maken een nieuwe button aan en voegen die toe net onder deze zin.</p>
+        <p id="para"></p>
+<pre>
+<code>
+<span>// We maken een nieuwe knop aan</span>
+const newBtn = document.createElement('button');
+
+<span>// We halen deze div op</span>
+const emptyPara = document.querySelector('#para');
+
+<span>// We voegen de div toe aan de body</span>
+emptyPara.appendChild(newBtn);
+</code> 
+</pre>
+<p>
+    Je ziet (amper) een nieuwe knop verschijnen, maar hij heeft geen tekst in zich.
+</p>
+<p>
+    We kunnen de tekst van de knop aanpassen door een tekstnode toe te voegen aan de knop.
+</p>
+<pre>
+<code>
+<span>// We maken een nieuwe tekstnode aan</span>
+const btnText = document.createTextNode('Klik hier');
+
+<span>// We voegen de tekstnode toe aan de knop</span>
+newBtn.appendChild(btnText);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>removeChild()</code></h2>
+        <p>
+            Met de <code class="good">removeChild()</code> methode kunnen we een
+            node verwijderen uit de DOM.
+        </p>
+        <p>De methode neemt één argument: de node die je wil verwijderen.</p>
+        <p>Voorbeeld:</p>
+        <p>We verwijderen de knop die we net hebben toegevoegd.</p>
+<pre>
+<code>
+<span>// We halen de knop op</span>
+const btn = document.querySelector('button');
+
+<span>// We halen de parent node van de knop op</span>
+const parent = btn.parentNode;
+
+<span>// We verwijderen de knop uit de parent node</span>
+parent.removeChild(btn);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph border-red">
+        <h2 class="subtitle important"><strong>Opgelet!</strong></h2>
+        <p>
+            De methodes zijn enkel beschikbaar
+            op de parent node van de node die je wil toevoegen of verwijderen.
+        </p>
+        <p class="centered">
+            <code>parent.METHODE(child)</code>
+        </p>
+        <p>
+            Als je in een <code>div</code> een element wil toevoegen, moet je dus eerst de <code>div</code> ophalen,
+            dan je element aanmaken en dan de <code>appendChild()</code> methode uitvoeren op de <code>div</code>.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

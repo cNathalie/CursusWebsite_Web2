@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
     <link rel="stylesheet" href="/styles/style.css" type="text/css" />
-    <title>Timers:</title>
+    <title>Timers: Clear Timer</title>
   </head>
   <body>
     <div class="info-page-container">
       <div class="header">
-        <h1 class="title">Timers:</h1>
+        <h1 class="title">Timers: Clear Timer</h1>
         <img
           class="label-img"
           src="/imgs/need-to-know.png"
@@ -33,7 +33,7 @@
         >
         <a
           href="/pages/lessons/javascript/timers/clear-timer.html"
-          >Clear Timer</a
+          >Clear Timers</a
         >
         <a
           href="/pages/exercises/javascript/timers/all-tasks.html"
@@ -42,7 +42,139 @@
         >
       </div>
 
-      <div class="paragraph"></div>
+      <div class="paragraph">
+        <p>
+          Je kan de aangemaakte timers ook clearen
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Timer-id</h2>
+        <p>
+          Wanneer we een interval aanmaken met <code>setInterval</code>, krijgen
+          we een unieke id terug. Hetzelfde geldt voor <code>setTimeout</code>. 
+          Deze id kunnen we gebruiken om het interval of de timeout te
+          stoppen.
+        </p>
+        <p>
+          Je kan uiteraard een timeout enkel stoppen met <code>clearTimeout</code>
+          wanneer de timeout nog niet van start is gegaan. Wanneer de timeout al
+          is gestart, zal deze sowieso uitgevoerd worden.
+        </p>
+        <p>
+          Zo vangen we het id van een timer op:
+        </p>
+<pre>
+<code>
+<span>// Bij setTimeout</span>
+const timeoutId = setTimeout(() => {
+console.log('Hello, world!');
+}, 1000);
+
+console.log(timeoutId);
+
+<span>// Bij setInterval</span>
+const intervalId = setInterval(() => {
+console.log('Hello, world!');
+}, 1000);
+
+console.log(intervalId);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle"><code>clearTimeout</code></h2>
+        <p>
+          Wanneer we een timeout hebben aangemaakt met <code>setTimeout</code>,
+          kunnen we deze stoppen met de <code>clearTimeout</code> functie. Deze
+          functie accepteert één argument: de timeout die we willen stoppen.
+        </p>
+
+      
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle"><code>clearInterval</code></h2>
+        <p>
+          Wanneer we een interval hebben aangemaakt met <code>setInterval</code>,
+          kunnen we deze stoppen met de <code>clearInterval</code> functie. Deze
+          functie accepteert één argument: het interval dat we willen stoppen.
+        </p>
+      </div>
+
+      <div class="student-template paragraph">
+        <h2 class="subtitle">Een voorbeeld dat de beiden combineert:</h2>
+        <p>
+          Voer de code in de Console en bekijk het resultaat.
+        </p>
+        <div class="centered">
+          <button id="google">Open Google</button>
+          <h2 id="countdown">10</h2>
+          <button id="stop">Stop</button>
+       </div>
+<pre>
+<code>
+<span>// Declareer de variabelen waar je de ID zal in bijhouden</span>
+let intervalId;
+let timeoutId;
+
+<span>// Declareer de functie die Google zal openen</span>
+const openGoogle = () => {
+      window.open("https://www.google.com", "_blank");
+};
+
+<span>// Declareer de TimeOut functie</span>
+const timeOutFn = () => {
+      timeoutId = setTimeout(openGoogle, 10000)
+};
+
+<span>// Haal de countdown op</span>
+const countdown = document.getElementById("countdown");
+
+<span>// Declareer de variabele die de tijd bijhoudt</span>
+let time = 10;
+
+<span>// Declareer de functie die de countdown uitvoert</span>
+const countdownFn = () => {
+      <span>// Clear de countdown wanneer die op nul staat</span>
+      if (time === 0) {
+            clearInterval(intervalId);
+            countdown.innerText = "Countdown stopped";
+            return;
+      }
+      <span>// Verlaag de waarde van time met 1</span>
+      time--;
+      <span>// Update de tekst van het element met id "countdown"</span>
+      countdown.innerText = time;
+};
+
+<span>// Haal de knop op</span>
+const button = document.getElementById("google");
+
+<span>// Voeg een event listener toe aan de Google-knop</span>
+button.addEventListener("click", () => {
+      <span>// Start de timeout</span>
+      timeOutFn();
+      <span>// Start ook de visuele countdown</span>
+      intervalId = setInterval(countdownFn, 1000);
+});
+
+<span>// Haal de stop knop op</span>
+const stopButton = document.getElementById("stop");
+
+<span>// Voeg een event listener toe aan de stop knop</span>
+stopButton.addEventListener("click", () => {
+      <span>// Stop de timeout die Google zal openen</span>
+      clearTimeout(timeoutId);
+      <span>// Stop de interval van de countdown</span>
+      clearInterval(intervalId);
+});
+</code>
+</pre>
+      </div>
+
+    
 
       <a id="back-to-top" href="#">Terug naar boven</a>
     </div>

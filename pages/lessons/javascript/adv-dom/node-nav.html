@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Advanced DOM:</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Advanced DOM:</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/adv-dom/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-types.html"
+          >Node Types</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/get-elements.html"
+          >Nodes Ophalen</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-props.html"
+          >Node Properties</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-nav.html"
+          >Node Navigatie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-creation.html"
+          >Nodes Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-add.html"
+          >Nodes Toevoegen</a
+        >
+        <a href="">Oefeningen</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Je kan navigeren tussen nodes in de DOM. Dit kan je doen met de
+          volgende properties:
+        </p>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>parentNode</code></h2>
+        <p>De parent node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen de parent node op</span>
+const parentNode = node.parentNode;
+
+console.log(parentNode);
+</code>
+</pre>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>childNodes</code></h2>
+        <p>De children nodes van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen de children nodes op</span>
+const childNodes = node.childNodes;
+
+console.log(childNodes);
+</code>
+</pre>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>firstChild</code></h2>
+        <p>Het eerste child node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen het eerste child node op</span>
+const firstChild = node.firstChild;
+
+console.log(firstChild);
+</code>
+</pre>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>lastChild</code></h2>
+        <p>Het laatste child node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen het laatste child node op</span>
+const lastChild = node.lastChild;
+
+console.log(lastChild);
+</code>
+</pre>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>nextSibling</code></h2>
+        <p>Het volgende sibling node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen het volgende sibling node op</span>
+const nextSibling = node.nextSibling;
+
+console.log(nextSibling);
+</code>
+</pre>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle"><code>previousSibling</code></h2>
+        <p>Het vorige sibling node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen het vorige sibling node op</span>
+const previousSibling = node.previousSibling;
+
+console.log(previousSibling);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph border-red">
+        <h2 class="subtitle important">Opgelet</h2>
+
+        <p>
+          Alle bovenstaande properties geven nodes van alle types terug. We zijn
+          echter meestel enkel geinteresseerd in element nodes (HTML-Elementen).
+          Daarvoor heb je onderstaande properties ter beschikking:
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>children</code></h2>
+        <p>De children element nodes van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen de children element nodes op</span>
+const children = node.children;
+
+console.log(children);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>firstElementChild</code></h2>
+        <p>Het eerste child element node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen het eerste child element node op</span>
+const firstElementChild = node.firstElementChild;
+
+console.log(firstElementChild);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>lastElementChild</code></h2>
+        <p>Het laatste child element node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+
+<span>// We halen het laatste child element node op</span>
+const lastElementChild = node.lastElementChild;
+
+console.log(lastElementChild);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>nextElementSibling</code></h2>
+        <p>Het volgende sibling element node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen het volgende sibling element node op</span>
+const nextElementSibling = node.nextElementSibling;
+
+console.log(nextElementSibling);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>previousElementSibling</code></h2>
+        <p>Het vorige sibling element node van de huidige node.</p>
+        <pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+<span>// We halen het vorige sibling element node op</span>
+const previousElementSibling = node.previousElementSibling;
+
+console.log(previousElementSibling);
+</code>
+</pre>
+      </div>
+
+      <div class="centered">
+        <img class="responsive-image" src="/imgs/node-nav.png" alt="" />
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

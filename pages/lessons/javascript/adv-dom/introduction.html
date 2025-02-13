@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Advanced DOM:</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Advanced DOM: Introductie</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/adv-dom/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-types.html"
+          >Node Types</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/get-elements.html"
+          >Nodes Ophalen</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-props.html"
+          >Node Properties</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-nav.html"
+          >Node Navigatie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-creation.html"
+          >Nodes Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-add.html"
+          >Nodes Toevoegen</a
+        >
+        <a href="">Oefeningen</a>
+      </div>
+
+      <div class="paragraph">
+        <p>
+          In deze module gaan we dieper in op de DOM. We zullen leren hoe we de
+          DOM nog meer kunnen manipuleren en hoe we elementen kunnen toevoegen
+          en verwijderen. We beginnen met een korte herhaling:
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Wat is de DOM?</h2>
+        <p>
+          De DOM, of Document Object Model, is een object georiënteerde
+          representatie van een HTML document. Het is een boomstructuur van
+          nodes die elk een deel van het document voorstellen. De DOM is een
+          manier om een HTML document te representeren zodat we het kunnen
+          manipuleren met JavaScript.
+        </p>
+        <p>
+          De DOM bestaat uit verschillende soorten nodes. Een node kan het
+          volgende zijn:
+        </p>
+        <ul>
+          <li>
+            <strong>Document</strong>: de top node in de DOM-tree. Het heeft het
+            volledige document in zich.
+          </li>
+          <li>
+            <strong>Element nodes</strong>: Elke HTML-tag is een element in de
+            boom.
+          </li>
+          <li>
+            <strong>Text nodes</strong>: De tekstinhoud van een bepaald element
+            is altijd een text-node. Witruimte wordt ook voorgesteld als een
+            text-node!
+          </li>
+          <li>
+            <strong>Attribute nodes</strong>: Een attribuut van een node is
+            bereikbaar via he element, maar wordt niet in de de boomstructuur
+            getekend.
+          </li>
+        </ul>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

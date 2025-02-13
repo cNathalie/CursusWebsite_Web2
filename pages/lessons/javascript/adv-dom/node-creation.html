@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Advanced DOM: Nodes Aanmaken</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Advanced DOM: Nodes Aanmaken</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/adv-dom/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-types.html"
+          >Node Types</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/get-elements.html"
+          >Nodes Ophalen</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-props.html"
+          >Node Properties</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-nav.html"
+          >Node Navigatie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-creation.html"
+          >Nodes Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-add.html"
+          >Nodes Toevoegen</a
+        >
+        <a href="">Oefeningen</a>
+      </div>
+
+      <div class="paragraph">
+        <p>We kunnen dynamisch nodes aanmaken in de DOM.</p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>createElement()</code></h2>
+        <p>
+          Met de <code class="good">createElement()</code> methode kunnen we een
+          nieuwe node aanmaken. Dit is een methode die enkel beschikbaar is op
+          het <code>document</code> object.
+        </p>
+        <p>
+          De methode neemt één argument: de naam van het element dat je wil
+          aanmaken. Dit is een string met de naam van het element, bv: 'img',
+          'div', 'p', 'h1', ...
+        </p>
+        <pre>
+<code>
+<span>// We maken een nieuwe div aan</span>
+const newDiv = document.createElement('div');
+
+console.log(newDiv);
+</code>
+</pre>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle"><code>createTextNode()</code></h2>
+        <p>
+          Met de <code class="good">createTextNode()</code> methode kunnen we
+          een nieuwe tekstnode aanmaken. Dit is een methode die enkel
+          beschikbaar is op het <code>document</code> object.
+        </p>
+        <p>
+          De methode neemt één argument: de tekst die je wil toevoegen aan de
+          tekstnode. Dit is een string met de tekst die je wil toevoegen.
+        </p>
+        <pre>
+<code>
+<span>// We maken een nieuwe tekstnode aan</span>
+const newText = document.createTextNode('Dit is een nieuwe tekstnode');
+
+console.log(newText);
+</code>
+</pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

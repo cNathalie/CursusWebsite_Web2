@@ -12,11 +12,13 @@ const setup = () => {
     ["js-basics-folder", "js-basics-title"],
     ["dom-folder", "dom-title"],
     ["events-folder", "events-title"],
-    ["js-types-folder","js-types-title"],
-    ["js-elements-folder","js-elements-title"],
-    ["js-forms-folder","js-forms-title"],
-    ['js-timers-folder','js-timers-title'],
-    ['js-adv-dom-folder','js-adv-dom-title'],
+    ["js-types-folder", "js-types-title"],
+    ["js-elements-folder", "js-elements-title"],
+    ["js-forms-folder", "js-forms-title"],
+    ["js-timers-folder", "js-timers-title"],
+    ["js-adv-dom-folder", "js-adv-dom-title"],
+    ["js-objects-folder", "js-objects-title"],
+    ["storage-folder", "storage-title"],
   ];
 
   topics.forEach(([folderId, titleId]) => {

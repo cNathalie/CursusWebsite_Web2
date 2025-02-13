@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Advanced DOM: Node Types</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Advanced DOM: Node Types</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/adv-dom/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-types.html"
+          >Node Types</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/get-elements.html"
+          >Nodes Ophalen</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-props.html"
+          >Node Properties</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-nav.html"
+          >Node Navigatie</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-creation.html"
+          >Nodes Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/adv-dom/node-add.html"
+          >Nodes Toevoegen</a
+        >
+        <a href="">Oefeningen</a>
+      </div>
+
+      <div class="paragraph">
+        <p>Nodes bestaan in verschillende types.</p>
+      </div>
+
+      <div id="my-div" class="paragraph card">
+        <h2 class="subtitle">Types</h2>
+        <p>
+          Je kan het type van een node opvragen via de
+          <code>nodeType</code> property. Deze methode geeft een nummer terug
+          dat het type van de node aangeeft. Voorbeeld:
+        </p>
+<pre>
+<code>
+<span>// We halen deze div op</span>
+const node = document.querySelector('#my-div');
+
+<span>// We loggen het type van de node</span>
+console.log(node.nodeType); 
+</code>
+</pre>
+        <p>
+          Dit zal <code>1</code> loggen naar de console, wat het type is van een
+          element node.
+        </p>
+        <p>Hier zijn de codes van nodes die wij leerden kennen:</p>
+        <ul>
+          <li>Element node: <code>1</code></li>
+          <li>Attribute node: <code>2</code></li>
+          <li>Text node: <code>3</code></li>
+          <li>Document node: <code>9</code></li>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

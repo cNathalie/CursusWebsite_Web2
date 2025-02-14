@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>JSON: Parse</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JSON: Parse</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/json/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/json/json-syntax.html"
+          >JSON Syntax</a
+        >
+        <a href="/pages/lessons/javascript/json/json-parse.html"
+          >JSON Parse</a
+        >
+        <a href="/pages/lessons/javascript/json/json-stringify.html"
+          >JSON Stringify</a
+        >
+        <a
+          href="/pages/exercises/javascript/json/task.html"
+          target="_blank"
+          >Oefening</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+            We kunnen JSON omzetten naar een JavaScript object.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">JSON.parse()</h2>
+        <p>
+            JSON.parse() is een methode die een JSON-string omzet naar een JavaScript object.
+        </p>
+        <p>
+            Voorbeeld:
+        </p>
+        <pre>
+          <code>
+<span>// We hebben een JSON string</span>
+const json = '{"naam":"John", "leeftijd":30, "gehuwd":false}';
+
+<span>// We zetten de JSON string om naar een JavaScript object</span>
+const obj = JSON.parse(json);
+
+<span>// We kunnen nu de data manipuleren of gebruiken</span>
+console.log(obj.naam); 
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

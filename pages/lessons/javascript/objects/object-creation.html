@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Objecten: Aanmaken</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Objecten: Aanmaken</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/objects/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-creation.html"
+          >Objecten Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-properties.html"
+          >Object Properties</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-methods.html"
+          >Object Methodes</a
+        >
+        <a href="/pages/lessons/javascript/objects/date.html">Date Object</a>
+        <a
+          href="/pages/exercises/javascript/objects/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          JavaScript heef teen aantal standaard gedefinieerde objecten, zoals
+          Date, Array, en Math. Je kunt ook je eigen objecten definiëren. In
+          JavaScript kun je objecten op verschillende manieren maken.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Object initializer</h2>
+        <p>
+          De eenvoudigste manier om een object te maken is met een object
+          initializer. Een object initializer is een lijst met nul of meer paren
+          van eigenschappen en waarden van een object, gescheiden door een
+          dubbele punt en gescheiden door komma's.
+        </p>
+        <pre>
+<code>
+const objectName = {
+  property1: value1,
+  property2: value2,
+  property3: value3
+};
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Object constructor</h2>
+        <p>
+          Een andere manier om een object te maken is met een constructor
+          functie. Een constructor functie is een speciale functie die wordt
+          gebruikt om een object te initialiseren. De constructor functie wordt
+          aangeroepen met het new trefwoord.
+        </p>
+        <pre>
+<code>
+function ObjectName(property1, property2, property3) {
+    this.property1 = property1;
+    this.property2 = property2;
+    this.property3 = property3;
+}
+const objectName = new ObjectName(value1, value2, value3);
+</code>
+</pre>
+        <p>
+          Je kan dit vergelijken met hoe je reeds objecten hebt leren aanmaken
+          in C#: <br />
+          In C# maak je een klasse aan met properties en methodes. Vervolgens
+          maak je een instantie van die klasse aan. In JavaScript maak je een
+          constructor functie aan met properties en methodes. Vervolgens maak je
+          een instantie van die constructor functie aan.
+        </p>
+        <p>
+          <code class="blue">this.</code> is een referentie naar het object dat
+          wordt aangemaakt. Het is een manier om de eigenschappen van het object
+          te definiëren. Je zegt dus letterlijk "dit object heeft deze waarde
+          voor deze eigenschap".
+        </p>
+        <p>
+          <span class="important">Opgelet:</span><br />Het is een conventie in
+          JavaScript om constructorfuncties met een hoofdletter te beginnen. Dit
+          helpt om ze te onderscheiden van gewone functies en maakt het
+          duidelijker dat ze bedoeld zijn om met het new keyword te worden
+          aangeroepen.
+        </p>
+        <p>
+          <span class="important">Opgelet:</span><br />Een constructor functie
+          kan je enkel aanmaken met het <code>function</code> keyword. Een
+          anonieme constructor functie is niet mogelijk.
+        </p>
+      </div>
+
+      <div class="card paragraph student-template">
+        <h2 class="subtitle">Probeer het zelf:</h2>
+        <pre>
+<code>
+<span>// Maak een constructor function aan voor het aanmaken van Student-objecten</span>
+function Student(name, age, grade) {
+    this.name = name;
+    this.age = age;
+    this.grade = grade;
+}
+
+<span>// Maak nu een Student-object aan met je eigen gegevens</span>
+const ....
+
+<span>// Log het Student-object in de console</span>
+console.log(...);
+</code>
+        </pre>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

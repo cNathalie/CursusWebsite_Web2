@@ -1,0 +1,9 @@
+
+{
+    "student":{
+        "firstName":"John",
+        "lastName":"Doe",
+        "email":"test@email.com",
+        "studentNumber":"1234567890"
+    }
+}

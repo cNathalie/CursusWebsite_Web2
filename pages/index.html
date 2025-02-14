@@ -9,15 +9,23 @@
     <title>Web-2</title>
   </head>
   <body>
-    <div class="owner">
-      <p><span>Student:</span> [Vul hier jouw naam en voornaam in]</p>
-      <p>
-        <span>E-mailadres:</span> [Vul hier jouw eigen HoGent emailadres in]
-      </p>
-      <p>
-        <span>Studentennummer:</span> [Vul hier jouw eigen studentennummer in]
-      </p>
-    </div>
+    <table id="student-info" class="owner">
+      <tr>
+        <td class="key"><strong>Student:</strong></td>
+        <!-- Vul hier jouw naam en voornaam in -->
+        <td id="name" class="value">...</td>
+      </tr>
+      <tr>
+        <td class="key"><strong>E-mailadres:</strong></td>
+        <!-- Vul hier jouw eigen HoGent emailadres in -->
+        <td id="email" class="value">...</td>
+      </tr>
+      <tr>
+        <td class="key"><strong>Studentennummer:</strong></td>
+        <!-- Vul hier jouw eigen studentennummer in -->
+        <td id="number" class="value">...</td>
+      </tr>
+    </table>
 
     <div class="info-page-container">
       <div class="welcome">
@@ -350,7 +358,8 @@
 
         <!-- JAVASCRIPT OBJECTEN FOLDER -->
         <span class="folder-title" id="js-objects-title"
-          >JavaScript - Objecten</span>
+          >JavaScript - Objecten</span
+        >
         <div class="hidden folder" id="js-objects-folder">
           <a
             href="/pages/lessons/javascript/objects/introduction.html"
@@ -372,46 +381,80 @@
             target="_blank"
             >Object Methods</a
           >
+          <a href="/pages/lessons/javascript/objects/date.html" target="_blank"
+            >Date Object</a
+          >
           <a
             href="/pages/exercises/javascript/objects/all-tasks.html"
             target="_blank"
             >Oefeningen</a
           >
-          </div>
+        </div>
 
-          <!-- JSON -->
-          <a href="">JSON</a>
+        <!-- PROMISE & ASYNC AWAIT -->
 
-          <!-- STORAGE FOLDER -->
-          <span class="folder-title" id="storage-title">Storage</span>
-          <div class="hidden folder" id="storage-folder">
-            <a href="/pages/lessons/javascript/storage/introduction.html"
-              target="_blank"
-              >Introductie</a
-            >
-            <a
-              href="/pages/lessons/javascript/storage/local-storage.html"
-              target="_blank"
-              >Local Storage</a
-            >
-            <a
-              href="/pages/lessons/javascript/storage/session-storage.html"
-              target="_blank"
-              >Session Storage</a
-            >
-            <a
-              href="/pages/lessons/javascript/storage/cookies.html"
-              target="_blank"
-              >Cookies</a
-            >
-            <a
-              href="/pages/exercises/javascript/storage/all-tasks.html"
-              target="_blank"
-              >Oefeningen</a
-            >
-          </div>
+        <!-- FETCH -->
+
+        <!-- JSON FOLDER-->
+        <span class="folder-title" id="json-title">JSON</span>
+        <div class="hidden folder" id="json-folder">
+          <a
+            href="/pages/lessons/javascript/json/introduction.html"
+            target="_blank"
+            >Introductie</a
+          >
+          <a
+            href="/pages/lessons/javascript/json/json-syntax.html"
+            target="_blank"
+            >JSON Syntax</a
+          >
+          <a
+            href="/pages/lessons/javascript/json/json-parse.html"
+            target="_blank"
+            >JSON Parse</a
+          >
+          <a
+            href="/pages/lessons/javascript/json/json-stringify.html"
+            target="_blank"
+            >JSON Stringify</a
+          >
+          <a href="/pages/exercises/javascript/json/task.html" target="_blank"
+            >Oefening</a
+          >
+        </div>
+
+        <!-- STORAGE FOLDER -->
+        <span class="folder-title" id="storage-title">Storage</span>
+        <div class="hidden folder" id="storage-folder">
+          <a
+            href="/pages/lessons/javascript/storage/introduction.html"
+            target="_blank"
+            >Introductie</a
+          >
+          <a
+            href="/pages/lessons/javascript/storage/local-storage.html"
+            target="_blank"
+            >Local Storage</a
+          >
+          <a
+            href="/pages/lessons/javascript/storage/session-storage.html"
+            target="_blank"
+            >Session Storage</a
+          >
+          <a
+            href="/pages/lessons/javascript/storage/cookies.html"
+            target="_blank"
+            >Cookies</a
+          >
+          <a
+            href="/pages/exercises/javascript/storage/all-tasks.html"
+            target="_blank"
+            >Oefeningen</a
+          >
+        </div>
       </div>
     </div>
     <script src="/scripts/examples/index.js" type="module"></script>
+    <!-- <script src="/pages/exercises/javascript/json/student-info.js" type="module"></script> -->
   </body>
 </html>

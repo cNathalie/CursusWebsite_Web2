@@ -18,6 +18,7 @@ const setup = () => {
     ["js-timers-folder", "js-timers-title"],
     ["js-adv-dom-folder", "js-adv-dom-title"],
     ["js-objects-folder", "js-objects-title"],
+    ["json-folder", "json-title"],
     ["storage-folder", "storage-title"],
   ];
 

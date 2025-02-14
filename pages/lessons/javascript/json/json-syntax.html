@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>JSON: Syntax</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JSON: Syntax</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/json/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/json/json-syntax.html"
+          >JSON Syntax</a
+        >
+        <a href="/pages/lessons/javascript/json/json-parse.html">JSON Parse</a>
+        <a href="/pages/lessons/javascript/json/json-stringify.html"
+          >JSON Stringify</a
+        >
+        <a href="/pages/exercises/javascript/json/task.html" target="_blank"
+          >Oefening</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>De JSON-syntax lijkt sterk op die van JavaScript-objecten.</p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Key-Value pairs</h2>
+        <p>
+          JSON-gegevens zijn geschreven als key-value paren. Een key-value paar
+          is een set van twee strings, waarbij de key een string is en de value
+          een string, nummer, object, array, true, false of null. De key en
+          value worden gescheiden door een dubbele punt. De key-value paren
+          worden gescheiden door komma's.
+        </p>
+        <p>Een simpel voorbeeld:</p>
+        <pre>
+<code>
+{
+    "naam": "John",
+    "leeftijd": 30,
+    "gehuwd": false
+}
+</code>
+</pre>
+        <p>Een voorbeeld waarbij de value een array is:</p>
+        <pre>
+<code>
+{
+    "naam": "John",
+    "leeftijd": 30,
+    "gehuwd": false,
+    "kinderen": [
+        "Anna", 
+        "Tom", 
+        "Linda"
+    ]
+}
+</code>
+</pre>
+
+        <p>Een voorbeeld waarbij de value een object is:</p>
+        <pre>
+<code>
+{
+    "naam": "John",
+    "leeftijd": 30,
+    "gehuwd": false,
+    "adres": {
+        "straat": "Dorpstraat",
+        "huisnummer": 123,
+        "postcode": "1234AB",
+        "plaats": "Dorp"
+    }
+}
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">JSON Syntax Regels</h2>
+        <ul>
+          <li>JSON-gegevens zijn gescheiden door komma's.</li>
+          <li>Curly braces { } bevatten objecten.</li>
+          <li>Haakjes [ ] bevatten arrays.</li>
+          <li>JSON-gegevens zijn geschreven als key-value paren.</li>
+          <li>
+            Keys moeten strings zijn, en de waarden moeten een geldig JSON-data
+            type zijn (string, nummer, object, array, true, false of null).
+          </li>
+          <li>Keys en waarden worden gescheiden door dubbele punten.</li>
+          <li>Keys moeten omgeven zijn door dubbele aanhalingstekens.</li>
+          <li>JSON-gegevens mogen geen functies of variabelen bevatten.</li>
+          <li>JSON-gegevens mogen geen commentaar bevatten.</li>
+        </ul>
+      </div>
+
+      <div class="card paragraph student-template">
+        <h2 class="subtitle">Groter voorbeeld</h2>
+        <p>RESTful API's maken vaak gebruik van JSON om data te versturen.</p>
+        <a href="/pages/lessons/javascript/json/100-users.json" target="_blank"
+          >Klik hier om een groot voorbeeld te openen.</a
+        >
+        <p>Je ziet hier een JSON-array met verschillende user-objecten in.</p>
+        <p>
+          Je kan de JSON data ook met syntax highlighting bekijken in de source
+          code in Visual Studio Code, onder de map
+          <code>pages/lessons/javascript/json/100-users.json</code>.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

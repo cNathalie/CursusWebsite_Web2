@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Objecten: Date</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Objecten: Date</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/objects/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-creation.html"
+          >Objecten Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-properties.html"
+          >Object Properties</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-methods.html"
+          >Object Methodes</a
+        >
+        <a href="/pages/lessons/javascript/objects/date.html">Date Object</a>
+        <a
+          href="/pages/exercises/javascript/objects/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          De Date object is een ingebouwd object in JavaScript dat wordt
+          gebruikt om datums en tijden te werken.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Date object aanmaken</h2>
+        <p>
+          Om een Date object aan te maken, gebruik je de new Date() constructor.
+          De Date object constructor accepteert verschillende parameters, zoals
+          jaar, maand, dag, uur, minuut, seconde en milliseconde.
+        </p>
+        <p>
+          Wanneer je geen parameters meegeeft, zal de Date constructor de
+          huidige datum en tijd weergeven.
+        </p>
+        <pre>
+<code>
+<span>// Maak een Date object aan</span>
+const date = new Date();
+console.log(date);
+
+<span>// Maak een Date object met parameters aan</span>
+const myDate = new Date(1992, 09, 17, 09, 0, 0, 0);
+console.log(myDate);
+</code>
+</pre>
+        <p>
+          Wanneer je het Date object logt, zal het de datum en tijd weergegeven
+          worden in een standaard format. Om dit om te zetten naar een leesbaar
+          format, kun je gebruik maken van de verschillende Date object
+          methodes.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle"><code>.toLocaleString()</code></h2>
+        <p>
+          De <code>.toLocaleString()</code> methode wordt gebruikt om een
+          datum/tijd te converteren naar een leesbaar format.
+        </p>
+        <p>
+          Wanneer je de methode zonder parameters gebruikt, zal de datum en tijd
+          weergegeven worden in de taal en tijdzone van de gebruiker.
+        </p>
+        <pre>
+<code>
+<span>// Maak een Date object aan</span>
+const date = new Date();
+console.log(date.toLocaleString());
+</code>
+</pre>
+        <p>
+          De <code>.toLocaleString()</code> methode accepteert ook parameters
+          zoals <code>locale</code> en <code>options</code>.
+        </p>
+        <pre>
+<code>
+<span>// Maak een Date object aan</span>
+const date = new Date();
+console.log(date.toLocaleString('nl-BE', { weekday: 'long' }));
+</code>
+</pre>
+
+        <p>
+          Met de <code>locale</code> parameter kies je in de code in welk format
+          de datum moet worden weergegeven.
+        </p>
+        <p>Dit zijn een aantal locales:</p>
+        <ul>
+          <li><code>nl-BE</code>: Nederlands (België)</li>
+          <li><code>en-US</code>: Engels (Verenigde Staten)</li>
+          <li><code>fr-FR</code>: Frans (Frankrijk)</li>
+          <li><code>de-DE</code>: Duits (Duitsland)</li>    
+        </ul>
+
+        <p>Dit zijn de meest gebruikte options:</p>
+        <ul>
+          <li><code>weekday</code>: 'long', 'short', 'narrow'</li>
+          <li><code>year</code>: 'numeric', '2-digit'</li>
+          <li>
+            <code>month</code>: 'numeric', '2-digit', 'long', 'short', 'narrow'
+          </li>
+          <li><code>day</code>: 'numeric', '2-digit'</li>
+          <li><code>hour</code>: 'numeric', '2-digit'</li>
+          <li><code>minute</code>: 'numeric', '2-digit'</li>
+          <li><code>second</code>: 'numeric', '2-digit'</li>
+        </ul>
+        <p class="centered">
+            <span class="good">Deze parameters hoef je niet vanbuiten te kennen. Je moet wel een datum kunnen aanmaken en de methode <code>.toLocaleString()</code> kennen.</span>
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

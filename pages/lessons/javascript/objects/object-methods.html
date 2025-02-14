@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Objecten: Methodes</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Objecten: Methodes</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/objects/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-creation.html"
+          >Objecten Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-properties.html"
+          >Object Properties</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-methods.html"
+          >Object Methodes</a
+        >
+        <a href="/pages/lessons/javascript/objects/date.html">Date Object</a>
+        <a
+          href="/pages/exercises/javascript/objects/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Een methode is een property van een object dat als waarde een functie
+          heeft.
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Object-methodes aanmaken</h2>
+        <p>
+          Een methode is een functie die is opgeslagen als een eigenschap van
+          een object. Je kunt een methode aanmaken door een functie toe te
+          wijzen aan een object property.
+        </p>
+        <pre>
+          <code>
+<span>// Maak een hondje aan die kan blaffen</span>
+<span>// Function keyword</span>
+const dog = {
+  name: "Buddy",
+  breed: "Golden Retriever",
+  age: 5,
+  bark: function() {
+    console.log("Woof Woof!");
+  }
+};
+
+<span>// Maak een katje aan dat kan meowen</span>
+<span>// Anonieme functie</span>
+const cat = {
+  name: "Whiskers",
+  breed: "Siamese",
+  age: 3,
+  meow: () => {
+    console.log("Meow Meow!");
+  }
+};
+
+<span>// Maak een papagaai aan die kan praten</span>
+<span>// Functie met parameter</span>
+const parrot = {
+  name: "Polly",
+  breed: "African Grey",
+  age: 10,
+  talk: (phrase) => {
+    console.log(phrase);
+  }
+};
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Methodes oproepen</h2>
+        <p>
+          Je kunt een methode oproepen door de naam van het object gevolgd door
+          een punt en de naam van de methode te typen.
+        </p>
+        <pre>
+          <code>
+<span>// Roep de methode bark aan van het dog object</span>
+dog.bark();
+
+<span>// Roep de methode meow aan van het cat object</span>
+cat.meow();
+
+<span>// Roep de methode talk aan van het parrot object</span>
+parrot.talk("Polly wants a cracker!");
+</code>
+</pre>
+        <p>
+          <span class="important">Opgelet!</span> <br />
+          Je kan een methode niet oproepen zonder de naam van het object ervoor
+          te typen.
+        </p>
+        <p>
+          <span class="important">Opgelet!</span> <br />
+          Om de methode uit te voeren moet je de haakjes <code>()</code> na de
+          naam van de methode typen, anders log je enkel de functie zelf.
+        </p>
+      </div>
+
+      <div class="centered">
+        <img class="responsive-image" src="/imgs/polly-co.jpeg" alt="" />
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

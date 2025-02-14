@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Objecten: Properties</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Objecten: Properties</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/objects/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-creation.html"
+          >Objecten Aanmaken</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-properties.html"
+          >Object Properties</a
+        >
+        <a href="/pages/lessons/javascript/objects/object-methods.html"
+          >Object Methodes</a
+        >
+        <a href="/pages/lessons/javascript/objects/date.html">Date Object</a>
+        <a
+          href="/pages/exercises/javascript/objects/all-tasks.html"
+          target="_blank"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>Object properties definiëren de eigenschappen van een object.</p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Properties ophalen</h2>
+        <p>
+          Object properties kunnen worden gedefinieerd als een key-value pair.
+          De key (sleutel) is een string die de naam van de eigenschap aangeeft
+          en de waarde kan elk gegevenstype zijn. De eigenschappen van een
+          object kunnen worden gedefinieerd met een puntnotatie of met behulp
+          van vierkante haaknotatie.
+        </p>
+        <pre>
+<code>
+<span>//Initialiseer een object</span>
+const movie = {
+    title : "The Dark Knight",
+    director : "Christopher Nolan",
+    year : 2008
+};
+
+<span>// Properties ophalen met puntnotatie</span>
+console.log(movie.title);
+
+<span>// Properties ophalen met vierkante haaknotatie</span>
+console.log(movie["title"]);
+</code>
+</pre>
+        <p>Je ziet dat beide manieren hetzelfde resultaat opleveren.</p>
+        <p>
+          In welke situatie zou het gebruik van de bracket-notatie handiger
+          zijn?
+        </p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Properties toevoegen</h2>
+        <p>
+          Je kunt eigenschappen toevoegen aan een object door simpelweg een
+          nieuwe key-value pair toe te voegen.
+        </p>
+        <pre>
+<code>
+<span>//Initialiseer een object</span>
+const movie = {
+    title : "The Dark Knight",
+    director : "Christopher Nolan",
+    year : 2008
+};
+
+<span>// Voeg een nieuwe eigenschap toe</span>
+movie.genre = "Action";
+
+console.log(movie);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Properties verwijderen</h2>
+        <p>
+          Je kunt eigenschappen verwijderen uit een object met het
+          <code>delete</code> keyword.
+        </p>
+        <pre>
+<code>
+<span>//Initialiseer een object</span>
+const movie = {
+    title : "The Dark Knight",
+    director : "Christopher Nolan",
+    year : 2008
+};
+
+<span>// Verwijder een eigenschap</span>
+delete movie.year;
+
+console.log(movie);
+</code>
+</pre>
+      </div>
+
+      <div class="card paragraph student-template">
+        <h2 class="subtitle">Dynamisch omgaan met properties:</h2>
+        <p>
+          Het kan zijn dat je niet op voorhand weet van welke eigenschap je de
+          waarde wilt ophalen. Dan moet je gebruik maken van een variabele om de
+          eigenschap te definiëren.
+        </p>
+        <p>
+          We schrijven een klein programmaatje dat de gebruiker laat kiezen
+          welke eigenschap van een object hij wilt zien:
+        </p>
+        <p>
+            Voer eerst het object in de Console in, druk dan op Enter en voer
+            vervolgens de prompt code in. Vul de prompt in met een van de eigenschappen
+            en voer dan de laatste lijn code uit.
+        </p>
+        <pre>
+<code>
+<span>//Initialiseer een object</span>
+const movie = {
+    title : "Here",
+    director : "Robert Zemeckis",
+    year : 2024,
+    genre : "Drama",
+    cast : ["Tom Hanks", "Robin Wright", "Paul Bettany"],
+    aiArtist : "Andries Courteaux"
+};
+
+<span>// Vraag de gebruiker welke eigenschap hij wilt zien</span>
+const property = prompt("Welke eigenschap wil je zien?");
+
+<span>// Toon de waarde van de gekozen eigenschap</span>
+console.log(movie[property]);
+</code>
+</pre>
+        <p>
+          <span class="important">Opgelet:</span> Als je een eigenschap probeert
+          op te halen die niet bestaat, zal JavaScript
+          <code>undefined</code> teruggeven.
+        </p>
+        <p>
+          <span class="good">Ter info</span>: Input van de gebruiker moet je
+          altijd valideren en opschonen. Dit voorbeeld toont enkel aan hoe je
+          dynamisch kan omgaan met properties.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

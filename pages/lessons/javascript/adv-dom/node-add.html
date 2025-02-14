@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
     <link rel="stylesheet" href="/styles/style.css" type="text/css" />
-    <title>Advanced DOM:</title>
+    <title>Advanced DOM: Nodes Toevoegen</title>
   </head>
   <body>
     <div class="info-page-container">
       <div class="header">
-        <h1 class="title">Advanced DOM:</h1>
+        <h1 class="title">Advanced DOM: Nodes Toevoegen</h1>
         <img
           class="label-img"
           src="/imgs/need-to-know.png"
@@ -69,10 +69,10 @@
 <span>// We maken een nieuwe knop aan</span>
 const newBtn = document.createElement('button');
 
-<span>// We halen deze div op</span>
+<span>// We halen de lege paragraaf net boven dit blok op</span>
 const emptyPara = document.querySelector('#para');
 
-<span>// We voegen de div toe aan de body</span>
+<span>// We voegen de knop toe aan de paragraaf</span>
 emptyPara.appendChild(newBtn);
 </code> 
 </pre>

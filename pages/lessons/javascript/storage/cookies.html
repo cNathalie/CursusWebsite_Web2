@@ -57,6 +57,11 @@
           data bij te houden die gebruikt wordt aan de server kant.
         </p>
         <p>
+          Een belangrijk voorbeeld hievan is het bijhouden van een sessionId.
+          Dit is dan een unieke identifier om data van de gebruiker zijn sessie
+          aan de serverkant terug te vinden.
+        </p>
+        <p>
           Cookies worden gedeeld tussen verschillende tabs en vensters van
           dezelfde browser.
         </p>
@@ -85,6 +90,37 @@
 
       <div class="centered">
         <img src="/imgs/cookies.png" alt="Cookies" class="responsive-image" />
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Cookies gebruiken</h2>
+        <p>
+          Om cookies te gebruiken, kun je de
+          <code>document.cookie</code> eigenschap gebruiken. Deze eigenschap
+          bevat alle cookies die door de website worden gebruikt. Je kunt
+          cookies instellen, ophalen en verwijderen met behulp van deze
+          eigenschap.
+        </p>
+        <pre>
+<code>
+<span>// Cookies instellen</span> 
+document.cookie = "name=John Doe";
+
+<span>// Cookies ophalen</span>
+console.log(document.cookie);
+</code>
+</pre>
+        <p>
+          Wanneer je cookies aanmaakt zonder "vervaldatum", dan zal de cookie
+          verwijdert worden wanneer de sessie afgesloten wordt.
+        </p>
+        <p>
+          Er zijn ook permanente cookies, deze worden aangemaakt met een
+          vervaldatum/tijd en zullen op dat ogenblik verwijdert worden. Wanneer
+          een cookie geldig is voor een week, dan wordt die opgeslagen door je
+          browser en steeds opnieuw gebruikt tot die vervalt. Het afsluiten van
+          de browser heeft hier dus geen effect op.
+        </p>
       </div>
 
       <a id="back-to-top" href="#">Terug naar boven</a>

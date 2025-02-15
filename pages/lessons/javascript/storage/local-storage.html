@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Storage: Local Storage</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Storage: Local Storage</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/storage/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/storage/globals.html"
+          >Globale variabelen</a
+        >
+        <a href="/pages/lessons/javascript/storage/local-storage.html"
+          >Local Storage</a
+        >
+        <a href="/pages/lessons/javascript/storage/session-storage.html"
+          >Session Storage</a
+        >
+        <a href="/pages/lessons/javascript/storage/cookies.html">Cookies</a>
+        <a href="/pages/lessons/javascript/storage/web-sql.html"
+          >Web SQL Database</a
+        >
+        <a href="/pages/exercises/javascript/storage/all-tasks.html"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Data overheen verschillende HTML pagina's opslaan kan een uitdaging
+          zijn.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Wat is Local Storage</h2>
+        <p>
+          Local Storage is een manier om gegevens <strong>in de browser</strong> op te slaan. De
+          gegevens blijven bewaard, zelfs als de browser wordt gesloten. Het
+          biedt een eenvoudige API voor het opslaan en ophalen van gegevens. De
+          opslagcapaciteit is groter dan die van cookies. Local Storage is
+          handig voor het opslaan van gebruikersinstellingen en voorkeuren.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Local Storage bekijken</h2>
+        <p>
+          Je kan de Local Storage van uw browser bekijken in de Developer Tools.
+          Ga naar de Application tab en klik op Local Storage in het menu aan de
+          linkerkant. Hier kan je de gegevens zien die in Local Storage zijn
+          opgeslagen.
+        </p>
+      </div>
+
+      <div class="centered paragraph">
+        <img
+          class="responsive-image"
+          src="/imgs/local-storage.png"
+          alt="Local Storage"
+        />
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Local Storage gebruiken</h2>
+        <p>
+          Om Local Storage te gebruiken, kunt u de
+          <code>localStorage</code> object gebruiken. Dit object heeft
+          verschillende methoden om gegevens op te slaan en op te halen.
+        </p>
+        <pre>
+<code>
+<span>// Gegevens opslaan</span>
+localStorage.setItem('key', 'value');
+
+<span>// Gegevens ophalen</span>
+let value = localStorage.getItem('key');
+
+<span>// Gegevens verwijderen</span>
+localStorage.removeItem('key');
+</code>
+</pre>
+        <p>
+          We slaan bijvoorbeeld op of de gebruiker voor 'dark' of 'light' mode
+          koos voor de weeergave van de website.
+        </p>
+
+        <pre>
+<code>
+<span>// Gegevens opslaan</span>
+localStorage.setItem('theme', 'dark');
+
+<span>// Bekijk nu de waarde in de Application tab van je Developer Tools.</span>
+
+<span>// Gegevens ophalen</span>
+let theme = localStorage.getItem('theme');
+
+<span>// Gegevens verwijderen</span>
+localStorage.removeItem('theme');
+</code>
+</pre>
+
+        <p>
+          Wanneer je na het invoeren van de eerste lijn code, dit venster zou
+          sluiten en naar een andere pagina op deze (lokale) website gaan, dan
+          zal je zien dat ook daar dezelfde waarden in de Local Storage
+          beschikbaar zijn. Zelfs na het volledig afsluiten van de browser.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

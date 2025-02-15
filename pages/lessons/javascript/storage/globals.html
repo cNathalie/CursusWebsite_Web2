@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Storage: Globale Variabelen</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Storage:: Globale Variabelen</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/storage/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/storage/globals.html"
+          >Globale variabelen</a
+        >
+        <a href="/pages/lessons/javascript/storage/local-storage.html"
+          >Local Storage</a
+        >
+        <a href="/pages/lessons/javascript/storage/session-storage.html"
+          >Session Storage</a
+        >
+        <a href="/pages/lessons/javascript/storage/cookies.html">Cookies</a>
+        <a href="/pages/lessons/javascript/storage/web-sql.html"
+          >Web SQL Database</a
+        >
+        <a href="/pages/exercises/javascript/storage/all-tasks.html"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>
+          Globals horen bij de context van h et huidige HTML document. Als
+          debrowser naar een andere pagina navigeert of herlaadt, gaat deze
+          variabele en zijn waarde verloren.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Wat zijn globale variabelen</h2>
+        <p>
+          Globale variabelen zijn variabelen die buiten een functie worden
+          gedeclareerd. Deze variabelen kunnen overal in de code worden
+          gebruikt. Dit kan handig zijn als je bepaalde waarden wilt opslaan die
+          je later in de code wilt gebruiken.
+        </p>
+        <p>
+          Hieronder zie je een voorbeeld van een globale variabele. In dit
+          voorbeeld wordt de variabele <code>name</code> gedeclareerd buiten de
+          functie <code>sayHello</code>. Hierdoor kan de variabele
+          <code>name</code> overal in de code worden gebruikt.
+        </p>
+        <pre>
+<code>
+var name = "John";
+
+function sayHello() {
+    console.log("Hello " + name);
+}
+
+sayHello();
+</code>
+</pre>
+        <p>
+          In dit voorbeeld wordt de variabele <code>name</code> gedeclareerd
+          buiten de functie <code>sayHello</code>. Hierdoor kan de variabele
+          <code>name</code> overal in de code worden gebruikt. Als je de functie
+          <code>sayHello</code> aanroept, wordt de tekst "Hello John" naar de
+          console gelogd.
+        </p>
+        <p>
+          Vele globale variabelen kunnen ervoor zorgen dat je code minder
+          overzichtelijk wordt. Daarom is het belangrijk om zorgvuldig om te
+          gaan met globale variabelen en ze alleen te gebruiken als dat echt
+          nodig is.
+        </p>
+        <p>
+          Bij JavaScript zijn globale variabelen properties van het globale
+          object. In de browser is dit object <code>window</code>. Dit betekent
+          dat je een globale variabele kunt benaderen door
+          <code>window.variabeleNaam</code> te gebruiken.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Name clashes</h2>
+        <p>
+          Als je een globale variabele declareert met dezelfde naam als een
+          variabele die al bestaat binnen het <code>window</code> object,
+          overschrijft de nieuwe variabele de oude variabele. Dit kan leiden tot
+          onverwachte resultaten en bugs in je code.
+        </p>
+        <p>
+          Het is moeilijk om ten allen tijde een overzicht te hebben van welk
+          variabelen er al onder het <code>window</code> object leven. Daarom is
+          het handig om al jouw eigen globale variabelen te verzamelen in één
+          object.
+        </p>
+        <p>Hieronder zie je een voorbeeld van hoe je dit kan doen:</p>
+        <pre>
+<code>
+let myGlobals = {
+    users : [
+        {name: "John", age: 30},
+        {name: "Jane", age: 25}
+    ],
+    settings : {
+        theme: "dark",
+        music: "on"
+    },
+    PATH : "/pages/lessons/javascript/storage/globals.html"
+};
+
+console.log(myGlobals);
+
+console.log(myGlobals.users);
+</code>
+</pre>
+        <p>
+          In dit voorbeeld worden alle globale variabelen verzameld in het
+          object <code>myGlobals</code>. Dit maakt het gemakkelijker om te zien
+          welke variabelen globaal zijn en voorkomt name clashes met andere
+          variabelen die al bestaan in het <code>window</code> object.
+        </p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

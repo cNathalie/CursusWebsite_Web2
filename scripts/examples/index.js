@@ -19,6 +19,7 @@ const setup = () => {
     ["js-adv-dom-folder", "js-adv-dom-title"],
     ["js-objects-folder", "js-objects-title"],
     ["json-folder", "json-title"],
+    ['fetch-folder', 'fetch-title'],
     ["storage-folder", "storage-title"],
   ];
 

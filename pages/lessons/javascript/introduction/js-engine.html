@@ -1,60 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
     <link rel="stylesheet" href="/styles/style.css" type="text/css" />
     <title>JS-Engine</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">JavaScript-Engine</h1>
+        <img
+          class="label-img"
+          src="/imgs/need-to-know.png"
+          alt="Need to know"
+        />
+      </div>
 
-        <div class="header">
-            <h1 class="title">JavaScript-Engine</h1>
-            <img class="label-img" src="/imgs/need-to-know.png" alt="Need to know" />
-          </div>
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/introduction/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/introduction/ecma-script.html"
+          >ECMA-Script</a
+        >
+        <a href="/pages/lessons/javascript/introduction/js-engine.html"
+          >JavaScript Engine</a
+        >
+      </div>
 
-        <div class="link-bar">
-            <a href="/pages/lessons/javascript/introduction/introduction.html">Introductie</a>
-            <a href="/pages/lessons/javascript/introduction/ecma-script.html">ECMA-Script</a>
-            <a href="/pages/lessons/javascript/introduction/js-engine.html">JavaScript Engine</a>
-        </div>
+      <div class="paragraph">
+        <p>
+          De JavaScript-engine is een programma dat JavaScript-code uitvoert.
+          Het is een belangrijk onderdeel van elke webbrowser en zorgt ervoor
+          dat JavaScript-code correct wordt uitgevoerd.
+        </p>
+      </div>
 
-        <div class="paragraph">
-            <p>
-                De JavaScript-engine is een programma dat JavaScript-code uitvoert. 
-                Het is een belangrijk onderdeel van elke webbrowser en zorgt ervoor dat JavaScript-code correct wordt uitgevoerd.
-            </p>
-            <p>
-                De engine leest de JavaScript-code, compileert deze naar machinecode en voert deze vervolgens uit. 
-                Dit proces wordt meestal in verschillende stappen uitgevoerd, zoals parsing, compilatie en uitvoering.
-            </p>
-            <p>
-                De meeste moderne browsers hebben hun eigen JavaScript-engine. 
-                Enkele bekende engines zijn V8 (Google Chrome), SpiderMonkey (Mozilla Firefox) en JavaScriptCore (Safari).
-            </p>
-            <p>
-                De engine is een van de redenen waarom JavaScript zo snel is geworden en waarom het een van de meest populaire programmeertalen ter wereld is.
-            </p>            
-        </div>
+      <div class="paragraph card">
+        <h2 class="subtitle">Engine</h2>
+        <p>
+          De engine leest de JavaScript-code, compileert deze naar machinecode
+          en voert deze vervolgens uit. Dit proces wordt meestal in
+          verschillende stappen uitgevoerd, zoals parsing, compilatie en
+          uitvoering.
+        </p>
+        <p>
+          De meeste moderne browsers hebben hun eigen JavaScript-engine. Enkele
+          bekende engines zijn V8 (Google Chrome), SpiderMonkey (Mozilla
+          Firefox) en JavaScriptCore (Safari).
+        </p>
+        <p>
+          De engine is een van de redenen waarom JavaScript zo snel is geworden
+          en waarom het een van de meest populaire programmeertalen ter wereld
+          is.
+        </p>
+      </div>
 
-        <div class="paragraph">
-<h2 class="subtitle">Transpilers</h2>
-    <p>
-        Naast JavaScript-engines zijn er ook transpilers. 
-        Een transpiler is een programma dat de ene programmeertaal omzet in een andere.         
-    </p>
-    <p>
-        In het geval van JavaScript worden nieuwe functies en syntaxen vaak eerst geïmplementeerd in een nieuwe versie van de taal, zoals ES6.
-        Pas later worden deze functies en syntaxen ondersteund door de JavaScript-engines van de verschillende browsers.
-        Om ervoor te zorgen dat ontwikkelaars toch al gebruik kunnen maken van deze nieuwe functies, worden transpilers gebruikt.
-    </p>
-    <p>
-        Voorbeelden van transpilers zijn Babel.js en Traceur.
-    </p>
-        </div>
-        <a id="back-to-top" href="#">Terug naar boven</a>
+      <div class="paragraph card">
+        <h2 class="subtitle">Transpilers</h2>
+        <p>
+          Naast JavaScript-engines zijn er ook transpilers. Een transpiler is
+          een programma dat de ene programmeertaal omzet in een andere.
+        </p>
+        <p>
+          In het geval van JavaScript worden nieuwe functies en syntaxen vaak
+          eerst geïmplementeerd in een nieuwe versie van de taal, zoals ES6. Pas
+          later worden deze functies en syntaxen ondersteund door de
+          JavaScript-engines van de verschillende browsers. Om ervoor te zorgen
+          dat ontwikkelaars toch al gebruik kunnen maken van deze nieuwe
+          functies, worden transpilers gebruikt.
+        </p>
+        <p>Voorbeelden van transpilers zijn Babel.js en Traceur.</p>
+      </div>
+      <a id="back-to-top" href="#">Terug naar boven</a>
     </div>
-</body>
+  </body>
 </html>

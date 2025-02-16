@@ -107,20 +107,21 @@
 <code>
     const fruits = ['apple', 'banana', 'orange'];
 
-    console.log(fruits.length); <span>// 3</span>
-    console.log(fruits.indexOf('banana')); <span>// 1</span>
+    <span>// Vraag de lengte op = het aantal elementen in de array</span>
+    console.log(fruits.length); 
+
+    <span>//Vraag de index van een bepaald element op</span>
+    console.log(fruits.indexOf('banana')); 
 
     const vegetables = ['carrot', 'tomato'];
 
+    <span>// Voeg fruit en groenten samen in één array</span>
     const food = fruits.concat(vegetables);
     console.log(food); 
-    <span>// ['apple', 'banana', 'orange', 'carrot', 'tomato']</span>
-
-    console.log(food.reverse()); 
-    <span>// ['tomato', 'carrot', 'orange', 'banana', 'apple']</span>
-
-    console.log(food.sort()); 
-    <span>// ['apple', 'banana', 'carrot', 'orange', 'tomato']</span>
+    
+    <span>// Draai de volgorde van de elementen om</span>
+    food.reverse()
+    console.log(food); 
 </code>
 </pre>
       </div>

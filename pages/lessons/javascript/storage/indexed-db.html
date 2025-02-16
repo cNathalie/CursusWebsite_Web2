@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hier linken we onze CSS stylesheet aan deze html pagina -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Storage: Indexed Database</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="header">
+        <h1 class="title">Storage: Indexed Database</h1>
+        <img
+          class="label-img"
+          src="/imgs/good-to-know.png"
+          alt="Good to know"
+        />
+      </div>
+
+      <div class="link-bar">
+        <a href="/pages/lessons/javascript/storage/introduction.html"
+          >Introductie</a
+        >
+        <a href="/pages/lessons/javascript/storage/globals.html"
+          >Globale variabelen</a
+        >
+        <a href="/pages/lessons/javascript/storage/local-storage.html"
+          >Local Storage</a
+        >
+        <a href="/pages/lessons/javascript/storage/session-storage.html"
+          >Session Storage</a
+        >
+        <a href="/pages/lessons/javascript/storage/cookies.html">Cookies</a>
+        <a href="/pages/lessons/javascript/storage/indexed-db.html"
+          >Indexed Database </a
+        >
+        <a href="/pages/exercises/javascript/storage/all-tasks.html"
+          >Oefeningen</a
+        >
+      </div>
+
+      <div class="paragraph">
+        <p>Browser ondersteunen ook vaak een lokale NoSQL-database.</p>
+      </div>
+
+      <div class="card paragraph">
+        <h2 class="subtitle">Wat is de Indexed Database?</h2>
+        <p>
+          De Indexed Database API is een manier om gegevens in de browser op te
+          slaan. Het is een NoSQL-database die een krachtige en flexibele
+          manier biedt om gegevens op te slaan en te beheren. Het is
+          ontworpen om grote hoeveelheden gegevens te kunnen verwerken en
+          ondersteunt transacties en indexen.
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Indexed db bekijken</h2>
+        <p>
+          Je kan de indexeddb terugvinden in de developer tools van je
+          browser. In Chrome kan je dit vinden onder de tab "Application".
+        </p>
+      </div>
+
+      <div class="paragraph card">
+        <h2 class="subtitle">Indexed db gebruiken</h2>
+        <p>
+          Hieronder zie je een voorbeeld van hoe je een Indexed Database kan
+          gebruiken in JavaScript.
+        </p>
+<pre>
+<code>
+<span>// Haal de browser db op</span> 
+const indexedDB = window.indexedDB ;
+
+<span>// Open/Creëer een nieuwe database</span>
+const myDb = indexedDB.open("MyDatabase", 1);
+
+<span>// Maak het db schema aan</span>
+myDb.onupgradeneeded = () => {
+    const db = myDb.result;
+    const store = db.createObjectStore("MyObjectStore", { keyPath: "id" });
+    const index = store.createIndex("NameIndex", ["name.last", "name.first"]);
+};
+
+<span>// Voeg data toe en lees ze uit in een transactie</span>
+myDb.onsuccess = () => {
+    <span>// Start een nieuwe transactie</span>
+    const db = myDb.result;
+    const tx = db.transaction("MyObjectStore", "readwrite");
+    const store = tx.objectStore("MyObjectStore");
+    const index = store.index("NameIndex");
+
+    <span>// Voeg data toe</span>
+    store.put({ id: 12345, name: { first: "John", last: "Doe" }, age: 42 });
+    store.put({ id: 67890, name: { first: "Bob", last: "Smith" }, age: 35 });
+    
+    <span>// Lees data uit</span>
+    const getJohn = store.get(12345);
+    const getBob = index.get(["Smith", "Bob"]);
+
+    getJohn.onsuccess = () => {
+        console.log(getJohn.result.name.first);  <span>// => "John"</span>
+    };
+
+    getBob.onsuccess = () => {
+        console.log(getBob.result.name.first);   <span>// => "Bob"</span>
+    };
+
+    <span>// Sluit de database wanneer de transactie klaar is</span>
+    tx.oncomplete = () => {
+        db.close();
+    };
+};
+</code>
+</pre>
+        <p>
+          In dit voorbeeld wordt een Indexed Database aangemaakt met de naam
+          "myDatabase". Er wordt een object store aangemaakt met de naam
+          "MyObjectStore" en er wordt een index gemaakt voor het veld name.
+        </p>
+
+      </div>
+
+      <div class="paragraph card">
+<h2 class="subtitle">Levensduur</h2>
+<p>
+  De Indexed Database is een lokale database die wordt opgeslagen in de
+  browser. De gegevens blijven bewaard, zelfs als de browser wordt
+  gesloten. De gegevens worden alleen verwijderd als de gebruiker de
+  gegevens verwijdert of als de website de gegevens verwijdert.
+</p>
+      </div>
+
+      <a id="back-to-top" href="#">Terug naar boven</a>
+    </div>
+  </body>
+</html>

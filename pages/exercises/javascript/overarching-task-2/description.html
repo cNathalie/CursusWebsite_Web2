@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    <title>Overkoepelende Opdracht - 2</title>
+  </head>
+  <body>
+    <div class="info-page-container">
+      <div class="card paragraph">
+        <h2 class="subtitle">VERGEET NIET OM JE CODE TE PUSHEN NAAR GITHUB</h2>
+        <p class="important centered">Niet indienen = 0</p>
+      </div>
+      <div class="paragraph exercise-card">
+        <h1 class="centered">
+          Overkoepelende Opdracht - 2: Uitbreiding Color Picker
+        </h1>
+        <p>Maak in deze folder een kopie van de bestanden van Overkoepelende Opdracht - 1.</p>
+        <p>
+          In deze opdracht ga je de Color Picker uitbreiden met de volgende
+          functionaliteiten.
+        </p>
+        Requirements:
+        <ul>
+          <li>Voeg rechts van de colorpicker component een 'Save' knop toe.</li>
+          <li>
+            Wanneer de gebruiker op de 'Save' knop klikt, wordt er een kopie van
+            de gekleurde kader ('swatch') toegevoegd onder de component.
+          </li>
+          <li>
+            In de swatch wordt de kleur weergegeven die de gebruiker
+            heeft geselecteerd.
+          </li>
+          <li>
+            In de rechterbovenhoek van elke swatch staat een 'Delete'
+            knop.
+          </li>
+          <li>
+            Wanneer de gebruiker op de 'Delete' knop klikt, wordt de swatch verwijderd.
+          </li>
+          <li>
+            Wanneer de gebruiker op een swatch klikt, wordt de kleur
+            van de kader terug ingesteld in de colorpicker.
+          </li>
+        </ul>
+
+        Technical notes:
+        <ul>
+          <li>
+            <strong
+              >Wanneer de gebruiker op de 'Save' knop klikt, wordt er een kopie
+              van de gekleurde kader toegevoegd onder de component</strong
+            >
+          </li>
+          <ul>
+            <li>
+              Voorzie de delete knop maar koppel nog geen click gedrag aan de
+              swatchof de delete knop
+            </li>
+            <li>
+              De layoutis geen prioriteit maar als je je geroepen voelt: de
+              delete knop wordt absoluut gepositioneerd en je krijgt hem in de
+              rechterbovenhoek door de <code>top</code> en
+              <code>right</code> CSS-properties in te stellen
+            </li>
+          </ul>
+          <li>
+            <strong
+              >Wanneer de gebruiker op een gekleurde kader klikt, wordt de kleur
+              van de kader terug ingesteld in de colorpicker.</strong
+            >
+          </li>
+          <ul>
+            <li>
+              De waarde van de sliders voor een bewaarde kleur, stop je in drie
+              custom attributen (data-red, data-green en data-blue) van het
+              swatch element.
+            </li>
+            <li>
+              In de click event listener achterhaal je met event.target het
+              swatch element, vraagt de waarden van diens 3 custom attributen
+              op, gebruikt ze om de sliders te herstellen en roept tenslotte
+              update() op
+            </li>
+          </ul>
+          <li>
+            <strong
+              >Wanneer de gebruiker op de 'Delete' knop klikt, wordt de
+              gekleurde kader verwijderd.</strong
+            >
+          </li>
+          <ul>
+            <li>
+              Hier ligt een moeilijkheid omdat de delete knop een child is van
+              het swatch element. Een klik op de delete knop zal dus wegens
+              event bubbling ook de click event listener van het swatch element
+              activeren
+            </li>
+            <li>
+              Je zal dus in die event listener een onderscheid moeten maken
+              tussen een directe klik op de swatch en een klik op de delete knop...
+            </li>
+          </ul>
+        </ul>
+
+        <p>Veel succes!</p>
+      </div>
+
+      <div class="centered paragraph">
+        <img class="responsive-image" src="/imgs/cp-uitbreiding.png" alt="" />
+      </div>
+      <div class="card paragraph">
+        <h2 class="subtitle">VERGEET NIET OM JE CODE TE PUSHEN NAAR GITHUB</h2>
+        <p class="important centered">Niet indienen = 0</p>
+      </div>
+    </div>
+  </body>
+</html>

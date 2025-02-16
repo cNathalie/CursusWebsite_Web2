@@ -191,6 +191,10 @@ body {
   display: none;
 }
 
+.click-me {
+  color: brown;
+}
+
 .click-me:hover {
   cursor: pointer;
   text-decoration: underline;

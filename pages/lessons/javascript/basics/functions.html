@@ -54,9 +54,9 @@
           aangeroepen.
         </p>
         <p>
-          We maken gebruik van het keyword <code class="good">function</code>
+          We maken gebruik van het keyword <code class="good">function</code>.
         </p>
-        .
+
         <p>
           We kunnen ook een functie maken waarmee we één of meerdere parameters
           meegeven:
@@ -168,11 +168,11 @@
         </p>
         <pre>
 <code>
-    const greet = () => {
+    const greet1 = () => {
         console.log('Hello, world!');
     }
 
-    greet();
+    greet1();
 </code>
 </pre>
         <p>
@@ -186,8 +186,8 @@
         </p>
         <pre>   
 <code>
-    const greet = () => console.log('Hello, world!');
-    greet();
+    const greet2 = () => console.log('Hello, world!');
+    greet2();
 </code>
 </pre>
         <p>
@@ -195,8 +195,8 @@
         </p>
         <pre>
 <code>
-    const greet = name => console.log(`Hello, ${name}!`);
-    greet('John');
+    const greet3 = name => console.log(`Hello, ${name}!`);
+    greet3('John');
 </code>
 </pre>
         <p>
@@ -222,11 +222,11 @@
         </p>
         <pre>
 <code>
-    const greet = () => console.log('Hello, world!');
+    const greet4 = () => console.log('Hello, world!');
 
-    greet; 
+    greet4; 
 
-    greet(); <span>// Hello, world!</span>
+    greet4(); <span>// Hello, world!</span>
 </code>
 </pre>
       </div>
@@ -256,6 +256,15 @@
     changeValue(x);
 
     console.log(x); <span>// Wat verwacht je hier?</span>
+
+    <span>// Je moet de nieuw waarde teruggeven</span>
+    function changeValue2(value){
+      return 10;
+    }
+
+    x = changeValue2(x);
+
+    console.log(x)
 </code>
 </pre>
         <p>
